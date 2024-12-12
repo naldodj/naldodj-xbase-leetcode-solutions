@@ -53,9 +53,7 @@ static function singleNumber(aNumbers as array)
 
     if (Mod(nLen,2) != 0)
         // Case 1: Numbers appear two times
-        for i:=1 to nLen
-            nOne:=nXor(nOne,aNumbers[i])
-        next i
+        aEval(aNumbers,{|n|nOne:=nXor(nOne,n)})
     else
         // Case 2: Numbers appear three times
         for i:=1 to nLen

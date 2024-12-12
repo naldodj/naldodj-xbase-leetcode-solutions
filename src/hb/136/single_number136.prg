@@ -55,9 +55,7 @@ static function singleNumber(aNumbers as array)
 
     if (Mod(nLen, 2) != 0)
         // Case 1: Numbers appear two times
-        for i := 1 to nLen
-            nOne := hb_bitXor(nOne, aNumbers[i])
-        next i
+        aEval(aNumbers,{|n|nOne:=hb_bitXor(nOne,n)})
     else
         // Case 2: Numbers appear three times
         for i := 1 to nLen

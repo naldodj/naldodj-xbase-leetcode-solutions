@@ -3,6 +3,13 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-12 13:19 UTC naldodj
+  * src/hb/136/single_number136.prg
+  * src/hb/137/single_number137.prg
+  * src/tlpp/136/single_number136.tlpp
+  * src/tlpp/137/single_number137.tlpp
+    ; Refactored iteration to simplify using aEval for clarity.
+
 2024-12-12 11:22 UTC naldodj (Add README file)
   + src/tlpp/136/README.md
   + src/tlpp/137/README.md
