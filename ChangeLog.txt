@@ -33,3 +33,5 @@
   + src/hb/137/single_number137.prg
   + src/tlpp/136/single_number136.tlpp
   + src/tlpp/137/single_number137.tlpp
+  + .gitattributes
+  + .gitignore
