@@ -23,5 +23,3 @@ Output: [0,1]
 ![image](https://github.com/user-attachments/assets/c0f48c6c-30a4-456c-bc81-7a697773234f)
 
 ![image](https://github.com/user-attachments/assets/3c8d2ef0-0c9f-4f61-9163-ef71d3e783bf)
-
-

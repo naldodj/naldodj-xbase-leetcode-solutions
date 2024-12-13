@@ -3,6 +3,10 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-13 07:41 UTC naldodj
+  * src/hb/1/two_sum1.prg -> src/hb/001/two_sum1.prg
+  * src/hb/1/two_sum1.md -> src/hb/001/two_sum1.md
+
 2024-12-13 07:39 UTC naldodj
   * src/tlpp/1/two_sum1.tlpp -> src/tlpp/001/two_sum1.tlpp
   * src/tlpp/1/two_sum1.md -> src/tlpp/001/two_sum1.md
