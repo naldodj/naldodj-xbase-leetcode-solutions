@@ -27,3 +27,6 @@
 
     0 <= s.length <= 5 * 104
     s consists of English letters, digits, symbols and spaces.
+
+![image](https://github.com/user-attachments/assets/1b96145e-9ecd-4750-a6e6-43f1e352e78f)
+
