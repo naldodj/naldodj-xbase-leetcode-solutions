@@ -36,31 +36,31 @@ procedure Main()
 
     local cSubString as character
 
-    ? "abcabcbb =>",lengthOfLongestsubString("abcabcbb",@cSubString)," => ",hb_JSONEncode(cSubString)  // Resultado: 3
+    ? "abcabcbb =>",lengthOfLongestsubString("abcabcbb",@cSubString),hb_JSONEncode(cSubString)  // Resultado: 3
     ? "</br>"
 
-    ? "bbbbb =>" ,lengthOfLongestsubString("bbbbb",@cSubString)," => ",hb_JSONEncode(cSubString)     // Resultado: 1
+    ? "bbbbb =>" ,lengthOfLongestsubString("bbbbb",@cSubString),hb_JSONEncode(cSubString)     // Resultado: 1
     ? "</br>"
 
-    ? "pwwkew => ",lengthOfLongestsubString("pwwkew",@cSubString)," => ",hb_JSONEncode(cSubString)    // Resultado: 3
+    ? "pwwkew => ",lengthOfLongestsubString("pwwkew",@cSubString),hb_JSONEncode(cSubString)    // Resultado: 3
     ? "</br>"
 
-    ? "blacktdn =>",lengthOfLongestsubString("blacktdn",@cSubString)," => ",hb_JSONEncode(cSubString)  // Resultado: 8
+    ? "blacktdn =>",lengthOfLongestsubString("blacktdn",@cSubString),hb_JSONEncode(cSubString)  // Resultado: 8
     ? "</br>"
 
-    ? "susej ed odlaniram => ",lengthOfLongestsubString("susej ed odlaniram",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 8
+    ? "susej ed odlaniram => ",lengthOfLongestsubString("susej ed odlaniram",@cSubString),hb_JSONEncode(cSubString) // Resultado: 8
     ? "</br>"
 
-    ? "xBase => ",lengthOfLongestsubString("xBase",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 5
+    ? "xBase => ",lengthOfLongestsubString("xBase",@cSubString),hb_JSONEncode(cSubString) // Resultado: 8
     ? "</br>"
 
-    ? "harbour => ",lengthOfLongestsubString("harbour",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 6
+    ? "harbour => ",lengthOfLongestsubString("harbour",@cSubString),hb_JSONEncode(cSubString) // Resultado: 8
     ? "</br>"
 
-    ? "tlpp => ",lengthOfLongestsubString("tlpp",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 3
+    ? "tlpp => ",lengthOfLongestsubString("tlpp",@cSubString),hb_JSONEncode(cSubString) // Resultado: 8
     ? "</br>"
 
-    ? "advpl => ",lengthOfLongestsubString("advpl",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 5
+    ? "advpl => ",lengthOfLongestsubString("advpl",@cSubString),hb_JSONEncode(cSubString) // Resultado: 8
     ? "</br>"
 
 return
@@ -71,6 +71,7 @@ static function lengthOfLongestsubString(cString as character,cSubString as char
 
     local cChar as character         // Caractere atual
 
+    local i as numeric               // indice para percorrer o vetor
     local nAT as numeric
     local nEnd as numeric            // indice final da janela
     local nStart as numeric := 1     // indice inicial da janela

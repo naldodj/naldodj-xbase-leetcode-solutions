@@ -32,49 +32,45 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+
+#include "totvs.ch"
+
+namespace dna.tech
+
+procedure u_MainLongestSubstringWithoutRepeatingCharacters()
 
     local cSubString as character
 
-    ? "abcabcbb =>",lengthOfLongestsubString("abcabcbb",@cSubString)," => ",hb_JSONEncode(cSubString)  // Resultado: 3
-    ? "</br>"
+    MsgInfo("abcabcbb =>"+LTrim(Str(lengthOfLongestsubString("abcabcbb",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName())  // Resultado: 3
 
-    ? "bbbbb =>" ,lengthOfLongestsubString("bbbbb",@cSubString)," => ",hb_JSONEncode(cSubString)     // Resultado: 1
-    ? "</br>"
+    MsgInfo("bbbbb =>"+LTrim(Str(lengthOfLongestsubString("bbbbb",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName())    // Resultado: 1
 
-    ? "pwwkew => ",lengthOfLongestsubString("pwwkew",@cSubString)," => ",hb_JSONEncode(cSubString)    // Resultado: 3
-    ? "</br>"
+    MsgInfo("pwwkew =>"+LTrim(Str(lengthOfLongestsubString("pwwkew",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName())    // Resultado: 3
 
-    ? "blacktdn =>",lengthOfLongestsubString("blacktdn",@cSubString)," => ",hb_JSONEncode(cSubString)  // Resultado: 8
-    ? "</br>"
+    MsgInfo("blacktdn =>"+LTrim(Str(lengthOfLongestsubString("blacktdn",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName())  // Resultado: 8
 
-    ? "susej ed odlaniram => ",lengthOfLongestsubString("susej ed odlaniram",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 8
-    ? "</br>"
+    MsgInfo("susej ed odlaniram =>"+LTrim(Str(lengthOfLongestsubString("susej ed odlaniram",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName()) // Resultado: 8
 
-    ? "xBase => ",lengthOfLongestsubString("xBase",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 5
-    ? "</br>"
+    MsgInfo("xBase =>"+LTrim(Str(lengthOfLongestsubString("xBase",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName()) // Resultado: 5
 
-    ? "harbour => ",lengthOfLongestsubString("harbour",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 6
-    ? "</br>"
+    MsgInfo("harbour =>"+LTrim(Str(lengthOfLongestsubString("harbour",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName()) // Resultado: 6
 
-    ? "tlpp => ",lengthOfLongestsubString("tlpp",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 3
-    ? "</br>"
+    MsgInfo("tlpp =>"+LTrim(Str(lengthOfLongestsubString("tlpp",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName()) // Resultado: 3
 
-    ? "advpl => ",lengthOfLongestsubString("advpl",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 5
-    ? "</br>"
+    MsgInfo("advpl =>"+LTrim(Str(lengthOfLongestsubString("advpl",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName()) // Resultado: 5
 
 return
 
-static function lengthOfLongestsubString(cString as character,cSubString as character)
+static function lengthOfLongestsubString(cString as character,/*@*/cSubString as character) as numeric
 
-    local aSet as array := array(0) // "Conjunto" para armazenar os caracteres na janela
+    local aSet := array(0) as array  // "Conjunto" para armazenar os caracteres na janela
 
     local cChar as character         // Caractere atual
 
     local nAT as numeric
     local nEnd as numeric            // indice final da janela
-    local nStart as numeric := 1     // indice inicial da janela
-    local nMaxLength as numeric := 0 // Comprimento maximo encontrado
+    local nStart := 1 as numeric      // indice inicial da janela
+    local nMaxLength := 0 as numeric  // Comprimento maximo encontrado
 
     // Percorre a string com o indice nEnd como limite da janela
     for nEnd := 1 to Len(cString)
@@ -101,4 +97,4 @@ static function lengthOfLongestsubString(cString as character,cSubString as char
 
     next nEnd
 
-    return nMaxLength as numeric
+    return nMaxLength
