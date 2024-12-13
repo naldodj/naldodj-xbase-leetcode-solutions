@@ -3,6 +3,18 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-13 08:20 UTC naldodj (add_two_numbers)
+  + src/hb/002/add_two_numbers.2.0.prg
+  + src/hb/002/add_two_numbers.2.1.prg
+  + src/hb/002/README.md
+  + src/tlpp/002/README.md
+  * src/hb/001/two_sum1.prg -> src/hb/001/two_sum.1.prg
+  * src/hb/136/single_number136.prg -> src/hb/136/single_number.136.prg
+  * src/hb/137/single_number137.prg -> src/hb/137/single_number.137.prg
+  * src/tlpp/001/two_sum1.tlpp -> src/tlpp/001/two_sum.1.tlpp
+  * src/tlpp/136/single_number136.tlpp -> src/tlpp/136/single_number.136.tlpp
+  * src/tlpp/137/single_number137.tlpp -> src/tlpp/137/single_number.137.tlpp
+
 2024-12-13 07:43 UTC naldodj
   * src/hb/001/two_sum1.md -> src/hb/001/README.md
   * src/tlpp/001/two_sum1.md -> src/tlpp/001/README.md
