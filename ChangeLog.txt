@@ -3,6 +3,10 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-13 19:12 UTC naldodj (longest_substring_without_repeating_characters harbour)
+  - src/hb/003/longest_substring_without_repeating_characters.prg
+  * src/hb/003/longest_substring_without_repeating_characters.3.prg
+
 2024-12-13 18:58 UTC naldodj (longest_substring_without_repeating_characters tlpp)
   + src/hb/003/longest_substring_without_repeating_characters.3.prg
   + src/tlpp/003/longest_substring_without_repeating_characters.3.tlpp
