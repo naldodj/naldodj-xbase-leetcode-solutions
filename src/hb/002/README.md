@@ -25,3 +25,12 @@ Constraints:
 The number of nodes in each linked list is in the range [1, 100].
 0 <= Node.val <= 9
 It is guaranteed that the list represents a number that does not have leading zeros.
+
+`add_two_numbers.2.0.prg`
+![image](https://github.com/user-attachments/assets/99f84523-0d89-4256-a4e7-c4c00362a484)
+
+`add_two_numbers.2.1.prg`
+![image](https://github.com/user-attachments/assets/d5e3629b-7ff9-4f0d-856f-bb41bdd14169)
+
+`add_two_numbers.2.2.prg`
+![image](https://github.com/user-attachments/assets/35e4f489-3e41-459a-89e0-2ae4a5fbc6e4)
