@@ -30,26 +30,28 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-procedure Main()
-    ? "Sum: '243'+'564' => " ,addTwoNumbers("243","564")
-    ? "</br>"
-    ? "Sum: '0'+'0' => " ,addTwoNumbers("0","0")
-    ? "</br>"
-    ? "Sum: '9999999'+'9999' => " ,addTwoNumbers("9999999","9999")
+#include "totvs.ch"
+
+namespace dna.tech
+
+procedure u_MainAddTwoNumbers2_1()
+    MsgInfo("Sum: '243'+'564' => "+ addTwoNumbers("243","564"),ProcName())
+    MsgInfo("Sum: '0'+'0' => "+ addTwoNumbers("0","0"),ProcName())
+    MsgInfo("Sum: '9999999'+'9999' => "+ addTwoNumbers("9999999","9999"),ProcName())
 return
 
 static function addTwoNumbers(a as character, b as character, n as numeric, nBase as numeric)
 
     local aResult as array
 
-    local cOutPut as character := ""
+    local cOutPut := "" as character
 
     local nSum as numeric
     local nIdx as numeric
-    local nCarry as numeric := 0
+    local nCarry := 0 as numeric
 
-    hb_default(@n,Max(Len(a),Len(b)))
-    hb_default(@nBase,10)
+    DEFAULT n:=Max(Len(a),Len(b))
+    DEFAULT nBase:=10
 
     a:=PadL(a,n,"0")
     b:=PadL(b,n,"0")
@@ -57,7 +59,7 @@ static function addTwoNumbers(a as character, b as character, n as numeric, nBas
     // Inicializa o array de aResultados com zeros
     aResult := aFill(Array(n + 1), 0)
 
-    // Soma os digitos ordem inversa
+    // Soma os digitos em ordem inversa
     for nIdx:=n to 1 step -1
         nSum:=(Val(SubStr(a,nIdx,1))+Val(SubStr(b,nIdx,1))+nCarry)
         nCarry:=Int(nSum/nBase)
@@ -70,7 +72,7 @@ static function addTwoNumbers(a as character, b as character, n as numeric, nBas
     endif
 
     // Converte o array para string, removendo zeros a esquerda
-    aEval(aResult, { |v as numeric| cOutPut+=hb_ntoc(v) })
+    aEval(aResult,{|v as numeric|cOutPut+=LTrim(Str(v))})
     cOutPut:=LeftCharRemove(cOutPut,"0",.F.)
 
     return strReverse(cOutPut,len(cOutPut))
@@ -92,7 +94,7 @@ static function LeftCharRemove(cStr,cChr,lAll)
     local cStrRet as character
     local nAT as numeric
     local nCHR as numeric
-    hb_default(@lAll,.T.)
+    DEFAULT lAll:=.T.
     cStrRet:=cStr
     nCHR:=len(cChr)
     while (Left(cStrRet,nCHR)==cChr)

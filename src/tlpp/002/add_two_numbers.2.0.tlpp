@@ -30,50 +30,53 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-procedure Main()
-    ? "Sum: '243'+'564' => " ,addTwoNumbers("243","564")
-    ? "</br>"
-    ? "Sum: '0'+'0' => " ,addTwoNumbers("0","0")
-    ? "</br>"
-    ? "Sum: '9999999'+'9999' => " ,addTwoNumbers("9999999","9999")
+
+#include "totvs.ch"
+
+namespace dna.tech
+
+procedure u_MainAddTwoNumbers2_0()
+    MsgInfo("Sum: '243'+'564' => "+ addTwoNumbers("243","564"),ProcName())
+    MsgInfo("Sum: '0'+'0' => "+ addTwoNumbers("0","0"),ProcName())
+    MsgInfo("Sum: '9999999'+'9999' => "+ addTwoNumbers("9999999","9999"),ProcName())
 return
 
-static function addTwoNumbers(a as character, b as character, n as numeric, nBase as numeric)
+static function addTwoNumbers(a as character,b as character,n as numeric,nBase as numeric)
 
-    local aResult as array
+    local c as array
 
-    local cOutPut as character := ""
+    local s as character
 
-    local nSum as numeric
-    local nIdx as numeric
-    local nCarry as numeric := 0
+    local k as numeric
+    local y as numeric
 
-    hb_default(@n,Max(Len(a),Len(b)))
-    hb_default(@nBase,10)
+    DEFAULT n:=Max(Len(a),Len(b))
+    DEFAULT nBase:=10
 
     a:=PadL(a,n,"0")
     b:=PadL(b,n,"0")
 
-    // Inicializa o array de aResultados com zeros
-    aResult := aFill(Array(n + 1), 0)
+    y:=n+1
+    k:=y
+    c:=aFill(Array(y),0)
 
-    // Soma os digitos ordem inversa
-    for nIdx:=n to 1 step -1
-        nSum:=(Val(SubStr(a,nIdx,1))+Val(SubStr(b,nIdx,1))+nCarry)
-        nCarry:=Int(nSum/nBase)
-        aResult[nIdx+1]:=Mod(nSum,nBase)
-    next nIdx
+    while (n>0)
+        c[k]+=Val(SubStr(a,n,1))+Val(SubStr(b,n,1))
+        if (c[k]>=nBase)
+            c[k-1]+=1
+            c[k]-=nBase
+        endif
+        --k
+        --n
+    end while
 
-    // Adiciona o nCarry final (se houver)
-    if (nCarry>0)
-        aResult[1]:=nCarry
-    endif
+    s:=""
 
-    // Converte o array para string, removendo zeros a esquerda
-    aEval(aResult, { |v as numeric| cOutPut+=hb_ntoc(v) })
-    cOutPut:=LeftCharRemove(cOutPut,"0",.F.)
+    aEval(c,{|v as numeric|s+=LTrim(Str(v))})
 
-    return strReverse(cOutPut,len(cOutPut))
+    s:=LeftCharRemove(s,"0",.F.)
+
+    return(strReverse(s,Len(s)))
 
 static function strReverse(c as character,n as numeric)
 
@@ -92,7 +95,7 @@ static function LeftCharRemove(cStr,cChr,lAll)
     local cStrRet as character
     local nAT as numeric
     local nCHR as numeric
-    hb_default(@lAll,.T.)
+    DEFAULT lAll:=.T.
     cStrRet:=cStr
     nCHR:=len(cChr)
     while (Left(cStrRet,nCHR)==cChr)

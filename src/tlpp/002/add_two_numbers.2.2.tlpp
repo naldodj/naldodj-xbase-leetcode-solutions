@@ -1,5 +1,4 @@
 /*
-
     [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
 
     You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
@@ -33,22 +32,24 @@
 
 #define _SET_DECIMALS 3
 
-procedure Main()
-    // Testa a função `addTwoNumbers` com diferentes entradas
-    ? "Sum: [2,4,3]+[5,6,4] => ", hb_JSONEncode(addTwoNumbers({2,4,3}, {5,6,4}))
-    ? "</br>"
-    ? "Sum: [0]+[0] => ", hb_JSONEncode(addTwoNumbers({0}, {0}))
-    ? "</br>"
-    ? "Sum: [9,9,9,9,9,9,9]+[9,9,9,9] => ", hb_JSONEncode(addTwoNumbers({9,9,9,9,9,9,9}, {9,9,9,9}))
+#include "totvs.ch"
+
+namespace dna.tech
+
+procedure u_MainAddTwoNumbers2_2()
+    // Testa a funçao `addTwoNumbers` com diferentes entradas
+    MsgInfo("Sum: [2,4,3]+[5,6,4] => "+ FWJSONSerialize(addTwoNumbers({2,4,3}, {5,6,4})),ProcName())
+    MsgInfo("Sum: [0]+[0] => "+ FWJSONSerialize(addTwoNumbers({0}, {0})),ProcName())
+    MsgInfo("Sum: [9,9,9,9,9,9,9]+[9,9,9,9] => "+ FWJSONSerialize(addTwoNumbers({9,9,9,9,9,9,9}, {9,9,9,9})),ProcName())
 return
 
 /*
-    Função: addTwoNumbers
-    Realiza a soma de dois Numeros representados como arrays de digitos, armazenados em ordem inversa.
+    Funçao: addTwoNumbers
+    Realiza a soma de dois numeros representados como arrays de digitos, armazenados em ordem inversa.
 
     Parâmetros:
-    - a (array): Primeiro Numero como array de digitos.
-    - b (array): Segundo Numero como array de digitos.
+    - a (array): Primeiro numero como array de digitos.
+    - b (array): Segundo numero como array de digitos.
     - n (numeric, opcional): Comprimento maximo dos arrays.
                               Se nao fornecido, e calculado como o comprimento maximo entre `a` e `b`.
     - nBase (numeric, opcional): Base numerica da soma (padrao: 10 para sistema decimal).
@@ -60,15 +61,15 @@ static function addTwoNumbers(a as array, b as array, n as numeric, nBase as num
     local aResult as array       // Array para armazenar o resultado final
     local nSum as numeric        // Soma dos digitos e o carry
     local nIdx as numeric        // Indice para percorrer os arrays
-    local nFill as numeric       // Numero de Posicoes para preencher com zeros
-    local nCarry as numeric := 0 // Carry (transbordo) para a proxima posicao
+    local nFill as numeric       // Numero de posicoes para preencher com zeros
+    local nCarry:=0 as numeric  // Carry (transbordo) para a proxima posicao
 
     set(_SET_DECIMALS, 0)        // Define precisao decimal para evitar arredondamentos
 
-    hb_default(@n, Max(Len(a), Len(b))) // Define comprimento maximo se nao especificado
-    hb_default(@nBase, 10)              // Define a base numerica padrao (decimal)
+    DEFAULT n:=Max(Len(a),Len(b)) // Define comprimento maximo se nao especificado
+    DEFAULT nBase:=10             // Define a base numerica padrao (decimal)
 
-    // Ajusta os arrays para o mesmo comprimento, preenchendo com zeros à direita
+    // Ajusta os arrays para o mesmo comprimento, preenchendo com zeros a direita
     if Len(a) < n
         nFill := ((n - Len(a)) + 1)
         aFill(aSize(a, n), 0, nFill, n)
@@ -77,14 +78,14 @@ static function addTwoNumbers(a as array, b as array, n as numeric, nBase as num
         aFill(aSize(b, n), 0, nFill, n)
     endif
 
-    // Inicializa o array de resultados com zeros, incluindo espaço extra para carry final
+    // Inicializa o array de resultados com zeros, incluindo espaco extra para carry final
     aResult := aFill(Array(n + 1), 0)
 
     // Soma os digitos correspondentes
     for nIdx := 1 to n
         nSum := a[nIdx] + b[nIdx] + nCarry   // Soma dos digitos e carry
         nCarry := Int(nSum / nBase)          // Calcula o carry para a proxima posicao
-        aResult[nIdx] := Mod(nSum, nBase)    // Armazena o dígito resultante
+        aResult[nIdx] := Mod(nSum, nBase)    // Armazena o digito resultante
     next nIdx
 
     // Adiciona carry final, se existir
@@ -92,7 +93,7 @@ static function addTwoNumbers(a as array, b as array, n as numeric, nBase as num
         aResult[nIdx] := nCarry
     endif
 
-    // Remove zeros à direita do array resultante
+    // Remove zeros a direita do array resultante
     if aResult[nIdx] == 0
         aResult := aSize(aDel(aResult, nIdx), Len(aResult) - 1)
     endif
