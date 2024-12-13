@@ -37,14 +37,14 @@
 namespace dna.tech
 
 procedure u_MainAddTwoNumbers2_2()
-    // Testa a funçao `addTwoNumbers` com diferentes entradas
+    // Testa a Funcao `addTwoNumbers` com diferentes entradas
     MsgInfo("Sum: [2,4,3]+[5,6,4] => "+ FWJSONSerialize(addTwoNumbers({2,4,3}, {5,6,4})),ProcName())
     MsgInfo("Sum: [0]+[0] => "+ FWJSONSerialize(addTwoNumbers({0}, {0})),ProcName())
     MsgInfo("Sum: [9,9,9,9,9,9,9]+[9,9,9,9] => "+ FWJSONSerialize(addTwoNumbers({9,9,9,9,9,9,9}, {9,9,9,9})),ProcName())
 return
 
 /*
-    Funçao: addTwoNumbers
+    Funcao: addTwoNumbers
     Realiza a soma de dois numeros representados como arrays de digitos, armazenados em ordem inversa.
 
     Parâmetros:

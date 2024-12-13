@@ -3,6 +3,11 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-13 19:47 UTC naldodj
+  * src/tlpp/002/add_two_numbers.2.2.tlpp
+  * src/tlpp/136/single_number.136.tlpp
+  * src/tlpp/137/single_number.137.tlpp
+
 2024-12-13 19:12 UTC naldodj (longest_substring_without_repeating_characters harbour)
   - src/hb/003/longest_substring_without_repeating_characters.prg
   * src/hb/003/longest_substring_without_repeating_characters.3.prg

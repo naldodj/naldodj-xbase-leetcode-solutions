@@ -20,6 +20,8 @@
 
 */
 
+#include "set.ch"
+
 namespace dna.tech
 
 function u_MainSingleNumber136()
@@ -29,14 +31,14 @@ function u_MainSingleNumber136()
 
     // Case 1: Numbers appear two times
     aNumbers:={2,3,4,1,4,3,2}
-    MsgInfo(varInfo("Input Array (Two Times):",aNumbers),"Input Array (Two Times)")
+    MsgInfo(__varInfo("Input Array (Two Times):",aNumbers),"Input Array (Two Times)")
     nOne:=singleNumber(aNumbers)
     MsgInfo("The Single Number is: "+Ltrim(Str(nOne)),"The Single Number")
 
     if (.F.)
         // Case 2: Numbers appear three times
         aNumbers:={6,5,9,6,4,1,7,7,3,6,10,3,9,8,5,7,10,10,3,1,4,4,5,8,2,1,8,9}
-        MsgInfo(varInfo("Input Array (Three Times):",aNumbers),"Input Array (Three Times)")
+        MsgInfo(__varInfo("Input Array (Three Times):",aNumbers),"Input Array (Three Times)")
         nOne:=singleNumber(aNumbers)
         MsgInfo("The Single Number is: "+Ltrim(Str(nOne)),"The Single Number")
     endif
@@ -49,6 +51,8 @@ static function singleNumber(aNumbers as array)
     local i,nLen as numeric
     local nOne:=0 as numeric
     local nNoOne:=0 as numeric
+
+    set(_SET_DECIMALS, 0)        // Define precisao decimal para evitar arredondamentos
 
     nLen:=Len(aNumbers)
 
@@ -70,3 +74,25 @@ static function singleNumber(aNumbers as array)
     endif
 
     return nOne
+
+static function __varInfo(cName as character,xVar as variant) as character
+
+    local cRet:=varInfo(cName,xVar,nil,.F.,.T.) as character
+
+    while ("( "$cRet)
+        cRet:=strTran(cRet,"( ","(")
+    end while
+
+    while ("[ "$cRet)
+        cRet:=strTran(cRet,"[ ","[")
+    end while
+
+    while ("N (15)"$cRet)
+        cRet:=strTran(cRet,"N (15)","")
+    end while
+
+    cRet:=strTran(cRet,"     I","I")
+
+    cRet:=strTran(cRet,".0000","")
+
+return(cRet)
