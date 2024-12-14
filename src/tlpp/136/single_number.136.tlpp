@@ -52,7 +52,8 @@ static function singleNumber(aNumbers as array)
     local nOne:=0 as numeric
     local nNoOne:=0 as numeric
 
-    set(_SET_DECIMALS, 0)        // Define precisao decimal para evitar arredondamentos
+    // Define precisao decimal para evitar arredondamentos
+    set(_SET_DECIMALS, 0)
 
     nLen:=Len(aNumbers)
 

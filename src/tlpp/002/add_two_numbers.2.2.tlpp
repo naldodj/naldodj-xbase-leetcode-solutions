@@ -47,7 +47,7 @@ return
     Funcao: addTwoNumbers
     Realiza a soma de dois numeros representados como arrays de digitos, armazenados em ordem inversa.
 
-    Parâmetros:
+    Parametros:
     - a (array): Primeiro numero como array de digitos.
     - b (array): Segundo numero como array de digitos.
     - n (numeric, opcional): Comprimento maximo dos arrays.
