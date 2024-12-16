@@ -1,0 +1,191 @@
+/*
+    4. Median of Two Sorted Arrays
+
+    Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+
+    The overall run time complexity should be O(log (m+n)).
+
+    Example 1:
+
+    Input: nums1 = [1,3], nums2 = [2]
+    Output: 2.00000
+    Explanation: merged array = [1,2,3] and median is 2.
+
+    Example 2:
+
+    Input: nums1 = [1,2], nums2 = [3,4]
+    Output: 2.50000
+    Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+
+    Constraints:
+
+    nums1.length == m
+    nums2.length == n
+    0 <= m <= 1000
+    0 <= n <= 1000
+    1 <= m + n <= 2000
+    -106 <= nums1[i], nums2[i] <= 106
+
+    Released to Public Domain.
+    --------------------------------------------------------------------------------------
+*/
+procedure Main()
+
+    local aNums1 as array
+    local aNums2 as array
+    local nMedian as numeric
+
+    aNums1 := {1, 3}
+    aNums2 := {2}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {1, 2}
+    aNums2 := {3, 4}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {0}
+    aNums2 := {3, 4}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {1,5}
+    aNums2 := {2,3,4,6}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {2,7}
+    aNums2 := {1,3,4,5,6}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {2,7}
+    aNums2 := {1,3,4,5,6,8}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {1,3}
+    aNums2 := {2}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {1,2}
+    aNums2 := {3,4}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {1,4}
+    aNums2 := {2,3}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {0}
+    aNums2 := {3,4}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {2,5,7}
+    aNums2 := {1,3}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {1,2,3}
+    aNums2 := {4,5,6}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {1,3,8}
+    aNums2 := {2,4,5}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {0,0}
+    aNums2 := {0,0}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {}
+    aNums2 := {1}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {2}
+    aNums2 := {}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {21,33,41}
+    aNums2 := {14,15,16}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    aNums1 := {3,121,133,141}
+    aNums2 := {5,114,115,116}
+    nMedian := FindMedianSortedArrays(aNums1, aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+
+    return
+
+static function FindMedianSortedArrays(aNums1, aNums2)
+
+    local aTmp as array
+
+    local lOdd as logical
+
+    local nLen1, nLen2 as numeric
+    local nLow, nHalf as numeric
+    local i, j as numeric
+    local nLeft1, nLeft2 as numeric
+    local nRight1, nRight2 as numeric
+
+    if (Empty(aNums1))
+        aNums1:=aFill(aSize(aNums1,1),0)
+        m:=1
+    endif
+
+    if (Empty(aNums2))
+        aNums2:=aFill(aSize(aNums2,1),0)
+        n:=1
+    endif
+
+    // Garantir que o primeiro array seja o menor
+    if (Len(aNums1) > Len(aNums2))
+        aTmp   := aNums1
+        aNums1 := aNums2
+        aNums2 := aTmp
+    endif
+
+    nLen1 := Len(aNums1)
+    nLen2 := Len(aNums2)
+    nLow := 0
+    nHigh := nLen1
+    nHalf := Int((nLen1 + nLen2 + 1) / 2)
+
+    lOdd:=(Mod(nLen1 + nLen2, 2) == 1)
+
+    while (nLow <= nHigh)
+
+        i := Int((nLow + nHigh) / 2)
+        j := nHalf - i
+
+        nLeft1 := if(i > 0, aNums1[i], -1000000) // Menor valor possIvel
+        nLeft2 := if(j > 0, aNums2[j], -1000000)
+        nRight1 := if(i < nLen1, aNums1[i + 1], 1000000) // Maior valor possIvel
+        nRight2 := if(j < nLen2, aNums2[j + 1], 1000000)
+
+        // Verificar se a divisao e válida
+        if (nLeft1 <= nRight2 .and. nLeft2 <= nRight1)
+            if (lOdd)
+                return Max(nLeft1, nLeft2) // Impar: maior da esquerda
+            else
+                return (Max(nLeft1, nLeft2) + Min(nRight1, nRight2)) / 2 // Par: media
+            endif
+        elseif (nLeft1 > nRight2)
+            nHigh := i - 1 // Mova o corte para a esquerda
+        else
+            nLow := i + 1 // Mova o corte para a direita
+        endif
+    end while
+
+    return 0 // Apenas no caso de erro, o que nao deve ocorrer
