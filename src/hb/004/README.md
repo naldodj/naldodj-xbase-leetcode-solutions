@@ -26,3 +26,13 @@
     0 <= n <= 1000
     1 <= m + n <= 2000
     -106 <= nums1[i], nums2[i] <= 106
+
+`median_of_two_sorted_arrays.4.1.prg`
+![image](https://github.com/user-attachments/assets/bdf84266-8851-492e-b69e-2d33e185db65)
+
+`median_of_two_sorted_arrays.4.2.prg`
+![image](https://github.com/user-attachments/assets/f2c222a8-fca4-4eba-9b35-b218ae6875f8)
+
+`median_of_two_sorted_arrays.4.3.prg`
+![image](https://github.com/user-attachments/assets/9cd8bcb4-cdec-47d0-af0f-655ba1535df3)
+
