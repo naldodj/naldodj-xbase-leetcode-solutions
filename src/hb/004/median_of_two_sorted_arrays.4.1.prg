@@ -147,7 +147,8 @@ static function FindMedianSortedArrays(aNums1, aNums2)
         nLen2:=1
     endif
 
-    aMerged:=Array(nLen1+Len(aNums2))
+    aMerged:=Array(nLen1+nLen2)
+
     aCopy(aNums1,@aMerged,1,nLen1,1)
     aCopy(aNums2,@aMerged,1,nLen2,nLen1+1)
     aSort(aMerged)

@@ -149,7 +149,8 @@ static function FindMedianSortedArrays(aNums1, aNums2)
         nLen2:=1
     endif
 
-    aMerged:=Array(nLen1+Len(aNums2))
+    aMerged:=Array(nLen1+nLen2)
+
     aCopy(aNums1,@aMerged,1,nLen1,1)
     aCopy(aNums2,@aMerged,1,nLen2,nLen1+1)
     aSort(aMerged)
@@ -157,10 +158,10 @@ static function FindMedianSortedArrays(aNums1, aNums2)
     nLen := Len(aMerged)
     nMid := Int(nLen / 2)
 
-    // Verifica se o número de elementos é ímpar
+    // Verifica se o numero de elementos eh impar
     if nLen % 2 == 1
-        return aMerged[nMid + 1] // Ýndice ajustado para 1-based
+        return aMerged[nMid + 1] // Indice ajustado para 1-based
     else
-        // Caso par, calcula a média dos dois elementos centrais
-        return (aMerged[nMid] + aMerged[nMid + 1]) / 2.0
+        // Caso par, calcula a media dos dois elementos centrais
+        return (aMerged[nMid] + aMerged[nMid + 1]) / 2
     endif
