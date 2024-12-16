@@ -26,3 +26,11 @@
     0 <= n <= 1000
     1 <= m + n <= 2000
     -106 <= nums1[i], nums2[i] <= 106
+
+![image](https://github.com/user-attachments/assets/9aedb8df-723d-4140-82d1-01c83122d15d)
+![image](https://github.com/user-attachments/assets/fd92ac47-ec82-4d05-863d-4b00784ec8a7)
+![image](https://github.com/user-attachments/assets/c7a9e9d5-54c1-40a7-a33d-6ad07f72453f)
+...
+
+
+    
