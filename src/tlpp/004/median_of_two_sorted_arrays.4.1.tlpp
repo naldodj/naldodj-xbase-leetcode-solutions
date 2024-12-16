@@ -29,7 +29,9 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-procedure Main()
+namespace dna.tech
+
+procedure u_MainMedianOfTwoSortedArrays_4_1()
 
     local aNums1 as array
     local aNums2 as array
@@ -38,92 +40,92 @@ procedure Main()
     aNums1 := {1, 3}
     aNums2 := {2}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {1, 2}
     aNums2 := {3, 4}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {0}
     aNums2 := {3, 4}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {1,5}
     aNums2 := {2,3,4,6}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {2,7}
     aNums2 := {1,3,4,5,6}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {2,7}
     aNums2 := {1,3,4,5,6,8}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {1,3}
     aNums2 := {2}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {1,2}
     aNums2 := {3,4}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {1,4}
     aNums2 := {2,3}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {0}
     aNums2 := {3,4}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {2,5,7}
     aNums2 := {1,3}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {1,2,3}
     aNums2 := {4,5,6}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {1,3,8}
     aNums2 := {2,4,5}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {0,0}
     aNums2 := {0,0}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {}
     aNums2 := {1}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {2}
     aNums2 := {}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {21,33,41}
     aNums2 := {14,15,16}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     aNums1 := {3,121,133,141}
     aNums2 := {5,114,115,116}
     nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    MsgInfo("FindMedianSortedArrays("+FWJSONSerialize(aNums1)+","+FWJSONSerialize(aNums2)+") => Median: "+LTrim(Str(nMedian)),ProcName())
 
     return
 
@@ -157,7 +159,7 @@ static function FindMedianSortedArrays(aNums1, aNums2)
 
     // Verifica se o número de elementos é ímpar
     if nLen % 2 == 1
-        return aMerged[nMid + 1] // Índice ajustado para 1-based
+        return aMerged[nMid + 1] // Ýndice ajustado para 1-based
     else
         // Caso par, calcula a média dos dois elementos centrais
         return (aMerged[nMid] + aMerged[nMid + 1]) / 2.0
