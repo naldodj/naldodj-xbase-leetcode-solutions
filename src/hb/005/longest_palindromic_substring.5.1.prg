@@ -30,7 +30,6 @@ procedure Main()
 
    local cString as character
    local cLongestPalindrome1 as character
-   local cLongestPalindrome2 as character
 
    hb_cdpSelect("UTF8EX")
 
@@ -134,7 +133,7 @@ procedure Main()
 static function LongestPalindromicSubstring(cString as character)
 
    local aPalindromicSubstring as array
-   local aPalindromicSubstringReturn:=Array(0) as array
+   local aPalindromicSubstringReturn as array :=Array(0)
    local cStringTmp as character,cPalindromicSubstring as character
 
    local i as numeric

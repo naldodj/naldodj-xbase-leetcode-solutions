@@ -3,6 +3,14 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-17 21:51 UTC naldodj (longest_palindromic_substring :: tlpp)
+  + src/tlpp/005/README.md
+  + src/tlpp/005/longest_palindromic_substring.5.1.tlpp
+  + src/tlpp/005/longest_palindromic_substring.5.2.tlpp
+  * src/hb/005/longest_palindromic_substring.5.2.prg
+  * src/hb/005/README.md
+  * src/hb/005/longest_palindromic_substring.5.1.prg
+
 2024-12-17 21:51 UTC naldodj (longest_palindromic_substring :: harbour)
   + src/hb/005/README.md
   + src/hb/005/longest_palindromic_substring.5.1.prg

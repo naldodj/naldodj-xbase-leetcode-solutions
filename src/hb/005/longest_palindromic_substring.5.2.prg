@@ -175,7 +175,7 @@ procedure Main()
 static function Manacher(cString as character)
 
    local aPalindromicSubstring as array
-   local aPalindromicSubstringReturn:=Array(0) as array
+   local aPalindromicSubstringReturn as array := Array(0)
    local cStringTmp as character,cPalindromicSubstring as character
 
    local i as numeric

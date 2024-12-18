@@ -19,9 +19,7 @@
     1 <= s.length <= 1000
     s consist of only digits and English letters.
 
-`longest_palindromic_substring.5.1.prg`
-![image](https://github.com/user-attachments/assets/a4c0ce56-83ae-48ec-8e37-328e27194c7e)
-
+`longest_palindromic_substring.5.1.tlpp`
     ```
     +--------------------------------------------------------------------+-----------------------------------------------------------------------+
     | Input                                                              | Brute Force Output                                                    |
@@ -48,9 +46,7 @@
     +--------------------------------------------------------------------+-----------------------------------------------------------------------+
     ```
 
-`longest_palindromic_substring.5.2.prg`
-![image](https://github.com/user-attachments/assets/96e4a9da-9298-4dd8-b8f7-e5cf64ac733b)
-
+`longest_palindromic_substring.5.2.tlpp`
     ```
     +-------------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------------------------+
     |Input                                                              | Brute Force Output                                                    | Manacher Output                                                       |

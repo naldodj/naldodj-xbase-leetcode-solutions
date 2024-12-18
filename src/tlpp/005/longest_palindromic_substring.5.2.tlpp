@@ -1,0 +1,447 @@
+/*
+
+    5. Longest Palindromic Substring
+
+    Given a string s, return the longest  palindromic substring in s
+
+    Example 1:
+
+    Input: s = "babad"
+    Output: "bab"
+    Explanation: "aba" is also a valid answer.
+    Example 2:
+
+    Input: s = "cbbd"
+    Output: "bb"
+
+    Constraints:
+
+    1 <= s.length <= 1000
+    s consist of only digits and English letters.
+
+    Released to Public Domain.
+    --------------------------------------------------------------------------------------
+
+*/
+
+namespace dna.tech
+
+static __aAccentuation as array
+
+procedure u_MainLongestPalindromicSubstring_5_2()
+
+   local cString as character
+   local cLongestPalindrome1 as character
+   local cLongestPalindrome2 as character
+
+   cString := "babad"
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := "cbbd"
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("A Aia cuidava das crian#cas com dedica#c#ao.","ccedil","ccedil","atilde")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := "Quem tem aibofobia sente medo de "+__Accentuation("pal#indromos","iacute")+"."
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("A ala esquerda do pr#edio foi reformada.","eacute")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := "Ele ama viajar para lugares tranquilos."
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := "A cor foi obtida com anilina natural."
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("A ata da reuni#ao foi enviada a todos os participantes.","atilde")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("A arara azul #e uma ave bel#issima.","eacute","iacute")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("O avi#ao perdeu uma asa no acidente.","atilde")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("Ele sempre est#a disposto a ajudar.","aacute")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("Esse livro #e um dos meus favoritos.","eacute")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("Os beb#es mamam para se alimentar.","ecirc")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := "As ondas fortes matam muitos animais marinhos."
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("Eles sempre metem o nariz onde n#ao s#ao chamados.","atilde","atilde")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := "O time mirim venceu o campeonato regional."
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("Um relat#ario omiss#issimo em v#arios pontos importantes.","aacute","iacute","aacute")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("Viajar para a cidade natal faz muitos reviverem mem#orias antigas.","oacute")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   cString := __Accentuation("A discuss#ao acalorada terminou em sopapos.","atilde")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cLongestPalindrome2 := hb_JSONEncode(Manacher(cString))
+   MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
+   MsgInfo("Input: "+cString+" => "+"Manacher Output: "+cLongestPalindrome2,ProcName())
+
+   return
+
+/****************************************************************************************/
+static function Manacher(cString as character) as array
+
+   local aPalindromicSubstring as array
+   local aPalindromicSubstringReturn:=Array(0) as array
+   local cStringTmp as character,cPalindromicSubstring as character
+
+   local i as numeric
+
+   cString:=NormalizeString(cString)
+
+   aPalindromicSubstring:=hb_regexSplit(" ",cString)
+   for i:=1 to Len(aPalindromicSubstring)
+      cStringTmp:=aPalindromicSubstring[i]
+      while (!empty(cPalindromicSubstring:=ManacherLongestPalindromicSubstring(@cStringTmp)))
+         if ((Len(cPalindromicSubstring)>1).and.(hb_AScan(aPalindromicSubstringReturn,{|s|hb_regexlike(cPalindromicSubstring,s)})==0))
+           aAdd(aPalindromicSubstringReturn,cPalindromicSubstring)
+         endif
+      end while
+   next i
+
+return(aPalindromicSubstringReturn)
+
+static function ManacherLongestPalindromicSubstring(/*@*/cString as character) as character
+
+   local cReturn as character
+   local cTransformed := TransformString(cString) as character
+   local nLen := Len(cTransformed) as numeric
+   local aP := Array(nLen) as array
+   local nCenter := 0 as numeric
+   local nRight := 0 as numeric
+   local i as numeric, iMirror as numeric
+   local nMaxLen := 0 as numeric
+   local nCenterIndex := 0 as  numeric
+   local nStart as numeric
+
+   aFill(aP,0)
+
+   for i := 2 to nLen-1
+
+      iMirror := 2 * nCenter - i
+
+      if (i < nRight)
+         aP[i] := Min(aP[iMirror], nRight - i)
+      endif
+
+      while (Lower(SubStr(cTransformed, i - aP[i] - 1, 1)) == Lower(SubStr(cTransformed, i + aP[i] + 1, 1)))
+         aP[i]++
+      end while
+
+      if (i + aP[i] > nRight)
+         nCenter := i
+         nRight := i + aP[i]
+      endif
+
+      if (aP[i] > nMaxLen)
+         nMaxLen := aP[i]
+         nCenterIndex := i
+      endif
+
+   next i
+
+   nStart := Int((nCenterIndex - nMaxLen - 1) / 2)
+
+   cReturn:=SubStr(cString, nStart + 1, nMaxLen)
+
+   cString:=Stuff(cString,nStart+1,1,"")
+
+   return(cReturn)
+
+static function TransformString(cString as character) as character
+
+   local cResult := "|#" as character
+   local i as numeric
+
+   for i := 1 to Len(cString)
+      cResult += SubStr(cString, i, 1) + "#"
+   next i
+
+   return(cResult+"|")
+
+/****************************************************************************************/
+static function LongestPalindromicSubstring(cString as character) as array
+
+   local aPalindromicSubstring as array
+   local aPalindromicSubstringReturn:=Array(0) as array
+   local cStringTmp as character,cPalindromicSubstring as character
+
+   local i as numeric
+
+   cString:=NormalizeString(cString)
+
+   aPalindromicSubstring:=hb_regexSplit(" ",cString)
+   for i:=1 to Len(aPalindromicSubstring)
+      cStringTmp:=aPalindromicSubstring[i]
+      while (!empty(cPalindromicSubstring:=__LongestPalindromicSubstring(@cStringTmp)))
+         if ((Len(cPalindromicSubstring)>1).and.(hb_AScan(aPalindromicSubstringReturn,{|s|hb_regexlike(cPalindromicSubstring,s)})==0))
+           aAdd(aPalindromicSubstringReturn,cPalindromicSubstring)
+         endif
+      end while
+   next i
+
+return(aPalindromicSubstringReturn)
+
+static function __LongestPalindromicSubstring(/*@*/cString) as character
+
+   local nLen := Len(cString) as numeric
+   local cResult := "" as character
+   local cSubStr as character
+   local i as numeric, j as numeric
+
+   for i := 1 to nLen
+      for j := i to nLen
+         cSubStr := SubStr(cString, i, j - i + 1)
+         if (IsPalindrome(cSubStr) .and. Len(cSubStr) > Len(cResult))
+            cResult := cSubStr
+         endif
+      next j
+   next i
+
+   cString:=Stuff(cString,1,1,"")
+
+   return(cResult)
+
+static function IsPalindrome(cString as character) as logical
+
+   local lRet :=.T. as logical
+
+   local nStart := 1 as numeric
+   local nEnd := Len(cString) as numeric
+
+   begin sequence
+
+      while (nStart < nEnd)
+         if (Lower(SubStr(cString, nStart, 1)) != Lower(SubStr(cString, nEnd, 1)))
+            lRet:=.F.
+            break
+         endif
+         nStart++
+         nEnd--
+      end while
+
+   end sequence
+
+   return(lRet)
+
+/****************************************************************************************/
+
+static function NormalizeString(cString as character) as character
+   local cNormalized  := cString as character
+   aEval(__getAccentuation(),{|aNormalizeItem|cNormalized:=strTran( cNormalized, aNormalizeItem[1] , aNormalizeItem[2] ) } )
+   return(cNormalized)
+
+static function __Accentuation(cString as character,vAccentuation as variadic) as character
+
+    local ai18n as array
+
+    local cIdx as character
+    local cChar as character
+    local cAccentuation:=cString as character
+
+    local nAT as numeric
+    local nIdx as numeric
+    local nLen as numeric
+    local nATPos as numeric
+    local nAccentuation as numeric
+
+    begin sequence
+
+        if (vAccentuation==nil)
+            break
+        endif
+
+        __getAccentuation()
+
+        ai18n:=array(0)
+
+        for nAccentuation:=1 to vAccentuation:vCount
+            cChar:=allTrim(vAccentuation:vArgs[nAccentuation])
+            nAT:=aScan(__aAccentuation,{|x|x[3]==cChar})
+            cChar:=if(nAT>0,__aAccentuation[nAT][1],cChar)
+            aAdd(ai18n,cChar)
+        next nAccentuation
+
+        nIdx:=0
+        nLen:=Len(cAccentuation)
+        for nAT:=1 to nLen
+            nATPos:=AT("#",SubStr(cAccentuation,nAT))
+            if (nATPos==0)
+                exit
+            endif
+            nAT+=(nATPos-1)
+            cChar:=SubStr(cAccentuation,nAT,1)
+            if (cChar=="#")
+                cIdx:=LTrim(Str(++nIdx))
+                cAccentuation:=stuff(cAccentuation,++nAT,1,cIdx)
+            endif
+        next nAT
+
+        cAccentuation:=i18n(cAccentuation,ai18n)
+
+        FWFreeArray(@ai18n)
+
+    end sequence
+
+    return(cAccentuation)
+
+static function __getAccentuation() as array
+
+    if (empty(__aAccentuation))
+        __aAccentuation:={;
+            {chr(009),"","HT"},;
+            {chr(010),"","LF"},;
+            {chr(013),"","CR"},;
+            {chr(129),"","129"},;
+            {chr(141),"",""},;
+            {chr(143),"","143"},;
+            {chr(144),"","144"},;
+            {chr(157),"","157"},;
+            {chr(185),"1","sup1"},;
+            {chr(186),"o","ordm"},;
+            {chr(188),"1/4","frac14"},;
+            {chr(189),"1/2","frac12"},;
+            {chr(190),"3/4","frac34"},;
+            {chr(191),"?","iquest"},;
+            {chr(192),"A","Agrave"},;
+            {chr(195),"A","Atilde"},;
+            {chr(196),"A","Auml"},;
+            {chr(197),"A","Aring"},;
+            {chr(198),"AE","AElig"},;
+            {chr(224),"a","agrave"},;
+            {chr(225),"a","aacute"},;
+            {chr(226),"a","acirc"},;
+            {chr(227),"a","atilde"},;
+            {chr(228),"a","auml"},;
+            {chr(229),"a","aring"},;
+            {chr(230),"ae","aelig"},;
+            {chr(200),"E","Egrave"},;
+            {chr(201),"E","Eacute"},;
+            {chr(202),"E","Ecirc"},;
+            {chr(203),"E","Euml"},;
+            {chr(232),"e","egrave"},;
+            {chr(233),"e","eacute"},;
+            {chr(234),"e","ecirc"},;
+            {chr(235),"e","euml"},;
+            {chr(204),"I","Igrave"},;
+            {chr(205),"I","Iacute"},;
+            {chr(206),"I","Icirc"},;
+            {chr(207),"I","Iuml"},;
+            {chr(236),"i","igrave"},;
+            {chr(237),"i","iacute"},;
+            {chr(238),"i","icirc"},;
+            {chr(239),"i","iuml"},;
+            {chr(210),"O","Ograve"},;
+            {chr(211),"O","Oacute"},;
+            {chr(212),"O","Ocirc"},;
+            {chr(213),"O","Otilde"},;
+            {chr(214),"O","Ouml"},;
+            {chr(242),"o","ograve"},;
+            {chr(243),"o","oacute"},;
+            {chr(244),"o","ocirc"},;
+            {chr(245),"o","otilde"},;
+            {chr(246),"o","ouml"},;
+            {chr(216),"O","Oslash"},;
+            {chr(217),"U","Ugrave"},;
+            {chr(218),"U","Uacute"},;
+            {chr(219),"U","Ucirc"},;
+            {chr(220),"U","Uuml"},;
+            {chr(221),"Y","Yacute"},;
+            {chr(249),"u","ugrave"},;
+            {chr(250),"u","uacute"},;
+            {chr(251),"u","ucirc"},;
+            {chr(252),"u","uuml"},;
+            {chr(253),"y","yacute"},;
+            {chr(209),"N","Ntilde"},;
+            {chr(241),"n","ntilde"},;
+            {chr(199),"C","Ccedil"},;
+            {chr(231),"c","ccedil"};
+        }
+    endif
+
+return(__aAccentuation)
+
+/****************************************************************************************/
+
+static function hb_JSONEncode(xValue as variant) as character
+return(FWJSONSerialize(xValue))
+
+static function hb_regexSplit(cToken as character,cString as character) as array
+return(strTokArr2(cString,cToken))
+
+static function hb_AScan(aArray as array,bCodeBlock as codeblock,nStart as numeric,nCount as numeric) as numeric
+return(aScan(aArray,bCodeBlock,nStart,nCount))
+
+static function hb_regexlike(cPattern,cString) as logical
+return(tlpp.regex.Regex():matches(cPattern,cString))
