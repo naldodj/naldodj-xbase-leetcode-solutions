@@ -42,12 +42,15 @@ procedure u_MainLongestPalindromicSubstring_5_1()
    MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
 
    cString := __Accentuation("A Aia cuidava das crian#cas com dedica#c#ao.","ccedil","ccedil","atilde")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
    MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
 
    cString := "Quem tem aibofobia sente medo de "+__Accentuation("pal#indromos","iacute")+"."
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
    MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
 
    cString := __Accentuation("A ala esquerda do pr#edio foi reformada.","eacute")
+   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
    MsgInfo("Input: "+cString+" => "+"Brute Force Output: "+cLongestPalindrome1,ProcName())
 
    cString := "Ele ama viajar para lugares tranquilos."
