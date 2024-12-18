@@ -20,6 +20,8 @@
     s consist of only digits and English letters.
 
 `longest_palindromic_substring.5.1.tlpp`
+![image](https://github.com/user-attachments/assets/fe1eb814-5d91-4d68-bac7-f74bef948808)
+
 ```
 +--------------------------------------------------------------------+-----------------------------------------------------------------------+
 | Input                                                              | Brute Force Output                                                    |
@@ -47,6 +49,8 @@
 ```
 
 `longest_palindromic_substring.5.2.tlpp`
+![image](https://github.com/user-attachments/assets/67b362ed-c11a-41ae-80b6-dbddfe1f5a8c)
+
 ```
 +-------------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 |Input                                                              | Brute Force Output                                                    | Manacher Output                                                       |
