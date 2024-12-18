@@ -1,4 +1,4 @@
-[Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+# [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
 
     4. Median of Two Sorted Arrays
 
