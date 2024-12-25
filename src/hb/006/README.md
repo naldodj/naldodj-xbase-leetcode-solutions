@@ -36,7 +36,6 @@
     s consists of English letters (lower-case and upper-case), ',' and '.'.
     1 <= NumRows <= 1000
 
-`zigzag_conversion.6.1.prg`
+`zigzag_conversion.6.1.prg` & `zigzag_conversion.6.2.prg`
+![image](https://github.com/user-attachments/assets/c9839c74-880f-4f5f-9046-a21fedeac9af)
 
-
-`zigzag_conversion.6.2.prg`
