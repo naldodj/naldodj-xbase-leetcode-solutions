@@ -71,6 +71,7 @@ procedure Main()
     ? "Input: "+cInput,"</br>"
     ? "Output: "+cOutput,"</br>"
     ? "Reverse: "+cReverse,"</br>","</br>"
+
     cInput:="DAC NTHE"
     nNumRows:=3
     cOutput:=ZigZagConvert(cInput,nNumRows)
