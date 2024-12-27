@@ -26,3 +26,6 @@
     -2^31 <= x <= 2^31 - 1
 
 `reverse_integer.7.1.prg` & `reverse_integer.7.2.prg` & `reverse_integer.7.3.prg`
+![image](https://github.com/user-attachments/assets/89536215-0ee6-4b12-91c3-7b061b620e55)
+
+
