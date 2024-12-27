@@ -3,6 +3,12 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-26 07:40 UTC naldodj (reverse_integer harbour)
+  + src/hb/007/reverse_integer.7.1.prg
+  + src/hb/007/reverse_integer.7.2.prg
+  + src/hb/007/reverse_integer.7.3.prg
+  + src/hb/007/README.md
+
 2024-12-26 07:40 UTC naldodj (zigzag_conversion)
   * src/hb/006/zigzag_conversion.6.1.prg
   * src/hb/006/zigzag_conversion.6.2.prg
