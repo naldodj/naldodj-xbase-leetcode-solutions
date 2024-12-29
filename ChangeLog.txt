@@ -3,6 +3,14 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-29 18:41 UTC naldodj (string_to_integer_atoi)
+  + src/hb/008/README.md
+  + src/hb/008/string_to_integer_atoi.8.1.prg
+  + src/hb/008/string_to_integer_atoi.8.2.prg
+  + src/tlpp/008/README.md
+  + src/tlpp/008/string_to_integer_atoi.8.1.tlpp
+  + src/tlpp/008/string_to_integer_atoi.8.2.tlpp
+
 2024-12-29 11:00 UTC naldodj
   * src/tlpp/007/reverse_integer.7.1.tlpp
   * src/tlpp/007/reverse_integer.7.2.tlpp
