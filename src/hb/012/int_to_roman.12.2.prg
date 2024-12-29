@@ -72,27 +72,37 @@ procedure Main()
     nInput:=3749
     ? "Input: ",nInput,"</br>"
     cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"</br>","</br>"
+    ? "Output: ",cOutPut,"</br>"
+    nInput:=RomanToDec( cOutPut )
+    ? "Rom2Dec: ",nInput,"</br>","</br>"
 
     nInput:=58
     ? "Input: ",nInput,"</br>"
     cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"</br>","</br>"
+    ? "Output: ",cOutPut,"</br>"
+    nInput:=RomanToDec( cOutPut )
+    ? "Rom2Dec: ",nInput,"</br>","</br>"
 
     nInput:=1994
     ? "Input: ",nInput,"</br>"
     cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"</br>","</br>"
+    ? "Output: ",cOutPut,"</br>"
+    nInput:=RomanToDec( cOutPut )
+    ? "Rom2Dec: ",nInput,"</br>","</br>"
 
     nInput:=1970
     ? "Input: ",nInput,"</br>"
     cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"</br>","</br>"
+    ? "Output: ",cOutPut,"</br>"
+    nInput:=RomanToDec( cOutPut )
+    ? "Rom2Dec: ",nInput,"</br>","</br>"
 
     nInput:=2010
     ? "Input: ",nInput,"</br>"
     cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"</br>","</br>"
+    ? "Output: ",cOutPut,"</br>"
+    nInput:=RomanToDec( cOutPut )
+    ? "Rom2Dec: ",nInput,"</br>","</br>"
 
 return
 
@@ -184,3 +194,38 @@ static function DecToRoman( nNumber as numeric )
     hb_HEval(hRoman,{|cKey as character,nValue as numeric|cRoman+=Replicate(cKey,nValue)})
 
     return(cRoman) as character
+
+static function RomanToDec( cRoman as character )
+
+   local nTotal as numeric:=0
+   local nPrevValue as numeric:=0
+   local nCurrentValue as numeric:=0
+   local i as numeric
+
+   // Mapeamento de valores dos números romanos
+   local hRomanValues as hash := {;
+        "I" => 1;
+       ,"V" => 5;
+       ,"X" => 10;
+       ,"L" => 50;
+       ,"C" => 100;
+       ,"D" => 500;
+       ,"M" => 1000;
+   }
+
+   // Percorrer o número romano do final ao início
+   for i:=Len(cRoman) to 1 step -1
+      // Obter o valor do caractere atual
+      nCurrentValue:=hRomanValues[subStr(cRoman,i,1)]
+      if (nCurrentValue<nPrevValue)
+         // Regra de subtração
+         nTotal-=nCurrentValue
+      else
+         // Adicionar valor ao total
+         nTotal+=nCurrentValue
+      endif
+      // Atualizar o valor anterior
+      nPrevValue:=nCurrentValue
+   next i
+
+   return(nTotal) as numeric
