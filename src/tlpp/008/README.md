@@ -85,4 +85,4 @@
     s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.
 
 `string_to_integer_atoi.8.1.tlpp` & `string_to_integer_atoi.8.2.tlpp`
-![image](https://github.com/user-attachments/assets/f7b0c9c1-a18f-4326-9403-0b68e46dc125)
+![image](https://github.com/user-attachments/assets/1d9450d9-6f03-47df-ae84-f28a253958ff)
