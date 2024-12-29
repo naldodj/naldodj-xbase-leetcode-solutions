@@ -123,7 +123,7 @@ static function hb_Default(/*@*/uVar as variant,uDefault as variant) as variant
     endif
 return(uVar)
 
-static function __ConOut(vList as variadic)
+static function __ConOut(vList as variadic) as character
 
     local cOut:="",cValType as character
 
@@ -145,7 +145,7 @@ static function __ConOut(vList as variadic)
             else
                 cOut+=cValToChar(uValue)
             endif
-        next nAccentuation
+        next nIdx
 
     end sequence
 

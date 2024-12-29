@@ -115,7 +115,7 @@ static function reverseString(cInput as character,nSizeInput as numeric) as char
 static function hb_NToC(nValue as numeric) as character
 return(LTrim(Str(nValue)))
 
-static function __ConOut(vList as variadic)
+static function __ConOut(vList as variadic) as character
 
     local cOut:="",cValType as character
 
@@ -137,7 +137,7 @@ static function __ConOut(vList as variadic)
             else
                 cOut+=cValToChar(uValue)
             endif
-        next nAccentuation
+        next nIdx
 
     end sequence
 
