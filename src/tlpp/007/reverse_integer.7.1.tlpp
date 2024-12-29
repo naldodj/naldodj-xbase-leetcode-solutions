@@ -1,0 +1,144 @@
+/*
+    7. Reverse Integer
+
+    Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0.
+
+    Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
+
+    Example 1:
+
+    Input: x = 123
+    Output: 321
+
+    Example 2:
+
+    Input: x = -123
+    Output: -321
+
+    Example 3:
+
+    Input: x = 120
+    Output: 21
+
+    Constraints:
+
+    -2^31 <= x <= 2^31 - 1
+
+    Released to Public Domain.
+    --------------------------------------------------------------------------------------
+
+*/
+
+namespace dna.tech.leetcode
+
+static __cOut:="" as character
+
+#xcommand ?  [ <vList,...> ] => ( [, __cOut+=__ConOut( <vList> ) ] )
+
+#xtranslate "</br>" => chr(13)+chr(10)
+
+procedure u_MainReverseInteger_7_1()
+
+    local nInput as numeric
+    local nOutPut as numeric
+
+    nInput:=123
+    ? "Input: ",nInput,"</br>"
+    nOutPut:=ReverseNumber(nInput)
+    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+
+    nInput*=-1
+    ? "Input: ",nInput,"</br>"
+    nOutPut:=ReverseNumber(nInput)
+    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+
+    nInput:=7463847412
+    ? "Input: ",nInput,"</br>"
+    nOutPut:=ReverseNumber(nInput)
+    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+
+    nInput:=-8463847412
+    ? "Input: ",nInput,"</br>"
+    nOutPut:=ReverseNumber(nInput)
+    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+
+    nInput:=2147483647
+    ? "Input: ",nInput,"</br>"
+    nOutPut:=ReverseNumber(nInput)
+    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+
+    nInput:=-2147483648
+    ? "Input: ",nInput,"</br>"
+    nOutPut:=ReverseNumber(nInput)
+    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+
+    MsgInfo(__cOut,ProcName())
+
+    __cOut:=""
+
+return
+
+static function ReverseNumber(nNumber as numeric)
+
+    local cReversed:=hb_NToC(Abs(nNumber)) as character
+
+    local nSign:=if(nNumber<0,-1,1) as numeric
+    local nResult as numeric
+
+    // Invertendo os digitos
+    cReversed:=reverseString(cReversed,Len(cReversed))
+
+    // Convertendo de volta para numero
+    nResult:=(Val(cReversed)*nSign)
+
+    // Validando intervalo de 32 bits
+    if ((nResult<-2147483648).or.(nResult>2147483647))
+        nResult:=0
+    endif
+
+    return(nResult)
+
+static function reverseString(cInput as character,nSizeInput as numeric) as character
+
+    local cOutPut as character
+
+    local y as numeric, i:=0 as numeric
+
+    cOutPut:=Space(nSizeInput)
+    y:=nSizeInput
+    while (y>0)
+        cOutPut:=Stuff(cOutPut,++i,1,SubStr(cInput,y--,1))
+    end while
+
+    return(cOutPut)
+
+static function hb_NToC(nValue as numeric) as character
+return(LTrim(Str(nValue)))
+
+static function __ConOut(vList as variadic)
+
+    local cOut:="",cValType as character
+
+    local nIdx as numeric
+
+    local uValue as variant
+
+    begin sequence
+
+        if (vList==nil)
+            break
+        endif
+
+        for nIdx:=1 to vList:vCount
+            uValue:=vList:vArgs[nIdx]
+            cValType:=ValType(uValue)
+            if (cValType=="N")
+                cOut+=hb_NToC(uValue)
+            else
+                cOut+=cValToChar(uValue)
+            endif
+        next nAccentuation
+
+    end sequence
+
+    return(cOut)

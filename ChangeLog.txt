@@ -3,6 +3,28 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-28 22:44 UTC naldodj (reverse_integer tlpp)
+  + src/tlpp/007/reverse_integer.7.1.tlpp
+  + src/tlpp/007/reverse_integer.7.3.tlpp
+  + src/tlpp/007/README.md
+  + src/tlpp/007/reverse_integer.7.2.tlpp
+  * src/hb/007/reverse_integer.7.2.prg
+  * src/hb/007/reverse_integer.7.3.prg
+  * src/tlpp/001/two_sum.1.tlpp
+  * src/tlpp/002/add_two_numbers.2.0.tlpp
+  * src/tlpp/002/add_two_numbers.2.1.tlpp
+  * src/tlpp/002/add_two_numbers.2.2.tlpp
+  * src/tlpp/003/longest_substring_without_repeating_characters.3.tlpp
+  * src/tlpp/004/median_of_two_sorted_arrays.4.1.tlpp
+  * src/tlpp/004/median_of_two_sorted_arrays.4.2.tlpp
+  * src/tlpp/004/median_of_two_sorted_arrays.4.3.tlpp
+  * src/tlpp/005/longest_palindromic_substring.5.1.tlpp
+  * src/tlpp/005/longest_palindromic_substring.5.2.tlpp
+  * src/tlpp/006/zigzag_conversion.6.1.tlpp
+  * src/tlpp/006/zigzag_conversion.6.2.tlpp
+  * src/tlpp/136/single_number.136.tlpp
+  * src/tlpp/137/single_number.137.tlpp
+
 2024-12-26 07:40 UTC naldodj (reverse_integer harbour)
   + src/hb/007/reverse_integer.7.1.prg
   + src/hb/007/reverse_integer.7.2.prg

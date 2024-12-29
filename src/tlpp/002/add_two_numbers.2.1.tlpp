@@ -32,7 +32,7 @@
 */
 #include "totvs.ch"
 
-namespace dna.tech
+namespace dna.tech.leetcode
 
 procedure u_MainAddTwoNumbers2_1()
     MsgInfo("Sum: '243'+'564' => "+ addTwoNumbers("243","564"),ProcName())

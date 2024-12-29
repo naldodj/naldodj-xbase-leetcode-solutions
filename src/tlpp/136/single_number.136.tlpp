@@ -22,7 +22,7 @@
 
 #include "set.ch"
 
-namespace dna.tech
+namespace dna.tech.leetcode
 
 function u_MainSingleNumber136()
 

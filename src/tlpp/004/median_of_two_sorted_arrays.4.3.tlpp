@@ -30,7 +30,7 @@
     --------------------------------------------------------------------------------------
 */
 
-namespace dna.tech
+namespace dna.tech.leetcode
 
 procedure u_MainMedianOfTwoSortedArrays_4_3()
 

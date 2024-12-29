@@ -29,7 +29,7 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-namespace dna.tech
+namespace dna.tech.leetcode
 
 procedure u_MainMedianOfTwoSortedArrays_4_1()
 

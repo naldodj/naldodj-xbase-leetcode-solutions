@@ -24,7 +24,7 @@
 
 */
 
-namespace dna.tech
+namespace dna.tech.leetcode
 
 static __aAccentuation as array
 
