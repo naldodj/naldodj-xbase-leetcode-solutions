@@ -37,6 +37,10 @@ static __cOut:="" as character
 
 #xtranslate "</br>" => chr(13)+chr(10)
 
+#xtranslate IsNil(<xValue>) => Eval({|xValue|xValue==NIL,<xValue>})
+#xtranslate hb_NToC(<n>) => LTrim(Str(<n>))
+#xtranslate hb_Default(@<uVar1>,<uVal1>) => <uVar1> := iif( IsNil(<uVar1>), <uVal1>, <uVar1> )
+
 procedure u_MainReverseInteger_7_1()
 
     local nInput as numeric
@@ -111,9 +115,6 @@ static function reverseString(cInput as character,nSizeInput as numeric) as char
     end while
 
     return(cOutPut)
-
-static function hb_NToC(nValue as numeric) as character
-return(LTrim(Str(nValue)))
 
 static function __ConOut(vList as variadic) as character
 
