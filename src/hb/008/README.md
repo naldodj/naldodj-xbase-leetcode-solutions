@@ -1,4 +1,4 @@
-# [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi)
+![image](https://github.com/user-attachments/assets/21f09b38-88cd-4929-9845-bb5544a39728)# [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi)
 
     8. String to Integer (atoi)
 
@@ -85,3 +85,4 @@
     s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+', '-', and '.'.
 
 `string_to_integer_atoi.8.1.prg` & `string_to_integer_atoi.8.2.prg`
+![image](https://github.com/user-attachments/assets/0de40597-0ba4-4d65-9438-d30ddc478c6e)
