@@ -61,3 +61,5 @@
     1 <= num <= 3999
 
 `int_to_roman.prg`
+![image](https://github.com/user-attachments/assets/a2bb75f3-c2cf-4ecf-a525-c565070b420e)
+
