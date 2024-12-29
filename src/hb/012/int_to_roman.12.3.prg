@@ -3,7 +3,6 @@
 
     Seven different symbols represent Roman numerals with the following values:
 
-    Symbol    Value
     Symbol  Value
     I       1
     V       5
@@ -65,20 +64,12 @@
 
 */
 
-namespace dna.tech.leetcode
-
-static __cOut:="" as character
-
-#xcommand ?  [ <vList,...> ] => ( [, __cOut+=__ConOut( <vList> ) ] )
-
-#xtranslate "</br>" => chr(13)+chr(10)
-
-procedure u_MainIntToRoman_12_2()
+procedure Main()
 
     local nInput as numeric
     local cOutPut as character
 
-     nInput:=3749
+    nInput:=3749
     ? "Input: ",nInput,"</br>"
     cOutPut:=intToRoman(nInput)
     ? "Output: ",cOutPut,"</br>"
@@ -113,10 +104,6 @@ procedure u_MainIntToRoman_12_2()
     nInput:=RomanToDec( cOutPut )
     ? "Rom2Dec: ",nInput,"</br>","</br>"
 
-    MsgInfo(__cOut,ProcName())
-
-    __cOut:=""
-
 return
 
 static function intToRoman( nNumber as numeric )
@@ -132,98 +119,66 @@ static function intToRoman( nNumber as numeric )
 
 return(cRoman)
 
-/*ref.: https://raw.githubusercontent.com/naldodj/naldodj-harbour-core/ce1bc2039902f3a3797de532f2d1c7a7745d44a6/contrib/hbmisc/nconvert.prg*/
-static function DecToRoman( nNumber as numeric ) as character
+static function RomanMapping()
+    return(;
+                {;
+                   {1000,"M"};
+                  ,{900,"CM"};
+                  ,{500,"D"};
+                  ,{400,"CD"};
+                  ,{100,"C"};
+                  ,{90,"XC"};
+                  ,{50,"L"};
+                  ,{40,"XL"};
+                  ,{10,"X"};
+                  ,{9,"IX"};
+                  ,{5,"V"};
+                  ,{4,"IV"};
+                  ,{1,"I"};
+                };
+    ) as array
 
-    local cRoman:= "" as character
+static function DecToRoman( nNumber as numeric )
 
-    local jRoman:=JSONObject():New() as json
+    local aMapping as array:=RomanMapping()
 
-    if (nNumber>=1000)
-        jRoman["M"]:=Int(nNumber/1000)
-        nNumber-=(jRoman["M"]*1000)
-    endif
+    local cRoman as character:=""
 
-    if (nNumber>=900)
-        jRoman["CM"]:=Int(nNumber/900)
-        nNumber-=(jRoman["CM"]*900)
-    endif
+    local i as numeric
 
-    if (nNumber>=500)
-        jRoman["D"]:=Int(nNumber/500)
-        nNumber-=(jRoman["D"]*500)
-    endif
-
-    if (nNumber>=400)
-        jRoman["CD"]:=Int(nNumber/400)
-        nNumber-=(jRoman["CD"]*400)
-    endif
-
-    if (nNumber>=100)
-        jRoman["C"]:=Int(nNumber/100)
-        nNumber-=(jRoman["C"]*100)
-    endif
-
-    if (nNumber>=90)
-        jRoman["XC"]:=Int(nNumber/90)
-        nNumber-=(jRoman["XC"]*90)
-    endif
-
-    if (nNumber>=50)
-        jRoman["L"]:=Int(nNumber/50)
-        nNumber-=(jRoman["L"]*50)
-    endif
-
-    if (nNumber>=40)
-        jRoman["XL"]:=Int(nNumber/40)
-        nNumber-=(jRoman["XL"]*40)
-    endif
-
-    if (nNumber>=10)
-        jRoman["X"]:=Int(nNumber/10)
-        nNumber-=(jRoman["X"]*10)
-    endif
-
-    if (nNumber>=9)
-        jRoman["IX"]:=Int(nNumber/9)
-        nNumber-=(jRoman["IX"]*9)
-    endif
-
-    if (nNumber>=5)
-        jRoman["V"]:=Int(nNumber/5)
-        nNumber-=(jRoman["V"]*5)
-    endif
-
-    if (nNumber>=4)
-        jRoman["IV"]:=Int(nNumber/4)
-        nNumber-=(jRoman["IV"]*4)
-    endif
-
-    if (nNumber>1)
-        jRoman["I"]:=nNumber
-        nNumber-=nNumber
-    endif
-
-    aEval(jRoman:GetNames(),{|cName as character|cRoman+=Replicate(cName,jRoman[cName])})
+    for i:=1 to Len(aMapping)
+        while (nNumber>=aMapping[i][1])
+            cRoman+=aMapping[i][2]
+            nNumber-=aMapping[i][1]
+        end while
+    next i
 
     return(cRoman)
 
-static function RomanToDec( cRoman as character ) as numeric
+static function RomanToDec( cRoman as character )
 
-   local nTotal:=0 as numeric
-   local nPrevValue:=0 as numeric
-   local nCurrentValue:=0 as numeric
+   local nTotal as numeric:=0
+   local nPrevValue as numeric:=0
+   local nCurrentValue as numeric:=0
    local i as numeric
 
-   // Mapeamento de valores dos numeros romanos
-   local jRomanValues:={"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000} as json
+   // Mapeamento de valores dos números romanos
+   local hRomanValues as hash := {;
+        "I" => 1;
+       ,"V" => 5;
+       ,"X" => 10;
+       ,"L" => 50;
+       ,"C" => 100;
+       ,"D" => 500;
+       ,"M" => 1000;
+   }
 
-   // Percorrer o numero romano do final ao inicio
+   // Percorrer o número romano do final ao início
    for i:=Len(cRoman) to 1 step -1
       // Obter o valor do caractere atual
-      nCurrentValue:=jRomanValues[subStr(cRoman,i,1)]
+      nCurrentValue:=hRomanValues[subStr(cRoman,i,1)]
       if (nCurrentValue<nPrevValue)
-         // Regra de subtracao
+         // Regra de subtração
          nTotal-=nCurrentValue
       else
          // Adicionar valor ao total
@@ -233,41 +188,4 @@ static function RomanToDec( cRoman as character ) as numeric
       nPrevValue:=nCurrentValue
    next i
 
-   return(nTotal)
-
-static function hb_NToC(nValue as numeric) as character
-return(LTrim(Str(nValue)))
-
-static function hb_Default(/*@*/uVar as variant,uDefault as variant) as variant
-    if (uVar==nil)
-        uVar:=uDefault
-    endif
-return(uVar)
-
-static function __ConOut(vList as variadic) as character
-
-    local cOut:="",cValType as character
-
-    local nIdx as numeric
-
-    local uValue as variant
-
-    begin sequence
-
-        if (vList==nil)
-            break
-        endif
-
-        for nIdx:=1 to vList:vCount
-            uValue:=vList:vArgs[nIdx]
-            cValType:=ValType(uValue)
-            if (cValType=="N")
-                cOut+=hb_NToC(uValue)
-            else
-                cOut+=cValToChar(uValue)
-            endif
-        next nIdx
-
-    end sequence
-
-    return(cOut)
+   return(nTotal) as numeric

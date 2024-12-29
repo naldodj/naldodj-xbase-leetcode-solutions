@@ -191,6 +191,33 @@ static function DecToRoman( nNumber as numeric ) as character
 
    RETURN(cRoman)
 
+static function RomanToDec( cRoman as character ) as numeric
+
+   local nTotal:=0 as numeric
+   local nPrevValue:=0 as numeric
+   local nCurrentValue:=0 as numeric
+   local i as numeric
+
+   // Mapeamento de valores dos numeros romanos
+   local jRomanValues:={"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000} as json
+
+   // Percorrer o numero romano do final ao inicio
+   for i:=Len(cRoman) to 1 step -1
+      // Obter o valor do caractere atual
+      nCurrentValue:=jRomanValues[subStr(cRoman,i,1)]
+      if (nCurrentValue<nPrevValue)
+         // Regra de subtracao
+         nTotal-=nCurrentValue
+      else
+         // Adicionar valor ao total
+         nTotal+=nCurrentValue
+      endif
+      // Atualizar o valor anterior
+      nPrevValue:=nCurrentValue
+   next i
+
+   return(nTotal)
+
 static function hb_NToC(nValue as numeric) as character
 return(LTrim(Str(nValue)))
 
@@ -227,30 +254,3 @@ static function __ConOut(vList as variadic) as character
     end sequence
 
     return(cOut)
-
-static function RomanToDec( cRoman as character ) as numeric
-
-   local nTotal:=0 as numeric
-   local nPrevValue:=0 as numeric
-   local nCurrentValue:=0 as numeric
-   local i as numeric
-
-   // Mapeamento de valores dos numeros romanos
-   local jRomanValues:={"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000} as json
-
-   // Percorrer o numero romano do final ao inicio
-   for i:=Len(cRoman) to 1 step -1
-      // Obter o valor do caractere atual
-      nCurrentValue:=jRomanValues[subStr(cRoman,i,1)]
-      if (nCurrentValue<nPrevValue)
-         // Regra de subtracao
-         nTotal-=nCurrentValue
-      else
-         // Adicionar valor ao total
-         nTotal+=nCurrentValue
-      endif
-      // Atualizar o valor anterior
-      nPrevValue:=nCurrentValue
-   next i
-
-   return(nTotal)
