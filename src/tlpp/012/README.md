@@ -4,14 +4,14 @@
 
     Seven different symbols represent Roman numerals with the following values:
 
-    Symbol    Value
-    I    1
-    V    5
-    X    10
-    L    50
-    C    100
-    D    500
-    M    1000
+    Symbol  Value
+    I       1
+    V       5
+    X       10
+    L       50
+    C       100
+    D       500
+    M       1000
     Roman numerals are formed by appending the conversions of decimal place values from highest to lowest. Converting a decimal place value into a Roman numeral has the following rules:
 
     If the value does not start with 4 or 9, select the symbol of the maximal value that can be subtracted from the input, append that symbol to the result, subtract its value, and convert the remainder to a Roman numeral.
@@ -62,4 +62,3 @@
 
 `int_to_roman.12.1.tlpp` & `int_to_roman.12.2.tlpp`
 ![image](https://github.com/user-attachments/assets/3b1d190d-9140-4172-9ff6-790c8c347b66)
-
