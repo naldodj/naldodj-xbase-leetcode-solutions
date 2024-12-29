@@ -101,7 +101,7 @@ static function intToRoman( nNumber as numeric )
 
     nNumber:=Int(nNumber)
     if (nNumber<1).or.(nNumber>3999)
-        cRoman:=""
+        cRoman:="Out of range 1 <= n <= 3999"
     else
         cRoman:=DecToRoman(nNumber)
     endif
