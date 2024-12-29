@@ -68,7 +68,7 @@ namespace dna.tech.leetcode
 
 static __cOut:="" as character
 
-#xcommand ?  [ <vList,...> ] => ( [, __cOut+=__ConOut( <vList> ) ] )
+#xcommand ?  [ <vList,...> ] => ( [ __cOut+=__ConOut( <vList> ) ] )
 
 #xtranslate "</br>" => chr(13)+chr(10)
 

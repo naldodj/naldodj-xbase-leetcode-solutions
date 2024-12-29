@@ -3,6 +3,15 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-29 11:00 UTC naldodj
+  * src/tlpp/007/reverse_integer.7.1.tlpp
+  * src/tlpp/007/reverse_integer.7.2.tlpp
+  * src/tlpp/007/reverse_integer.7.3.tlpp
+  * src/tlpp/012/int_to_roman.12.1.tlpp
+  * src/tlpp/012/int_to_roman.12.2.tlpp
+  * src/tlpp/012/int_to_roman.12.3.tlpp
+  * src/tlpp/012/int_to_roman.12.4.tlpp
+
 2024-12-29 10:51 UTC naldodj
   * src/tlpp/007/reverse_integer.7.1.tlpp
   * src/tlpp/007/reverse_integer.7.2.tlpp

@@ -33,13 +33,13 @@ namespace dna.tech.leetcode
 
 static __cOut:="" as character
 
-#xcommand ?  [ <vList,...> ] => ( [, __cOut+=__ConOut( <vList> ) ] )
+#xcommand ?  [ <vList,...> ] => ( [ __cOut+=__ConOut( <vList> ) ] )
 
 #xtranslate "</br>" => chr(13)+chr(10)
 
-#xtranslate IsNil(<xValue>) => Eval({|xValue|xValue==NIL},<xValue>)
+#xtranslate IsNil(<uValue>) => Eval({|uValue|uValue==NIL},<uValue>)
 #xtranslate hb_NToC(<n>) => LTrim(Str(<n>))
-#xtranslate hb_Default(@<uVar1>,<uVal1>) => <uVar1> := iif( IsNil(<uVar1>), <uVal1>, <uVar1> )
+#xtranslate hb_Default(@<uVar1>,<uVal1>) => <uVar1>:=iif(IsNil(<uVar1>),<uVal1>,<uVar1>)
 
 procedure u_MainReverseInteger_7_2()
 
