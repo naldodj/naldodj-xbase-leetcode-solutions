@@ -3,6 +3,12 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-29 00:05 UTC naldodj (int_to_roman harbour & tlpp)
+  + src/hb/012/int_to_roman.12.1.prg
+  + src/hb/012/README.md
+  + src/tlpp/012/int_to_roman.12.1.tlpp
+  + src/tlpp/012/README.md
+
 2024-12-28 23:18 UTC naldodj (reverse_integer tlpp)
   * src/tlpp/007/reverse_integer.7.1.tlpp
   * src/tlpp/007/reverse_integer.7.2.tlpp
