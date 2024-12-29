@@ -118,7 +118,7 @@ procedure u_MainIntToRoman_12_3()
 
 return
 
-static function intToRoman( nNumber as numeric )
+static function intToRoman( nNumber as numeric ) as character
 
     local cRoman as character
 
@@ -150,7 +150,7 @@ static function RomanMapping() as array
                 };
     )
 
-static function DecToRoman( nNumber as numeric )
+static function DecToRoman( nNumber as numeric ) as character
 
     local aMapping:=RomanMapping() as array
 

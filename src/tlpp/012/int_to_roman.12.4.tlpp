@@ -118,7 +118,7 @@ procedure u_MainIntToRoman_12_4()
 
 return
 
-static function intToRoman( nNumber as numeric )
+static function intToRoman( nNumber as numeric ) as character
 
     local cRoman as character
 
@@ -150,7 +150,7 @@ static function RomanMapping() as array
                 };
     )
 
-static function RomanRecursive(nNumber as numeric,aMapping,cResult as character)
+static function RomanRecursive(nNumber as numeric,aMapping,cResult as character) as character
 
     local i:=1 as numeric
 
@@ -162,9 +162,9 @@ static function RomanRecursive(nNumber as numeric,aMapping,cResult as character)
         i++
     end while
 
-    return RomanRecursive(nNumber-aMapping[i][1],aMapping,cResult+aMapping[i][2])
+    return(RomanRecursive(nNumber-aMapping[i][1],aMapping,cResult+aMapping[i][2]))
 
-static function DecToRoman(nNumber)
+static function DecToRoman(nNumber) as character
     local aMapping:=RomanMapping() as array
     return (RomanRecursive(nNumber,aMapping,""))
 

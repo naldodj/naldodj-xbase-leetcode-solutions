@@ -117,7 +117,7 @@ static function intToRoman( nNumber as numeric )
         cRoman:=DecToRoman(nNumber)
     endif
 
-return(cRoman)
+return(cRoman) as character
 
 static function RomanMapping()
     return(;
@@ -143,18 +143,18 @@ static function RomanRecursive(nNumber as numeric,aMapping,cResult as character)
     local i as numeric:=1
 
     if (nNumber==0)
-        return(cResult)
+        return(cResult) as character
     endif
 
     while (nNumber<aMapping[i][1])
         i++
     end while
 
-    return RomanRecursive(nNumber-aMapping[i][1],aMapping,cResult+aMapping[i][2])
+    return(RomanRecursive(nNumber-aMapping[i][1],aMapping,cResult+aMapping[i][2])) as character
 
 static function DecToRoman(nNumber)
     local aMapping as array:=RomanMapping()
-    return (RomanRecursive(nNumber,aMapping,""))
+    return (RomanRecursive(nNumber,aMapping,"")) as character
 
 static function RomanToDec(cRoman as character)
 

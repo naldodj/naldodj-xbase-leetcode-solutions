@@ -117,7 +117,7 @@ static function intToRoman( nNumber as numeric )
         cRoman:=DecToRoman(nNumber)
     endif
 
-return(cRoman)
+return(cRoman) as character
 
 /*ref.: https://raw.githubusercontent.com/naldodj/naldodj-harbour-core/ce1bc2039902f3a3797de532f2d1c7a7745d44a6/contrib/hbmisc/nconvert.prg*/
 static function DecToRoman( nNumber as numeric )

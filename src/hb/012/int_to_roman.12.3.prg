@@ -117,7 +117,7 @@ static function intToRoman( nNumber as numeric )
         cRoman:=DecToRoman(nNumber)
     endif
 
-return(cRoman)
+return(cRoman) as character
 
 static function RomanMapping()
     return(;
@@ -153,7 +153,7 @@ static function DecToRoman( nNumber as numeric )
         end while
     next i
 
-    return(cRoman)
+    return(cRoman) as character
 
 static function RomanToDec( cRoman as character )
 
