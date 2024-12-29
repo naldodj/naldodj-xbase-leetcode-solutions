@@ -3,6 +3,9 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2024-12-29 19:41 UTC naldodj (string_to_integer_atoi)
+  * src/tlpp/008/string_to_integer_atoi.8.1.tlpp
+
 2024-12-29 18:41 UTC naldodj (string_to_integer_atoi)
   + src/hb/008/README.md
   + src/hb/008/string_to_integer_atoi.8.1.prg

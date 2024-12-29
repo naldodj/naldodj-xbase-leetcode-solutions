@@ -167,18 +167,18 @@ static function myAtoi(cString as character) as numeric
             i:=2 // Comeca apos o sinal positivo
         otherwise
             nSign:=1
-            i:=1 //Comeca a partir da posicacao inicial
+            i:=1 //Comeca a partir da posicao inicial
     end case
 
     // Converte cada caractere em numero
     nResult:=0
     for i:=i to nStringLen
         nChar:=Asc(subStr(cString,i,1))
-        if (nChar>=48).and.(nChar<=57) // Verifica se o caractere eh numehrico
+        if (nChar>=48).and.(nChar<=57) // Verifica se o caractere eh numerico
             nResult*=10
             nResult+=(nChar-48)
         else
-            // Se encontrar um caractere ncao numehrico, interrompe
+            // Se encontrar um caractere nao numerico, interrompe
             exit
         endif
     next i
