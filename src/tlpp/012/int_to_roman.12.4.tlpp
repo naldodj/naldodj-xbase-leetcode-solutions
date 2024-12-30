@@ -66,8 +66,6 @@
 
 namespace dna.tech.leetcode
 
-static __cOut:="" as character
-
 #xcommand ?  [ <vList,...> ] => ( [ __cOut+=__ConOut( <vList> ) ] )
 
 #xtranslate "</br>" => chr(13)+chr(10)
@@ -75,6 +73,8 @@ static __cOut:="" as character
 #xtranslate hb_NToC(<n>) => LTrim(Str(<n>))
 
 procedure u_MainIntToRoman_12_4()
+
+    local __cOut:="" as character
 
     local nInput as numeric
     local cOutPut as character
@@ -115,8 +115,6 @@ procedure u_MainIntToRoman_12_4()
     ? "Rom2Dec: ",nInput,"</br>","</br>"
 
     MsgInfo(__cOut,ProcName())
-
-    __cOut:=""
 
 return
 
@@ -216,6 +214,8 @@ static function __ConOut(vList as variadic) as character
             cValType:=ValType(uValue)
             if (cValType=="N")
                 cOut+=hb_NToC(uValue)
+            elseif (cValType=="A")
+                cOut+=FWJSONSerialize(uValue)
             else
                 cOut+=cValToChar(uValue)
             endif

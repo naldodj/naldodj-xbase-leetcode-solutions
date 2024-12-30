@@ -31,8 +31,6 @@
 
 namespace dna.tech.leetcode
 
-static __cOut:="" as character
-
 #xcommand ?  [ <vList,...> ] => ( [ __cOut+=__ConOut( <vList> ) ] )
 
 #xtranslate "</br>" => chr(13)+chr(10)
@@ -42,6 +40,8 @@ static __cOut:="" as character
 #xtranslate hb_Default(@<uVar1>,<uVal1>) => <uVar1>:=iif(IsNil(<uVar1>),<uVal1>,<uVar1>)
 
 procedure u_MainReverseInteger_7_2()
+
+    local __cOut:="" as character
 
     local nInput as numeric
     local nOutPut as numeric
@@ -77,8 +77,6 @@ procedure u_MainReverseInteger_7_2()
     ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
 
     MsgInfo(__cOut,ProcName())
-
-    __cOut:=""
 
     return
 
@@ -137,6 +135,8 @@ static function __ConOut(vList as variadic) as character
             cValType:=ValType(uValue)
             if (cValType=="N")
                 cOut+=hb_NToC(uValue)
+            elseif (cValType=="A")
+                cOut+=FWJSONSerialize(uValue)
             else
                 cOut+=cValToChar(uValue)
             endif
