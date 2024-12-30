@@ -59,6 +59,7 @@
     Constraints:
 
     1 <= num <= 3999
+---
+`int_to_roman.12.1.tlpp` ... `int_to_roman.12.4.tlpp`
 
-`int_to_roman.12.1.tlpp` & `int_to_roman.12.2.tlpp`
-![image](https://github.com/user-attachments/assets/3b1d190d-9140-4172-9ff6-790c8c347b66)
+![image](https://github.com/user-attachments/assets/32c561ad-ef76-4389-b660-5af50be54c1b)
