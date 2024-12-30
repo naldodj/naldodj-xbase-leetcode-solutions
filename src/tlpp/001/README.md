@@ -19,7 +19,8 @@ Output: [1,2]
 Example 3:
 Input: nums = [3,3], target = 6
 Output: [0,1]
-
-![image](https://github.com/user-attachments/assets/23199b10-57b8-4263-a7eb-13f00e59ac91)
-
-![image](https://github.com/user-attachments/assets/4650196e-ca65-4d53-b619-61148ac5a04c)
+---
+![image](https://github.com/user-attachments/assets/7dd580e0-f123-4588-8f07-d7cc9797380f)
+---
+![image](https://github.com/user-attachments/assets/7ec39ff0-c7f6-4c5c-ae1a-989fb95f54c4)
+---
