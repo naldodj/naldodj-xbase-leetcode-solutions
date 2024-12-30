@@ -27,5 +27,7 @@
     -2^31 <= x <= 2^31 - 1
 
     Follow up: Could you solve it without converting the integer to a string?
-
+---
 `palindrome_number.9.1.tlpp` & `palindrome_number.9.2.tlpp`
+
+![image](https://github.com/user-attachments/assets/47c89ac1-7d4d-4684-b7d2-e59047e143b8)
