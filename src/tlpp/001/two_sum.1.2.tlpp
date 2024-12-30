@@ -68,7 +68,7 @@ procedure u_MainTwoSum_1_2()
     ? "Indexes: " ,hb_JSONEncode(aResult),if(lZeroBasedIndex,"Store the zero-based index","Store the one-based index") // Output the Indexes as JSON: if(lZeroBasedIndex,[0,1],[1,2])
     ? "</br>"
 
-    MsgInfo(__cOut)
+    MsgInfo(__cOut,ProcName())
 
     return
 

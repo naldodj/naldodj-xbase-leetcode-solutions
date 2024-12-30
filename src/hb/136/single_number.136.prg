@@ -1,22 +1,35 @@
 /*
-    Problem:
-    1. Given an array of integers where every element appears three times except for one,
-       find the unique element that appears once.
+    136. Single Number
 
-    2. Given an array of integers where every element appears two times except for one,
-       find the unique element that appears once.
+    Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+    You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+    Example 1:
+
+    Input: nums = [2,2,1]
+    Output: 1
+
+    Example 2:
+
+    Input: nums = [4,1,2,1,2]
+    Output: 4
+
+    Example 3:
+
+    Input: nums = [1]
+    Output: 1
 
     Constraints:
-    - Linear runtime complexity (O(n)).
-    - No additional memory usage (constant space).
 
-    Notes:
-    - The solution differs for the two cases and is determined by the length of the array.
-      If the array length is odd,it assumes case 1 (numbers appear twice).
-      If the array length is even,it assumes case 2 (numbers appear three times).
+    1 <= nums.length <= 3 * 10^4
+    -3 * 10^4 <= nums[i] <= 3 * 10^4
+
+    Each element in the array appears twice except for one element which appears only once.
 
     Released to Public Domain.
     --------------------------------------------------------------------------------------
+
 */
 
 function Main()
