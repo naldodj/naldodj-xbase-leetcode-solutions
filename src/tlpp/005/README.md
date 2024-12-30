@@ -18,9 +18,11 @@
 
     1 <= s.length <= 1000
     s consist of only digits and English letters.
+---
+***longest_palindromic_substring.5.1.tlpp***
 
-`longest_palindromic_substring.5.1.tlpp`
-![image](https://github.com/user-attachments/assets/fe1eb814-5d91-4d68-bac7-f74bef948808)
+![image](https://github.com/user-attachments/assets/51312e0b-6b03-402f-b0dd-7ad4aca216ba)
+![image](https://github.com/user-attachments/assets/54724ab8-9a19-40bb-bc86-f9f9fc268e9c)
 
 ```
 +--------------------------------------------------------------------+-----------------------------------------------------------------------+
@@ -47,9 +49,12 @@
 | A discussão acalorada terminou em sopapos.                         | ["ss", "aca", "ada", "sopapos", "opapo", "pap"]                       |
 +--------------------------------------------------------------------+-----------------------------------------------------------------------+
 ```
+---
+***longest_palindromic_substring.5.2.tlpp***
 
-`longest_palindromic_substring.5.2.tlpp`
-![image](https://github.com/user-attachments/assets/67b362ed-c11a-41ae-80b6-dbddfe1f5a8c)
+![image](https://github.com/user-attachments/assets/207f773d-1780-44a3-847c-2e0ebc392646)
+![image](https://github.com/user-attachments/assets/7cc72808-1de1-4474-a88b-a22e8fa811ab)
+![image](https://github.com/user-attachments/assets/e6cde18f-9595-41fd-81a8-b12b9d6788a5)
 
 ```
 +-------------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------------------------+
