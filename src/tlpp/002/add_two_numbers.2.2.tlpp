@@ -30,17 +30,23 @@
     --------------------------------------------------------------------------------------
 */
 
-#define _SET_DECIMALS 3
-
-#include "totvs.ch"
+#include "dna.tech.leetcode.th"
 
 namespace dna.tech.leetcode
 
-procedure u_MainAddTwoNumbers2_2()
-    // Testa a Funcao `addTwoNumbers` com diferentes entradas
-    MsgInfo("Sum: [2,4,3]+[5,6,4] => "+ FWJSONSerialize(addTwoNumbers({2,4,3}, {5,6,4})),ProcName())
-    MsgInfo("Sum: [0]+[0] => "+ FWJSONSerialize(addTwoNumbers({0}, {0})),ProcName())
-    MsgInfo("Sum: [9,9,9,9,9,9,9]+[9,9,9,9] => "+ FWJSONSerialize(addTwoNumbers({9,9,9,9,9,9,9}, {9,9,9,9})),ProcName())
+procedure u_MainAddTwoNumbers_2_2()
+
+    local __cOut:="" as character
+
+    // Testa a funcao `addTwoNumbers` com diferentes entradas
+    ? "Sum: [2,4,3]+[5,6,4] => ", hb_JSONEncode(addTwoNumbers({2,4,3}, {5,6,4}))
+    ? "</br>"
+    ? "Sum: [0]+[0] => ", hb_JSONEncode(addTwoNumbers({0}, {0}))
+    ? "</br>"
+    ? "Sum: [9,9,9,9,9,9,9]+[9,9,9,9] => ", hb_JSONEncode(addTwoNumbers({9,9,9,9,9,9,9}, {9,9,9,9}))
+
+    MsgInfo(__cOut,ProcName())
+
 return
 
 /*

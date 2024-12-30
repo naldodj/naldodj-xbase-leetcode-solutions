@@ -33,107 +33,109 @@ procedure Main()
 
    hb_cdpSelect("UTF8EX")
 
-   cString := "babad"
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="babad"
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "cbbd"
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="cbbd"
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "A Aia cuidava das crianças com dedicação."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="A Aia cuidava das crianças com dedicação."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "Quem tem aibofobia sente medo de palíndromos."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="Quem tem aibofobia sente medo de palíndromos."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "A ala esquerda do prédio foi reformada."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="A ala esquerda do prédio foi reformada."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "Ele ama viajar para lugares tranquilos."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="Ele ama viajar para lugares tranquilos."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "A cor foi obtida com anilina natural."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="A cor foi obtida com anilina natural."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "A ata da reunião foi enviada a todos os participantes."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="A ata da reunião foi enviada a todos os participantes."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "A arara azul é uma ave belíssima."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="A arara azul é uma ave belíssima."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "O avião perdeu uma asa no acidente."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="O avião perdeu uma asa no acidente."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "Ele sempre está disposto a ajudar."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="Ele sempre está disposto a ajudar."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "Esse livro é um dos meus favoritos."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="Esse livro é um dos meus favoritos."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "Os bebês mamam para se alimentar."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="Os bebês mamam para se alimentar."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "As ondas fortes matam muitos animais marinhos."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="As ondas fortes matam muitos animais marinhos."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "Eles sempre metem o nariz onde não são chamados."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="Eles sempre metem o nariz onde não são chamados."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "O time mirim venceu o campeonato regional."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="O time mirim venceu o campeonato regional."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "Um relatório omissíssimo em vários pontos importantes."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="Um relatório omissíssimo em vários pontos importantes."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "Viajar para a cidade natal faz muitos reviverem memórias antigas."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="Viajar para a cidade natal faz muitos reviverem memórias antigas."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
-   cString := "A discussão acalorada terminou em sopapos."
-   cLongestPalindrome1 := hb_JSONEncode(LongestPalindromicSubstring(cString))
+   cString:="A discussão acalorada terminou em sopapos."
+   cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1,"</br></br>"
 
    return
 
+/****************************************************************************************/
 static function LongestPalindromicSubstring(cString as character)
 
    local aPalindromicSubstring as array
-   local aPalindromicSubstringReturn as array :=Array(0)
+   local aPalindromicSubstringReturn as array:=Array(0)
+
    local cStringTmp as character,cPalindromicSubstring as character
 
    local i as numeric
@@ -154,16 +156,17 @@ return(aPalindromicSubstringReturn) as array
 
 static function __LongestPalindromicSubstring(/*@*/cString)
 
-   local nLen as numeric := Len(cString)
-   local cResult as character := ""
+   local cResult as character:=""
    local cSubStr as character
-   local i as numeric, j as numeric
 
-   for i := 1 to nLen
-      for j := i to nLen
-         cSubStr := SubStr(cString, i, j - i + 1)
-         if (IsPalindrome(cSubStr) .and. Len(cSubStr) > Len(cResult))
-            cResult := cSubStr
+   local i as numeric,j as numeric
+   local nLen as numeric:=Len(cString)
+
+   for i:=1 to nLen
+      for j:=i to nLen
+         cSubStr:=SubStr(cString,i,j-i+1)
+         if (IsPalindrome(cSubStr) .and. Len(cSubStr)>Len(cResult))
+            cResult:=cSubStr
          endif
       next j
    next i
@@ -174,15 +177,15 @@ static function __LongestPalindromicSubstring(/*@*/cString)
 
 static function IsPalindrome(cString as character)
 
-   local lRet as logical :=.T.
+   local lRet as logical:=.T.
 
-   local nStart as numeric := 1
-   local nEnd as numeric := Len(cString)
+   local nStart as numeric:=1
+   local nEnd as numeric:=Len(cString)
 
    begin sequence
 
-      while (nStart < nEnd)
-         if (Lower(SubStr(cString, nStart, 1)) != Lower(SubStr(cString, nEnd, 1)))
+      while (nStart<nEnd)
+         if (Lower(SubStr(cString,nStart,1)) != Lower(SubStr(cString,nEnd,1)))
             lRet:=.F.
             break
          endif
@@ -197,7 +200,7 @@ static function IsPalindrome(cString as character)
 /****************************************************************************************/
 
 static function NormalizeString(cString as character)
-   local cNormalized as character := cString
+   local cNormalized as character:=cString
    local aNormalize as array :={;
       {"á","a"};
      ,{"à","a"};

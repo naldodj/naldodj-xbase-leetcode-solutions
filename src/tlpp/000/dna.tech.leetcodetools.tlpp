@@ -1,0 +1,37 @@
+#include "dna.tech.leetcode.th"
+
+namespace dna.tech.leetcode
+
+class tools
+    static method OutStd(vList as variadic) as character
+end class
+
+static function ___tools____OutStd(vList as variadic) as character
+
+    local cOut:="",cValType as character
+
+    local nIdx as numeric
+
+    local uValue as variant
+
+    begin sequence
+
+        if (vList==nil)
+            break
+        endif
+
+        for nIdx:=1 to vList:vCount
+            uValue:=vList:vArgs[nIdx]
+            cValType:=ValType(uValue)
+            if (cValType=="N")
+                cOut+=hb_NToC(uValue)
+            elseif (cValType$"A,L,J")
+                cOut+=FWJSONSerialize(uValue)
+            else
+                cOut+=cValToChar(uValue)
+            endif
+        next nIdx
+
+    end sequence
+
+    return(cOut)

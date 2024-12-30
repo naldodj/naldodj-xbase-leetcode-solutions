@@ -64,13 +64,9 @@
 
 */
 
+#include "dna.tech.leetcode.th"
+
 namespace dna.tech.leetcode
-
-#xcommand ?  [ <vList,...> ] => ( [ __cOut+=__ConOut( <vList> ) ] )
-
-#xtranslate "</br>" => chr(13)+chr(10)
-
-#xtranslate hb_NToC(<n>) => LTrim(Str(<n>))
 
 procedure u_MainIntToRoman_12_1()
 
@@ -217,33 +213,3 @@ static function RomanToDec( cRoman as character ) as numeric
    next i
 
    return(nTotal)
-
-static function __ConOut(vList as variadic) as character
-
-    local cOut:="",cValType as character
-
-    local nIdx as numeric
-
-    local uValue as variant
-
-    begin sequence
-
-        if (vList==nil)
-            break
-        endif
-
-        for nIdx:=1 to vList:vCount
-            uValue:=vList:vArgs[nIdx]
-            cValType:=ValType(uValue)
-            if (cValType=="N")
-                cOut+=hb_NToC(uValue)
-            elseif (cValType=="A")
-                cOut+=FWJSONSerialize(uValue)
-            else
-                cOut+=cValToChar(uValue)
-            endif
-        next nIdx
-
-    end sequence
-
-    return(cOut)

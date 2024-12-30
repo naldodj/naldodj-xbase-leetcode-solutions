@@ -1,0 +1,46 @@
+/*
+
+    dna.tech.leetcode.th
+
+    Released to Public Domain.
+    --------------------------------------------------------------------------------------
+
+*/
+
+#ifndef __DNA_TECH_LEETCOD_TH__
+
+    #define __DNA_TECH_LEETCOD_TH__
+
+    #xcommand ?  [ <vList,...> ] => ( [ __cOut+=dna.tech.leetcode.Tools():OutStd( <vList> ) ] )
+
+    #xtranslate "</br></br>" => "</br>","</br>"
+    #xtranslate "</br>" => chr(13)+chr(10)
+
+    #xtranslate IsNil(<uValue>) => Eval({|uValue|uValue==NIL},<uValue>)
+
+    #xtranslate hb_AScan => aScan
+    #xtranslate hb_JSONEncode => FWJSONSerialize
+
+    #xtranslate hb_NToC(<n>) => LTrim(Str(<n>))
+    #xtranslate hb_Default(@<uVar1>,<uVal1>) => <uVar1>:=iif(IsNil(<uVar1>),<uVal1>,<uVar1>)
+    #xtranslate hb_regexlike(<cPattern>,<cString>) => tlpp.regex.Regex():matches(<cPattern>,<cString>)
+    #xtranslate hb_regexSplit(<cToken>,<cString>) => strTokArr2(<cString>,<cToken>)
+
+    //TL++ nao tem suporte,ainda,para notacao Hexadecimal de forna nativa
+    #xtranslate 0x0 => __HexToDec("0x0")
+    #xtranslate 0xA => __HexToDec("0xA")
+    #xtranslate 0x80000000 => __HexToDec("0x80000000")
+    #xtranslate -0x80000000 =>__HexToDec("-0x80000000")
+    #xtranslate 0x7FFFFFFF => __HexToDec("0x7FFFFFFF")
+
+    #ifndef _PROTHEUS_CH
+        #include "totvs.ch"
+    #endif
+
+    #ifndef _SET_CH
+        #include "set.ch"
+    #endif
+
+    #define _SET_DECIMALS 3
+
+#endif

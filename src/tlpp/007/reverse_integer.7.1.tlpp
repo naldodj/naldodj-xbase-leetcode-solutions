@@ -29,15 +29,9 @@
 
 */
 
+#include "dna.tech.leetcode.th"
+
 namespace dna.tech.leetcode
-
-#xcommand ?  [ <vList,...> ] => ( [ __cOut+=__ConOut( <vList> ) ] )
-
-#xtranslate "</br>" => chr(13)+chr(10)
-
-#xtranslate IsNil(<uValue>) => Eval({|uValue|uValue==NIL},<uValue>)
-#xtranslate hb_NToC(<n>) => LTrim(Str(<n>))
-#xtranslate hb_Default(@<uVar1>,<uVal1>) => <uVar1>:=iif(IsNil(<uVar1>),<uVal1>,<uVar1>)
 
 procedure u_MainReverseInteger_7_1()
 
@@ -113,33 +107,3 @@ static function reverseString(cInput as character,nSizeInput as numeric) as char
     end while
 
     return(cOutPut)
-
-static function __ConOut(vList as variadic) as character
-
-    local cOut:="",cValType as character
-
-    local nIdx as numeric
-
-    local uValue as variant
-
-    begin sequence
-
-        if (vList==nil)
-            break
-        endif
-
-        for nIdx:=1 to vList:vCount
-            uValue:=vList:vArgs[nIdx]
-            cValType:=ValType(uValue)
-            if (cValType=="N")
-                cOut+=hb_NToC(uValue)
-            elseif (cValType=="A")
-                cOut+=FWJSONSerialize(uValue)
-            else
-                cOut+=cValToChar(uValue)
-            endif
-        next nIdx
-
-    end sequence
-
-    return(cOut)

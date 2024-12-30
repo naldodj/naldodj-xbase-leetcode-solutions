@@ -1,19 +1,19 @@
 /*
     4. Median of Two Sorted Arrays
 
-    Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+    Given two sorted arrays nums1 and nums2 of size m and n respectively,return the median of the two sorted arrays.
 
     The overall run time complexity should be O(log (m+n)).
 
     Example 1:
 
-    Input: nums1 = [1,3], nums2 = [2]
+    Input: nums1 = [1,3],nums2 = [2]
     Output: 2.00000
     Explanation: merged array = [1,2,3] and median is 2.
 
     Example 2:
 
-    Input: nums1 = [1,2], nums2 = [3,4]
+    Input: nums1 = [1,2],nums2 = [3,4]
     Output: 2.50000
     Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
 
@@ -24,7 +24,7 @@
     0 <= m <= 1000
     0 <= n <= 1000
     1 <= m + n <= 2000
-    -106 <= nums1[i], nums2[i] <= 106
+    -106 <= nums1[i],nums2[i] <= 106
 
     Released to Public Domain.
     --------------------------------------------------------------------------------------
@@ -35,99 +35,99 @@ procedure Main()
     local aNums2 as array
     local nMedian as numeric
 
-    aNums1 := {1, 3}
-    aNums2 := {2}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={1,3}
+    aNums2:={2}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {1, 2}
-    aNums2 := {3, 4}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={1,2}
+    aNums2:={3,4}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {0}
-    aNums2 := {3, 4}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={0}
+    aNums2:={3,4}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {1,5}
-    aNums2 := {2,3,4,6}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={1,5}
+    aNums2:={2,3,4,6}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {2,7}
-    aNums2 := {1,3,4,5,6}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={2,7}
+    aNums2:={1,3,4,5,6}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {2,7}
-    aNums2 := {1,3,4,5,6,8}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={2,7}
+    aNums2:={1,3,4,5,6,8}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {1,3}
-    aNums2 := {2}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={1,3}
+    aNums2:={2}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {1,2}
-    aNums2 := {3,4}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={1,2}
+    aNums2:={3,4}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {1,4}
-    aNums2 := {2,3}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={1,4}
+    aNums2:={2,3}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {0}
-    aNums2 := {3,4}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={0}
+    aNums2:={3,4}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {2,5,7}
-    aNums2 := {1,3}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={2,5,7}
+    aNums2:={1,3}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {1,2,3}
-    aNums2 := {4,5,6}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={1,2,3}
+    aNums2:={4,5,6}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {1,3,8}
-    aNums2 := {2,4,5}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={1,3,8}
+    aNums2:={2,4,5}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {0,0}
-    aNums2 := {0,0}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={0,0}
+    aNums2:={0,0}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {}
-    aNums2 := {1}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={}
+    aNums2:={1}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {2}
-    aNums2 := {}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={2}
+    aNums2:={}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {21,33,41}
-    aNums2 := {14,15,16}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={21,33,41}
+    aNums2:={14,15,16}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
-    aNums1 := {3,121,133,141}
-    aNums2 := {5,114,115,116}
-    nMedian := FindMedianSortedArrays(aNums1, aNums2)
-    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")", "Median: ", nMedian,"</br>"
+    aNums1:={3,121,133,141}
+    aNums2:={5,114,115,116}
+    nMedian:=FindMedianSortedArrays(aNums1,aNums2)
+    ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"</br>"
 
     return
 
-static function FindMedianSortedArrays(aNums1, aNums2)
+static function FindMedianSortedArrays(aNums1,aNums2)
 
     local aMerged as array
     local nLen,nLen1,nLen2 as numeric
@@ -153,13 +153,13 @@ static function FindMedianSortedArrays(aNums1, aNums2)
     aCopy(aNums2,@aMerged,1,nLen2,nLen1+1)
     aSort(aMerged)
 
-    nLen := Len(aMerged)
-    nMid := Int(nLen / 2)
+    nLen:=Len(aMerged)
+    nMid:=Int(nLen / 2)
 
     // Verifica se o número de elementos é ímpar
     if nLen % 2 == 1
         return aMerged[nMid + 1] // Índice ajustado para 1-based
     else
-        // Caso par, calcula a média dos dois elementos centrais
+        // Caso par,calcula a média dos dois elementos centrais
         return (aMerged[nMid] + aMerged[nMid + 1]) / 2.0
     endif

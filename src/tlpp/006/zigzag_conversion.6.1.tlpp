@@ -40,16 +40,17 @@
 
 */
 
-#include "totvs.ch"
+#include "dna.tech.leetcode.th"
 
 namespace dna.tech.leetcode
 
 procedure u_MainZigZagConversion_6_1()
 
+    local __cOut:=""
+
     local cInput as character
     local cOutput as character
     local cReverse as character
-    local cContent as character
 
     local nNumRows as numeric
 
@@ -57,57 +58,35 @@ procedure u_MainZigZagConversion_6_1()
     nNumRows:=3
     cOutput:=ZigZagConvert(cInput,nNumRows)
     cReverse:=ReverseZigZag(cOutput,nNumRows)
-    beginContent var cContent
-In:  cInput
-Out: cOutput
-Rev: cReverse
-    endContent
-    cContent:=StrTran(cContent,"cInput",cInput)
-    cContent:=StrTran(cContent,"cOutput",cOutput)
-    cContent:=StrTran(cContent,"cReverse",cReverse)
-    MsgInfo(cContent,ProcName())
+    ? "Input: "+cInput,"</br>"
+    ? "Output: "+cOutput,"</br>"
+    ? "Reverse: "+cReverse,"</br>","</br>"
 
     cInput:="PAYPALISHIRING"
     nNumRows:=4
     cOutput:=ZigZagConvert(cInput,nNumRows)
     cReverse:=ReverseZigZag(cOutput,nNumRows)
-    beginContent var cContent
-In:  cInput
-Out: cOutput
-Rev: cReverse
-    endContent
-    cContent:=StrTran(cContent,"cInput",cInput)
-    cContent:=StrTran(cContent,"cOutput",cOutput)
-    cContent:=StrTran(cContent,"cReverse",cReverse)
-    MsgInfo(cContent,ProcName())
+    ? "Input: "+cInput,"</br>"
+    ? "Output: "+cOutput,"</br>"
+    ? "Reverse: "+cReverse,"</br>","</br>"
 
     cInput:="The quick, brown fox jumps over the lazy dog."
     nNumRows:=10
     cOutput:=ZigZagConvert(cInput,nNumRows)
     cReverse:=ReverseZigZag(cOutput,nNumRows)
-    beginContent var cContent
-In:  cInput
-Out: cOutput
-Rev: cReverse
-    endContent
-    cContent:=StrTran(cContent,"cInput",cInput)
-    cContent:=StrTran(cContent,"cOutput",cOutput)
-    cContent:=StrTran(cContent,"cReverse",cReverse)
-    MsgInfo(cContent,ProcName())
+    ? "Input: "+cInput,"</br>"
+    ? "Output: "+cOutput,"</br>"
+    ? "Reverse: "+cReverse,"</br>","</br>"
 
     cInput:="DAC NTHE"
     nNumRows:=3
     cOutput:=ZigZagConvert(cInput,nNumRows)
     cReverse:=ReverseZigZag(cOutput,nNumRows)
-    beginContent var cContent
-In:  cInput
-Out: cOutput
-Rev: cReverse
-    endContent
-    cContent:=StrTran(cContent,"cInput",cInput)
-    cContent:=StrTran(cContent,"cOutput",cOutput)
-    cContent:=StrTran(cContent,"cReverse",cReverse)
-    MsgInfo(cContent,ProcName())
+    ? "Input: "+cInput,"</br>"
+    ? "Output: "+cOutput,"</br>"
+    ? "Reverse: "+cReverse,"</br>","</br>"
+
+    MsgInfo(__cOut,ProcName())
 
     return
 

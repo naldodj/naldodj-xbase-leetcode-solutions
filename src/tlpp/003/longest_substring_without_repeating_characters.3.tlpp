@@ -33,31 +33,43 @@
 
 */
 
-#include "totvs.ch"
+#include "dna.tech.leetcode.th"
 
 namespace dna.tech.leetcode
 
 procedure u_MainLongestSubstringWithoutRepeatingCharacters()
 
+    local __cOut:="" as character
     local cSubString as character
 
-    MsgInfo("abcabcbb =>"+LTrim(Str(lengthOfLongestsubString("abcabcbb",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName())  // Resultado: 3
+    ? "abcabcbb =>",lengthOfLongestsubString("abcabcbb",@cSubString)," => ",hb_JSONEncode(cSubString)  // Resultado: 3
+    ? "</br>"
 
-    MsgInfo("bbbbb =>"+LTrim(Str(lengthOfLongestsubString("bbbbb",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName())    // Resultado: 1
+    ? "bbbbb =>" ,lengthOfLongestsubString("bbbbb",@cSubString)," => ",hb_JSONEncode(cSubString)     // Resultado: 1
+    ? "</br>"
 
-    MsgInfo("pwwkew =>"+LTrim(Str(lengthOfLongestsubString("pwwkew",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName())    // Resultado: 3
+    ? "pwwkew => ",lengthOfLongestsubString("pwwkew",@cSubString)," => ",hb_JSONEncode(cSubString)    // Resultado: 3
+    ? "</br>"
 
-    MsgInfo("blacktdn =>"+LTrim(Str(lengthOfLongestsubString("blacktdn",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName())  // Resultado: 8
+    ? "blacktdn =>",lengthOfLongestsubString("blacktdn",@cSubString)," => ",hb_JSONEncode(cSubString)  // Resultado: 8
+    ? "</br>"
 
-    MsgInfo("susej ed odlaniram =>"+LTrim(Str(lengthOfLongestsubString("susej ed odlaniram",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName()) // Resultado: 8
+    ? "susej ed odlaniram => ",lengthOfLongestsubString("susej ed odlaniram",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 8
+    ? "</br>"
 
-    MsgInfo("xBase =>"+LTrim(Str(lengthOfLongestsubString("xBase",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName()) // Resultado: 5
+    ? "xBase => ",lengthOfLongestsubString("xBase",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 5
+    ? "</br>"
 
-    MsgInfo("harbour =>"+LTrim(Str(lengthOfLongestsubString("harbour",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName()) // Resultado: 6
+    ? "harbour => ",lengthOfLongestsubString("harbour",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 6
+    ? "</br>"
 
-    MsgInfo("tlpp =>"+LTrim(Str(lengthOfLongestsubString("tlpp",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName()) // Resultado: 3
+    ? "tlpp => ",lengthOfLongestsubString("tlpp",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 3
+    ? "</br>"
 
-    MsgInfo("advpl =>"+LTrim(Str(lengthOfLongestsubString("advpl",@cSubString)))+" =>"+FWJSOnSerialize(cSubString),ProcName()) // Resultado: 5
+    ? "advpl => ",lengthOfLongestsubString("advpl",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 5
+    ? "</br>"
+
+    MsgInfo(__cOut,ProcName())
 
 return
 

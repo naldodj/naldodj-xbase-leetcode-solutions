@@ -20,28 +20,24 @@
 
 */
 
-#include "set.ch"
+#include "dna.tech.leetcode.th"
 
 namespace dna.tech.leetcode
 
-function u_MainSingleNumber136()
+function u_MainSingleNumber_136()
+
+    local __cOut:="" as character
 
     local aNumbers as array
     local nOne as numeric
 
     // Case 1: Numbers appear two times
     aNumbers:={2,3,4,1,4,3,2}
-    MsgInfo(__varInfo("Input Array (Two Times):",aNumbers),"Input Array (Two Times)")
+    ? "Input Array (Two Times): ",aNumbers,"</br>"
     nOne:=singleNumber(aNumbers)
-    MsgInfo("The Single Number is: "+Ltrim(Str(nOne)),"The Single Number")
+    ? "The Single Number is: ",nOne,"</br>","</br>"
 
-    if (.F.)
-        // Case 2: Numbers appear three times
-        aNumbers:={6,5,9,6,4,1,7,7,3,6,10,3,9,8,5,7,10,10,3,1,4,4,5,8,2,1,8,9}
-        MsgInfo(__varInfo("Input Array (Three Times):",aNumbers),"Input Array (Three Times)")
-        nOne:=singleNumber(aNumbers)
-        MsgInfo("The Single Number is: "+Ltrim(Str(nOne)),"The Single Number")
-    endif
+    MsgInfo(__cOut,ProcName())
 
 return nil
 
@@ -53,47 +49,25 @@ static function singleNumber(aNumbers as array)
     local nNoOne:=0 as numeric
 
     // Define precisao decimal para evitar arredondamentos
-    set(_SET_DECIMALS, 0)
+    set(_SET_DECIMALS,0)
 
     nLen:=Len(aNumbers)
 
-    if (Mod(nLen,2) != 0)
+    if (Mod(nLen,2)!=0)
         // Case 1: Numbers appear two times
         aEval(aNumbers,{|n|nOne:=nXor(nOne,n)})
     else
         // Case 2: Numbers appear three times
         for i:=1 to nLen
             // Check if the number is not already in nNoOne
-            if (nAnd(nNoOne,aNumbers[i]) == 0)
+            if (nAnd(nNoOne,aNumbers[i])==0)
                 nOne:=nXor(nOne,aNumbers[i])
             endif
             // Check if the number is not already in nOne
-            if (nAnd(nOne,aNumbers[i]) == 0)
+            if (nAnd(nOne,aNumbers[i])==0)
                 nNoOne:=nXor(nNoOne,aNumbers[i])
             endif
         next i
     endif
 
     return nOne
-
-static function __varInfo(cName as character,xVar as variant) as character
-
-    local cRet:=varInfo(cName,xVar,nil,.F.,.T.) as character
-
-    while ("( "$cRet)
-        cRet:=strTran(cRet,"( ","(")
-    end while
-
-    while ("[ "$cRet)
-        cRet:=strTran(cRet,"[ ","[")
-    end while
-
-    while ("N (15)"$cRet)
-        cRet:=strTran(cRet,"N (15)","")
-    end while
-
-    cRet:=strTran(cRet,"     I","I")
-
-    cRet:=strTran(cRet,".0000","")
-
-return(cRet)

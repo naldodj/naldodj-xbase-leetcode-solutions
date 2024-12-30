@@ -30,14 +30,22 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-#include "totvs.ch"
+#include "dna.tech.leetcode.th"
 
 namespace dna.tech.leetcode
 
-procedure u_MainAddTwoNumbers2_1()
-    MsgInfo("Sum: '243'+'564' => "+ addTwoNumbers("243","564"),ProcName())
-    MsgInfo("Sum: '0'+'0' => "+ addTwoNumbers("0","0"),ProcName())
-    MsgInfo("Sum: '9999999'+'9999' => "+ addTwoNumbers("9999999","9999"),ProcName())
+procedure u_MainAddTwoNumbers_2_1()
+
+    local __cOut:="" as character
+
+    ? "Sum: '243'+'564' => " ,addTwoNumbers("243","564")
+    ? "</br>"
+    ? "Sum: '0'+'0' => " ,addTwoNumbers("0","0")
+    ? "</br>"
+    ? "Sum: '9999999'+'9999' => " ,addTwoNumbers("9999999","9999")
+
+    MsgInfo(__cOut,ProcName())
+
 return
 
 static function addTwoNumbers(a as character, b as character, n as numeric, nBase as numeric)
