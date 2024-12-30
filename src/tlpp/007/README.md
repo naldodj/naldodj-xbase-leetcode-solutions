@@ -24,6 +24,7 @@
     Constraints:
 
     -2^31 <= x <= 2^31 - 1
+---
+***reverse_integer.7.n.tlpp***
 
-`reverse_integer.7.1.tlpp` & `reverse_integer.7.2.tlpp` & `reverse_integer.7.3.tlpp`
-![image](https://github.com/user-attachments/assets/a5fbfe77-a5fe-44b0-a18b-874a930af2b5)
+![image](https://github.com/user-attachments/assets/887537a5-cd61-48be-92c9-bb589de8f299)
