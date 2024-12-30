@@ -35,12 +35,12 @@
     1 <= s.length <= 1000
     s consists of English letters (lower-case and upper-case), ',' and '.'.
     1 <= NumRows <= 1000
+---
+***zigzag_conversion.6.1.tlpp*** 
 
-`zigzag_conversion.6.1.tlpp` & `zigzag_conversion.6.2.tlpp`
-![image](https://github.com/user-attachments/assets/b22ef815-a275-4266-99ff-043fdab95fac)
-![image](https://github.com/user-attachments/assets/f840a88e-1c0f-4927-945c-3ca1a46f3687)
-![image](https://github.com/user-attachments/assets/2bdf10f9-5fca-47e6-84d2-1f2a2d54900a)
-![image](https://github.com/user-attachments/assets/a5c1e663-429e-438c-8304-6373ff8fab3f)
+![image](https://github.com/user-attachments/assets/2d588ba1-15f3-4e34-a2f0-72059b30e4cc)
 
+---
+***zigzag_conversion.6.2.tlpp***
 
-
+![image](https://github.com/user-attachments/assets/92c202cc-d94c-476a-a661-228d6371815c)
