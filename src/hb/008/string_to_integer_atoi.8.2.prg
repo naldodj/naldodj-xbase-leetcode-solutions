@@ -94,34 +94,34 @@ procedure Main()
     local nOutPut as numeric
 
     cInput:="42"
-    ? "Input: ",cInput,"</br>"
+    ? "Input: ",cInput,"<br/>"
     nOutPut:=myAtoi(cInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     cInput:=" -042"
-    ? "Input: ",cInput,"</br>"
+    ? "Input: ",cInput,"<br/>"
     nOutPut:=myAtoi(cInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     cInput:="1337c0d3"
-    ? "Input: ",cInput,"</br>"
+    ? "Input: ",cInput,"<br/>"
     nOutPut:=myAtoi(cInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     cInput:="0-1"
-    ? "Input: ",cInput,"</br>"
+    ? "Input: ",cInput,"<br/>"
     nOutPut:=myAtoi(cInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     cInput:="1-0"
-    ? "Input: ",cInput,"</br>"
+    ? "Input: ",cInput,"<br/>"
     nOutPut:=myAtoi(cInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     cInput:="words and 987"
-    ? "Input: ",cInput,"</br>"
+    ? "Input: ",cInput,"<br/>"
     nOutPut:=myAtoi(cInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
 return
 

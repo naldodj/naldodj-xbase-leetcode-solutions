@@ -38,34 +38,34 @@ procedure Main()
     local nInput as numeric
 
     nInput:=121
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",hb_JSONEncode(lOutPut),"</br>","</br>"
+    ? "Output: ",hb_JSONEncode(lOutPut),"<br/>","<br/>"
 
     nInput*=-1
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",hb_JSONEncode(lOutPut),"</br>","</br>"
+    ? "Output: ",hb_JSONEncode(lOutPut),"<br/>","<br/>"
 
     nInput:=10
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",hb_JSONEncode(lOutPut),"</br>","</br>"
+    ? "Output: ",hb_JSONEncode(lOutPut),"<br/>","<br/>"
 
     nInput:=444
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",hb_JSONEncode(lOutPut),"</br>","</br>"
+    ? "Output: ",hb_JSONEncode(lOutPut),"<br/>","<br/>"
 
     nInput:=454
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",hb_JSONEncode(lOutPut),"</br>","</br>"
+    ? "Output: ",hb_JSONEncode(lOutPut),"<br/>","<br/>"
 
     nInput:=321
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",hb_JSONEncode(lOutPut),"</br>","</br>"
+    ? "Output: ",hb_JSONEncode(lOutPut),"<br/>","<br/>"
 
 return
 

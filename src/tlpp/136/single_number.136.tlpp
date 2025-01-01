@@ -45,9 +45,9 @@ function u_MainSingleNumber_136()
 
     // Case 1: Numbers appear two times
     aNumbers:={2,3,4,1,4,3,2}
-    ? "Input Array (Two Times): ",aNumbers,"</br>"
+    ? "Input Array (Two Times): ",aNumbers,"<br/>"
     nOne:=singleNumber(aNumbers)
-    ? "The Single Number is: ",nOne,"</br>","</br>"
+    ? "The Single Number is: ",nOne,"<br/>","<br/>"
 
     MsgInfo(__cOut,ProcName())
 

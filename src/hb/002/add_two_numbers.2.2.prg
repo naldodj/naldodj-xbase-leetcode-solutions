@@ -36,9 +36,9 @@
 procedure Main()
     // Testa a função `addTwoNumbers` com diferentes entradas
     ? "Sum: [2,4,3]+[5,6,4] => ",hb_JSONEncode(addTwoNumbers({2,4,3},{5,6,4}))
-    ? "</br>"
+    ? "<br/>"
     ? "Sum: [0]+[0] => ",hb_JSONEncode(addTwoNumbers({0},{0}))
-    ? "</br>"
+    ? "<br/>"
     ? "Sum: [9,9,9,9,9,9,9]+[9,9,9,9] => ",hb_JSONEncode(addTwoNumbers({9,9,9,9,9,9,9},{9,9,9,9}))
 return
 

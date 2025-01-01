@@ -34,34 +34,34 @@ procedure Main()
     local nOutPut as numeric
 
     nInput:=123
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     nInput*=-1
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     nInput:=7463847412
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     nInput:=-8463847412
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     nInput:=0x7FFFFFFF
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     nInput:=-0x80000000
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     return
 

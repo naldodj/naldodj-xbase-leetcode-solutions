@@ -45,34 +45,34 @@ procedure u_MainPalindromeNumber_9_1()
     local nInput as numeric
 
     nInput:=121
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",lOutPut,"</br>","</br>"
+    ? "Output: ",lOutPut,"<br/>","<br/>"
 
     nInput*=-1
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",lOutPut,"</br>","</br>"
+    ? "Output: ",lOutPut,"<br/>","<br/>"
 
     nInput:=10
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",lOutPut,"</br>","</br>"
+    ? "Output: ",lOutPut,"<br/>","<br/>"
 
     nInput:=444
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",lOutPut,"</br>","</br>"
+    ? "Output: ",lOutPut,"<br/>","<br/>"
 
     nInput:=454
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",lOutPut,"</br>","</br>"
+    ? "Output: ",lOutPut,"<br/>","<br/>"
 
     nInput:=321
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     lOutPut:=isPalindrome(nInput)
-    ? "Output: ",lOutPut,"</br>","</br>"
+    ? "Output: ",lOutPut,"<br/>","<br/>"
 
     MsgInfo(__cOut,ProcName())
 

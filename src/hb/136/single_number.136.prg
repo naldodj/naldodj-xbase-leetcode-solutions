@@ -40,10 +40,10 @@ function Main()
     // Case 1: Numbers appear two times
     aNumbers:={2,3,4,1,4,3,2}
     ? "Input Array (Two Times):",hb_JSONEncode(aNumbers)
-    ? "</br>"
+    ? "<br/>"
     nOne:=singleNumber(aNumbers)
     ? "The Single Number is:",nOne
-    ? "</br>"
+    ? "<br/>"
 
 return nil
 

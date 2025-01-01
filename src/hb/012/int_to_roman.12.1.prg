@@ -69,39 +69,39 @@ procedure Main()
     local cOutPut as character
 
     nInput:=3749
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"</br>"
+    ? "Output: ",cOutPut,"<br/>"
     nInput:=RomanToDec( cOutPut )
-    ? "Rom2Dec: ",nInput,"</br>","</br>"
+    ? "Rom2Dec: ",nInput,"<br/>","<br/>"
 
     nInput:=58
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"</br>"
+    ? "Output: ",cOutPut,"<br/>"
     nInput:=RomanToDec( cOutPut )
-    ? "Rom2Dec: ",nInput,"</br>","</br>"
+    ? "Rom2Dec: ",nInput,"<br/>","<br/>"
 
     nInput:=1994
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"</br>"
+    ? "Output: ",cOutPut,"<br/>"
     nInput:=RomanToDec( cOutPut )
-    ? "Rom2Dec: ",nInput,"</br>","</br>"
+    ? "Rom2Dec: ",nInput,"<br/>","<br/>"
 
     nInput:=1970
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"</br>"
+    ? "Output: ",cOutPut,"<br/>"
     nInput:=RomanToDec( cOutPut )
-    ? "Rom2Dec: ",nInput,"</br>","</br>"
+    ? "Rom2Dec: ",nInput,"<br/>","<br/>"
 
     nInput:=2010
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"</br>"
+    ? "Output: ",cOutPut,"<br/>"
     nInput:=RomanToDec( cOutPut )
-    ? "Rom2Dec: ",nInput,"</br>","</br>"
+    ? "Rom2Dec: ",nInput,"<br/>","<br/>"
 
 return
 

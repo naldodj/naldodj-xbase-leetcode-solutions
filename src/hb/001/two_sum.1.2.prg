@@ -38,28 +38,28 @@ procedure Main()
     nTarget:=9
     aResult:=TwoSum(aNums,nTarget,lZeroBasedIndex)
     ? "Indexes: " ,hb_JSONEncode(aResult),if(lZeroBasedIndex,"Store the zero-based index","Store the one-based index") // Output the Indexes as JSON: if(lZeroBasedIndex,[0,1],[1,2])
-    ? "</br>"
+    ? "<br/>"
 
     ********************************************************************
     aNums:={ 3,2,4 }
     nTarget:=6 // Target sum
     aResult:=TwoSum(aNums,nTarget,lZeroBasedIndex)
     ? "Indexes: " ,hb_JSONEncode(aResult),if(lZeroBasedIndex,"Store the zero-based index","Store the one-based index") // Output the Indexes as JSON: if(lZeroBasedIndex,[1,2],[2,3])
-    ? "</br>"
+    ? "<br/>"
 
     ********************************************************************
     aNums:={3,3}
     nTarget:=6
     aResult:=TwoSum(aNums,nTarget,lZeroBasedIndex)
     ? "Indexes: " ,hb_JSONEncode(aResult),if(lZeroBasedIndex,"Store the zero-based index","Store the one-based index") // Output the Indexes as JSON: if(lZeroBasedIndex,[0,1],[1,2])
-    ? "</br>"
+    ? "<br/>"
 
     ********************************************************************
     aNums:={2,7,11,15}
     nTarget:=17
     aResult:=TwoSum(aNums,nTarget,lZeroBasedIndex)
     ? "Indexes: " ,hb_JSONEncode(aResult),if(lZeroBasedIndex,"Store the zero-based index","Store the one-based index") // Output the Indexes as JSON: if(lZeroBasedIndex,[0,1],[1,2])
-    ? "</br>"
+    ? "<br/>"
 
     return
 

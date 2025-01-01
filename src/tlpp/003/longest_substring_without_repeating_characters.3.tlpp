@@ -43,31 +43,31 @@ procedure u_MainLongestSubstringWithoutRepeatingCharacters()
     local cSubString as character
 
     ? "abcabcbb =>",lengthOfLongestsubString("abcabcbb",@cSubString)," => ",hb_JSONEncode(cSubString)  // Resultado: 3
-    ? "</br>"
+    ? "<br/>"
 
     ? "bbbbb =>" ,lengthOfLongestsubString("bbbbb",@cSubString)," => ",hb_JSONEncode(cSubString)     // Resultado: 1
-    ? "</br>"
+    ? "<br/>"
 
     ? "pwwkew => ",lengthOfLongestsubString("pwwkew",@cSubString)," => ",hb_JSONEncode(cSubString)    // Resultado: 3
-    ? "</br>"
+    ? "<br/>"
 
     ? "blacktdn =>",lengthOfLongestsubString("blacktdn",@cSubString)," => ",hb_JSONEncode(cSubString)  // Resultado: 8
-    ? "</br>"
+    ? "<br/>"
 
     ? "susej ed odlaniram => ",lengthOfLongestsubString("susej ed odlaniram",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 8
-    ? "</br>"
+    ? "<br/>"
 
     ? "xBase => ",lengthOfLongestsubString("xBase",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 5
-    ? "</br>"
+    ? "<br/>"
 
     ? "harbour => ",lengthOfLongestsubString("harbour",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 6
-    ? "</br>"
+    ? "<br/>"
 
     ? "tlpp => ",lengthOfLongestsubString("tlpp",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 3
-    ? "</br>"
+    ? "<br/>"
 
     ? "advpl => ",lengthOfLongestsubString("advpl",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 5
-    ? "</br>"
+    ? "<br/>"
 
     MsgInfo(__cOut,ProcName())
 

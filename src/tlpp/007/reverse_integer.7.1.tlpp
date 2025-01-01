@@ -41,34 +41,34 @@ procedure u_MainReverseInteger_7_1()
     local nOutPut as numeric
 
     nInput:=123
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     nInput*=-1
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     nInput:=7463847412
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     nInput:=-8463847412
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     nInput:=2147483647
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     nInput:=-2147483648
-    ? "Input: ",nInput,"</br>"
+    ? "Input: ",nInput,"<br/>"
     nOutPut:=ReverseNumber(nInput)
-    ? "Output: ",hb_NToC(nOutPut),"</br>","</br>"
+    ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
     MsgInfo(__cOut,ProcName())
 

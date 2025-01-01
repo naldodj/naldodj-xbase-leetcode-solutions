@@ -52,33 +52,33 @@ procedure Main()
     nNumRows:=3
     cOutput:=ZigZagConvert(cInput,nNumRows)
     cReverse:=ReverseZigZag(cOutput,nNumRows)
-    ? "Input: "+cInput,"</br>"
-    ? "Output: "+cOutput,"</br>"
-    ? "Reverse: "+cReverse,"</br>","</br>"
+    ? "Input: "+cInput,"<br/>"
+    ? "Output: "+cOutput,"<br/>"
+    ? "Reverse: "+cReverse,"<br/>","<br/>"
 
     cInput:="PAYPALISHIRING"
     nNumRows:=4
     cOutput:=ZigZagConvert(cInput,nNumRows)
     cReverse:=ReverseZigZag(cOutput,nNumRows)
-    ? "Input: "+cInput,"</br>"
-    ? "Output: "+cOutput,"</br>"
-    ? "Reverse: "+cReverse,"</br>","</br>"
+    ? "Input: "+cInput,"<br/>"
+    ? "Output: "+cOutput,"<br/>"
+    ? "Reverse: "+cReverse,"<br/>","<br/>"
 
     cInput:="The quick, brown fox jumps over the lazy dog."
     nNumRows:=10
     cOutput:=ZigZagConvert(cInput,nNumRows)
     cReverse:=ReverseZigZag(cOutput,nNumRows)
-    ? "Input: "+cInput,"</br>"
-    ? "Output: "+cOutput,"</br>"
-    ? "Reverse: "+cReverse,"</br>","</br>"
+    ? "Input: "+cInput,"<br/>"
+    ? "Output: "+cOutput,"<br/>"
+    ? "Reverse: "+cReverse,"<br/>","<br/>"
 
     cInput:="DAC NTHE"
     nNumRows:=3
     cOutput:=ZigZagConvert(cInput,nNumRows)
     cReverse:=ReverseZigZag(cOutput,nNumRows)
-    ? "Input: "+cInput,"</br>"
-    ? "Output: "+cOutput,"</br>"
-    ? "Reverse: "+cReverse,"</br>","</br>"
+    ? "Input: "+cInput,"<br/>"
+    ? "Output: "+cOutput,"<br/>"
+    ? "Reverse: "+cReverse,"<br/>","<br/>"
 
     return
 

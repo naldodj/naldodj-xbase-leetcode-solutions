@@ -41,44 +41,44 @@ procedure u_MainLongestPalindromicSubstring_5_2()
     cString:="babad"
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:="cbbd"
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:=__Accentuation("A Aia cuidava das crian#cas com dedica#c#ao.","ccedil","ccedil","atilde")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:="Quem tem aibofobia sente medo de "+__Accentuation("pal#indromos","iacute")+"."
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:=__Accentuation("A ala esquerda do pr#edio foi reformada.","eacute")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:="Ele ama viajar para lugares tranquilos."
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     MsgInfo(__cOut,ProcName())
     __cOut:=""
@@ -86,43 +86,43 @@ procedure u_MainLongestPalindromicSubstring_5_2()
     cString:="A cor foi obtida com anilina natural."
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:=__Accentuation("A ata da reuni#ao foi enviada a todos os participantes.","atilde")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:=__Accentuation("A arara azul #e uma ave bel#issima.","eacute","iacute")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:=__Accentuation("O avi#ao perdeu uma asa no acidente.","atilde")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:=__Accentuation("Ele sempre est#a disposto a ajudar.","aacute")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:=__Accentuation("Esse livro #e um dos meus favoritos.","eacute")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     MsgInfo(__cOut,ProcName())
     __cOut:=""
@@ -130,51 +130,51 @@ procedure u_MainLongestPalindromicSubstring_5_2()
     cString:=__Accentuation("Os beb#es mamam para se alimentar.","ecirc")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:="As ondas fortes matam muitos animais marinhos."
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:=__Accentuation("Eles sempre metem o nariz onde n#ao s#ao chamados.","atilde","atilde")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:="O time mirim venceu o campeonato regional."
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:=__Accentuation("Um relat#ario omiss#issimo em v#arios pontos importantes.","aacute","iacute","aacute")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:=__Accentuation("Viajar para a cidade natal faz muitos reviverem mem#orias antigas.","oacute")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     cString:=__Accentuation("A discuss#ao acalorada terminou em sopapos.","atilde")
     cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
     cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
-    ? "Input:",cString,"</br>
-    ? "Brute Force Output:",cLongestPalindrome1,"</br>
-    ? "Manacher Output:",cLongestPalindrome2,"</br></br>"
+    ? "Input:",cString,"<br/>
+    ? "Brute Force Output:",cLongestPalindrome1,"<br/>
+    ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
     MsgInfo(__cOut,ProcName())
 

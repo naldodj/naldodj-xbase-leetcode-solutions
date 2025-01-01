@@ -34,10 +34,10 @@ function Main()
     // Case 2: Numbers appear three times
     aNumbers:={6,5,9,6,4,1,7,7,3,6,10,3,9,8,5,7,10,10,3,1,4,4,5,8,2,1,8,9}
     ? "Input Array (Three Times):",hb_JSONEncode(aNumbers)
-    ? "</br>"
+    ? "<br/>"
     nOne:=singleNumber(aNumbers)
     ? "The Single Number is:",nOne
-    ? "</br>"
+    ? "<br/>"
 
 return nil
 

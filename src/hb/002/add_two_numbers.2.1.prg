@@ -32,9 +32,9 @@
 */
 procedure Main()
     ? "Sum: '243'+'564' => " ,addTwoNumbers("243","564")
-    ? "</br>"
+    ? "<br/>"
     ? "Sum: '0'+'0' => " ,addTwoNumbers("0","0")
-    ? "</br>"
+    ? "<br/>"
     ? "Sum: '9999999'+'9999' => " ,addTwoNumbers("9999999","9999")
 return
 

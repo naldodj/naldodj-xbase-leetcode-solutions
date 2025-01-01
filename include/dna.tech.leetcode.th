@@ -13,8 +13,8 @@
 
     #xcommand ?  [ <vList,...> ] => ( [ __cOut+=dna.tech.leetcode.Tools():OutStd( <vList> ) ] )
 
-    #xtranslate "</br></br>" => "</br>","</br>"
-    #xtranslate "</br>" => chr(13)+chr(10)
+    #xtranslate "<br/><br/>" => "<br/>","<br/>"
+    #xtranslate "<br/>" => chr(13)+chr(10)
 
     #xtranslate IsNil(<uValue>) => Eval({|uValue|uValue==NIL},<uValue>)
 

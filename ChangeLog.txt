@@ -3,6 +3,61 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-01-01 10:30 UTC naldodj (</br> => <br/>)
+  * .gitignore
+  * include/dna.tech.leetcode.th
+  * src/hb/001/two_sum.1.2.prg
+  * src/hb/002/add_two_numbers.2.0.prg
+  * src/hb/002/add_two_numbers.2.1.prg
+  * src/hb/002/add_two_numbers.2.2.prg
+  * src/hb/003/longest_substring_without_repeating_characters.3.prg
+  * src/hb/004/median_of_two_sorted_arrays.4.1.prg
+  * src/hb/004/median_of_two_sorted_arrays.4.2.prg
+  * src/hb/004/median_of_two_sorted_arrays.4.3.prg
+  * src/hb/005/longest_palindromic_substring.5.1.prg
+  * src/hb/005/longest_palindromic_substring.5.2.prg
+  * src/hb/006/zigzag_conversion.6.1.prg
+  * src/hb/006/zigzag_conversion.6.2.prg
+  * src/hb/007/reverse_integer.7.1.prg
+  * src/hb/007/reverse_integer.7.2.prg
+  * src/hb/007/reverse_integer.7.3.prg
+  * src/hb/008/string_to_integer_atoi.8.1.prg
+  * src/hb/008/string_to_integer_atoi.8.2.prg
+  * src/hb/009/palindrome_number.9.1.prg
+  * src/hb/009/palindrome_number.9.2.prg
+  * src/hb/012/int_to_roman.12.1.prg
+  * src/hb/012/int_to_roman.12.2.prg
+  * src/hb/012/int_to_roman.12.3.prg
+  * src/hb/012/int_to_roman.12.4.prg
+  * src/hb/136/single_number.136.prg
+  * src/hb/137/single_number.137.prg
+  * src/tlpp/001/two_sum.1.1.tlpp
+  * src/tlpp/001/two_sum.1.2.tlpp
+  * src/tlpp/002/add_two_numbers.2.0.tlpp
+  * src/tlpp/002/add_two_numbers.2.1.tlpp
+  * src/tlpp/002/add_two_numbers.2.2.tlpp
+  * src/tlpp/003/longest_substring_without_repeating_characters.3.tlpp
+  * src/tlpp/004/median_of_two_sorted_arrays.4.1.tlpp
+  * src/tlpp/004/median_of_two_sorted_arrays.4.2.tlpp
+  * src/tlpp/004/median_of_two_sorted_arrays.4.3.tlpp
+  * src/tlpp/005/longest_palindromic_substring.5.1.tlpp
+  * src/tlpp/005/longest_palindromic_substring.5.2.tlpp
+  * src/tlpp/006/zigzag_conversion.6.1.tlpp
+  * src/tlpp/006/zigzag_conversion.6.2.tlpp
+  * src/tlpp/007/reverse_integer.7.1.tlpp
+  * src/tlpp/007/reverse_integer.7.2.tlpp
+  * src/tlpp/007/reverse_integer.7.3.tlpp
+  * src/tlpp/008/string_to_integer_atoi.8.1.tlpp
+  * src/tlpp/008/string_to_integer_atoi.8.2.tlpp
+  * src/tlpp/009/palindrome_number.9.1.tlpp
+  * src/tlpp/009/palindrome_number.9.2.tlpp
+  * src/tlpp/012/int_to_roman.12.1.tlpp
+  * src/tlpp/012/int_to_roman.12.2.tlpp
+  * src/tlpp/012/int_to_roman.12.3.tlpp
+  * src/tlpp/012/int_to_roman.12.4.tlpp
+  * src/tlpp/136/single_number.136.tlpp
+  * src/tlpp/137/single_number.137.tlpp
+
 2024-12-30 12:51 UTC naldodj
   * src/hb/136/single_number.136.prg
   * src/hb/137/single_number.137.prg

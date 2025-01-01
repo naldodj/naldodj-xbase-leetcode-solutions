@@ -39,56 +39,56 @@ procedure Main()
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="cbbd"
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="A Aia cuidava das crianças com dedicação."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="Quem tem aibofobia sente medo de palíndromos."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="A ala esquerda do prédio foi reformada."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="Ele ama viajar para lugares tranquilos."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="A cor foi obtida com anilina natural."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="A ata da reunião foi enviada a todos os participantes."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
 
    cString:="A arara azul é uma ave belíssima."
@@ -96,7 +96,7 @@ procedure Main()
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
 
    cString:="O avião perdeu uma asa no acidente."
@@ -104,70 +104,70 @@ procedure Main()
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="Ele sempre está disposto a ajudar."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="Esse livro é um dos meus favoritos."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="Os bebês mamam para se alimentar."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="As ondas fortes matam muitos animais marinhos."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="Eles sempre metem o nariz onde não são chamados."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="O time mirim venceu o campeonato regional."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="Um relatório omissíssimo em vários pontos importantes."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="Viajar para a cidade natal faz muitos reviverem memórias antigas."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    cString:="A discussão acalorada terminou em sopapos."
    cLongestPalindrome1:=hb_JSONEncode(LongestPalindromicSubstring(cString))
    cLongestPalindrome2:=hb_JSONEncode(Manacher(cString))
    ? "Input:", cString," => "
    ? "Brute Force Output:", cLongestPalindrome1," :: "
-   ? "Manacher Output:", cLongestPalindrome2,"</br></br>"
+   ? "Manacher Output:", cLongestPalindrome2,"<br/><br/>"
 
    return
 
