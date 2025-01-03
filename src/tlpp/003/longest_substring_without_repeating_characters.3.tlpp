@@ -39,7 +39,6 @@ namespace dna.tech.leetcode
 
 procedure u_MainLongestSubstringWithoutRepeatingCharacters()
 
-    local __cOut:="" as character
     local cSubString as character
 
     ? "abcabcbb =>",lengthOfLongestsubString("abcabcbb",@cSubString)," => ",hb_JSONEncode(cSubString)  // Resultado: 3
@@ -69,7 +68,7 @@ procedure u_MainLongestSubstringWithoutRepeatingCharacters()
     ? "advpl => ",lengthOfLongestsubString("advpl",@cSubString)," => ",hb_JSONEncode(cSubString) // Resultado: 5
     ? "<br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
 
 return
 

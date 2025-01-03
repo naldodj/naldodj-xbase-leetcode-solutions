@@ -89,16 +89,18 @@ procedure Main()
         cHTML+=            "<td align='left' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+cInput+"</td>"
         cHTML+=            "<td align='left' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+cPattern+"</td>"
         cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(lOutPut)+"</td>"
-        cHTML+=            "<td align='center'style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInputs[nInput][1])+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInputs[nInput][1])+"</td>"
         cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(lMatched)+"</td>"
         cHTML+=        "</tr>"
     next nInput
     cHTML+=    "</tbody>"
     cHTML+="</table>"
+
     ? cHTML
 
     return
 
+// Wrapper function
 static function IsMatch(cString as character,cPattern as character,nMin as numeric,nMax as numeric)
     return(IsMatchRecursive(cString,cPattern,nMin,nMax)) as logical
 

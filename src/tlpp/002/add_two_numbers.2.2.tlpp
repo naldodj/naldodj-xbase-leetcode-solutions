@@ -36,8 +36,6 @@ namespace dna.tech.leetcode
 
 procedure u_MainAddTwoNumbers_2_2()
 
-    local __cOut:="" as character
-
     // Testa a funcao `addTwoNumbers` com diferentes entradas
     ? "Sum: [2,4,3]+[5,6,4] => ", hb_JSONEncode(addTwoNumbers({2,4,3}, {5,6,4}))
     ? "<br/>"
@@ -45,7 +43,7 @@ procedure u_MainAddTwoNumbers_2_2()
     ? "<br/>"
     ? "Sum: [9,9,9,9,9,9,9]+[9,9,9,9] => ", hb_JSONEncode(addTwoNumbers({9,9,9,9,9,9,9}, {9,9,9,9}))
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
 
 return
 

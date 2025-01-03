@@ -36,8 +36,6 @@ namespace dna.tech.leetcode
 
 procedure u_MainMedianOfTwoSortedArrays_4_3()
 
-    local __cOut:="" as character
-
     local aNums1 as array
     local aNums2 as array
     local nMedian as numeric
@@ -132,7 +130,7 @@ procedure u_MainMedianOfTwoSortedArrays_4_3()
     nMedian:=FindMedianSortedArrays(aNums1,aNums2)
     ? "FindMedianSortedArrays("+hb_JSONEncode(aNums1)+","+hb_JSONEncode(aNums2)+")"," Median: ",nMedian,"<br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
 
     return
 

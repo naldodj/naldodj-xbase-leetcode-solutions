@@ -38,8 +38,6 @@ namespace dna.tech.leetcode
 
 function u_MainSingleNumber_136()
 
-    local __cOut:="" as character
-
     local aNumbers as array
     local nOne as numeric
 
@@ -49,7 +47,7 @@ function u_MainSingleNumber_136()
     nOne:=singleNumber(aNumbers)
     ? "The Single Number is: ",nOne,"<br/>","<br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
 
 return nil
 

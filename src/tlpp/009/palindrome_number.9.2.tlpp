@@ -38,8 +38,6 @@ namespace dna.tech.leetcode
 
 procedure u_MainPalindromeNumber_9_2()
 
-    local __cOut:="" as character
-
     local lOutPut as logical
 
     local nInput as numeric
@@ -74,7 +72,7 @@ procedure u_MainPalindromeNumber_9_2()
     lOutPut:=isPalindrome(nInput)
     ? "Output: ",lOutPut,"<br/>","<br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
 
 return
 

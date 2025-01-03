@@ -32,8 +32,6 @@ static __aAccentuation as array
 
 procedure u_MainLongestPalindromicSubstring_5_2()
 
-    local __cOut:="" as character
-
     local cString as character
     local cLongestPalindrome1 as character
     local cLongestPalindrome2 as character
@@ -80,7 +78,7 @@ procedure u_MainLongestPalindromicSubstring_5_2()
     ? "Brute Force Output:",cLongestPalindrome1,"<br/>
     ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
     __cOut:=""
 
     cString:="A cor foi obtida com anilina natural."
@@ -124,7 +122,7 @@ procedure u_MainLongestPalindromicSubstring_5_2()
     ? "Brute Force Output:",cLongestPalindrome1,"<br/>
     ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
     __cOut:=""
 
     cString:=__Accentuation("Os beb#es mamam para se alimentar.","ecirc")
@@ -176,7 +174,7 @@ procedure u_MainLongestPalindromicSubstring_5_2()
     ? "Brute Force Output:",cLongestPalindrome1,"<br/>
     ? "Manacher Output:",cLongestPalindrome2,"<br/><br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
 
     return
 

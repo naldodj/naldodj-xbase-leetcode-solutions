@@ -33,8 +33,6 @@ namespace dna.tech.leetcode
 
 procedure u_MainTwoSum_1_1()
 
-    local __cOut:="" as character
-
     local aNums as array  // Input array of integers
     local aResult as array // Array to hold the result Indexes
     local nTarget as numeric  // Target sum
@@ -68,7 +66,7 @@ procedure u_MainTwoSum_1_1()
     ? "Indexes: " ,hb_JSONEncode(aResult),if(lZeroBasedIndex,"Store the zero-based index","Store the one-based index") // Output the Indexes as JSON: if(lZeroBasedIndex,[0,1],[1,2])
     ? "<br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
 
     return
 

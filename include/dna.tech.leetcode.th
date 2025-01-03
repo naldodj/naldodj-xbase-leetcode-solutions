@@ -11,7 +11,8 @@
 
     #define __DNA_TECH_LEETCOD_TH__
 
-    #xcommand ?  [ <vList,...> ] => ( [ __cOut+=dna.tech.leetcode.Tools():OutStd( <vList> ) ] )
+    #xcommand ?  [ <vList,...> ] => (if(type("__cOut")=="U",__cOut:="",nil),[ __cOut+=dna.tech.leetcode.Tools():OutStd( <vList> ) ] )
+    #xtranslate __getOutStd() => (if(type("__cOut")=="C",__cOut,""))
 
     #xtranslate "<br/><br/>" => "<br/>","<br/>"
     #xtranslate "<br/>" => chr(13)+chr(10)
@@ -24,6 +25,9 @@
     #xtranslate hb_NToC(<n>) => LTrim(Str(<n>))
     #xtranslate hb_Default(@<uVar1>,<uVal1>) => <uVar1>:=iif(IsNil(<uVar1>),<uVal1>,<uVar1>)
     #xtranslate hb_regexlike(<cPattern>,<cString>) => tlpp.regex.Regex():matches(<cPattern>,<cString>)
+
+    #xtranslate hb_regexMatch(<cString>,<cPattern>) => (__oRegex:=tlpp.regex.Regex():New(<cPattern>),__oRegex:setCaseSensitive(.T.),__lMatches:=__oRegex:fullMatch(<cString>),freeObj(__oRegex),__lMatches)
+
     #xtranslate hb_regexSplit(<cToken>,<cString>) => strTokArr2(<cString>,<cToken>)
 
     //TL++ nao tem suporte,ainda,para notacao Hexadecimal de forna nativa

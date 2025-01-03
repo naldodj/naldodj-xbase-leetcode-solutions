@@ -46,8 +46,6 @@ namespace dna.tech.leetcode
 
 procedure u_MainZigZagConversion_6_1()
 
-    local __cOut:=""
-
     local cInput as character
     local cOutput as character
     local cReverse as character
@@ -86,7 +84,7 @@ procedure u_MainZigZagConversion_6_1()
     ? "Output: "+cOutput,"<br/>"
     ? "Reverse: "+cReverse,"<br/>","<br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
 
     return
 

@@ -34,8 +34,6 @@ namespace dna.tech.leetcode
 
 procedure u_MainReverseInteger_7_3()
 
-    local __cOut:="" as character
-
     local nInput as numeric
     local nOutPut as numeric
 
@@ -69,7 +67,7 @@ procedure u_MainReverseInteger_7_3()
     nOutPut:=ReverseNumber(nInput)
     ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
 
     return
 

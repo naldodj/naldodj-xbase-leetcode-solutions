@@ -70,8 +70,6 @@ namespace dna.tech.leetcode
 
 procedure u_MainIntToRoman_12_3()
 
-    local __cOut:="" as character
-
     local nInput as numeric
     local cOutPut as character
 
@@ -110,7 +108,7 @@ procedure u_MainIntToRoman_12_3()
     nInput:=RomanToDec( cOutPut )
     ? "Rom2Dec: ",nInput,"<br/>","<br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
 
 return
 

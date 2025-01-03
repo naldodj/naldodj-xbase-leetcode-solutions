@@ -38,9 +38,13 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+#include "dna.tech.leetcode.th"
 
-    local aInputs as array:=Array(0)
+namespace dna.tech.leetcode
+
+procedure u_MainRegularExpressionMatching_10_2()
+
+    local aInputs:=Array(0) as array
 
     local cHTML as character
     local cInput as character
@@ -96,11 +100,13 @@ procedure Main()
 
     ? cHTML
 
+    ApMsgInfo(__getOutStd(),ProcName())
+
     return
 
 // Wrapper function
-static function IsMatch(cString as character,cPattern as character,nMin as numeric,nMax as numeric)
-    return(IsMatchRecursive(cString,cPattern,nMin,nMax)) as logical
+static function IsMatch(cString as character,cPattern as character,nMin as numeric,nMax as numeric) as logical
+    return(IsMatchRecursive(cString,cPattern,nMin,nMax))
 
 static function IsMatchRecursive(cString as character,cPattern as character,nMin as numeric,nMax as numeric)
 
@@ -150,7 +156,7 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
             break
         endif
 
-        nTrimPatSize:=Min(nPatSize,Len(hb_StrReplace(cPattern,{".*"=>""})))
+        nTrimPatSize:=Min(nPatSize,Len(StrTran(cPattern,".*","")))
 
         lMatch:=(;
                     (nPatSize==nStrSize);
@@ -179,7 +185,7 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
 
     end sequence
 
-    return(lMatch) as logical
+    return(lMatch)
 
 /*
     ref.: https://www.geeksforgeeks.org/implementing-regular-expression-matching/
@@ -252,27 +258,27 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
     }
 
 */
-static function __IsMatch(t as character,p as character,n as numeric, m as numeric)
+static function __IsMatch(t as character,p as character,n as numeric, m as numeric) as logical
 
-    local zero as logical:=.F.
-    local oneOrMore as logical:=.F.
+    local zero:=.F. as logical
+    local oneOrMore:=.F. as logical
 
     // If pattern is empty, then text must also be
     // empty
     if (m == 0)
-        return(n == 0) as logical
+        return(n == 0)
     endif
 
     // If text is empty, then pattern can have characters
     // followed by *s
     if (n == 0)
-        return((m >= 2 .and. subStr(p,m-1,1) == '*') .and.  __IsMatch(t, p, n, m - 2)) as logical
+        return((m >= 2 .and. subStr(p,m-1,1) == '*') .and.  __IsMatch(t, p, n, m - 2))
     endif
 
     // If last characters of both string and pattern
     // match, or pattern has '.'
     if (subStr(t,n-1,1) == subStr(p,m-1,1) .or. subStr(p,m-1,1) == '.')
-        return(__IsMatch(t, p, n - 1, m - 1)) as logical
+        return(__IsMatch(t, p, n - 1, m - 1))
     endif
 
     // Handle '*' in the pattern
@@ -286,13 +292,9 @@ static function __IsMatch(t as character,p as character,n as numeric, m as numer
         // of the preceding character
         oneOrMore = (subStr(p,m-2,1) == subStr(t,n-1,1) .or. subStr(p,m - 2,1) == '.') .and. __IsMatch(t, p, n - 1, m)
 
-        return(zero .or. oneOrMore) as logical
+        return(zero .or. oneOrMore)
 
     endif
 
     // If no match
-    return(.F.) as logical
-
-static function hb_regexMatch(cString,cPattern)
-   local pRegex as pointer:=hb_regexComp(cPattern)
-   return(!Empty(hb_regex(pRegex,cString,.T./* Case sensitive */))) as logical
+    return(.F.)

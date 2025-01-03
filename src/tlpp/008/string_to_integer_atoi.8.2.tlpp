@@ -94,8 +94,6 @@ namespace dna.tech.leetcode
 
 procedure u_MainStringToIntegerAtoI_8_2()
 
-    local __cOut:="" as character
-
     local cInput as character
     local nOutPut as numeric
 
@@ -129,7 +127,7 @@ procedure u_MainStringToIntegerAtoI_8_2()
     nOutPut:=myAtoi(cInput)
     ? "Output: ",hb_NToC(nOutPut),"<br/>","<br/>"
 
-    MsgInfo(__cOut,ProcName())
+    ApMsgInfo(__getOutStd(),ProcName())
 
 return
 

@@ -38,9 +38,13 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+#include "dna.tech.leetcode.th"
 
-    local aInputs as array:=Array(0)
+namespace dna.tech.leetcode
+
+procedure u_MainRegularExpressionMatching_10_4()
+
+    local aInputs:=Array(0) as array
 
     local cHTML as character
     local cInput as character
@@ -53,7 +57,9 @@ procedure Main()
 
     aAdd(aInputs,{.T.,"ab",".*"})
     aAdd(aInputs,{.F.,"ab","*."})
+    //s contains only lowercase English letters.
     aAdd(aInputs,{.F.,"Aa",".."})
+    //s contains only lowercase English letters.
     aAdd(aInputs,{.F.,"Aa",".*"})
     aAdd(aInputs,{.F.,"harbour","h**.ou*"})
     aAdd(aInputs,{.F.,"harbour","h*r.ou*"})
@@ -96,22 +102,32 @@ procedure Main()
 
     ? cHTML
 
+    ApMsgInfo(__getOutStd(),ProcName())
+
     return
 
 // Wrapper function
-static function IsMatch(cString as character,cPattern as character,nMin as numeric,nMax as numeric)
-    return(IsMatchRecursive(cString,cPattern,nMin,nMax)) as logical
+static function IsMatch(cString as character,cPattern as character) as logical
+    return(IsMatchDP(cString,cPattern))
 
-static function IsMatchRecursive(cString as character,cPattern as character,nMin as numeric,nMax as numeric)
+// Wrapper function
+static function IsMatchDP(cString as character,cPattern as character,nMin as numeric,nMax as numeric) as logical
+    return(__IsMatch(@cString,@cPattern,@nMin,@nMax))
+
+static function __IsMatch(cString as character,cPattern as character,nMin as numeric,nMax as numeric) as logical
 
     local cTmpChar as character
 
-    local lMatch as logical
+    local cCurrentChar as character
+    local cLastChar:="" as character
 
-    local nPatIdx as numeric
-    local nStrSize as numeric
-    local nPatSize as numeric
-    local nTrimPatSize as numeric
+    local cCurrentToken as character
+    local cLastToken as character
+
+    local lMatch as logical,lMatch1:=.T. as logical ,lMatch2:=.F. as logical
+    local lAcceptChar,lSameSize,lSameIndex as logical
+
+    local nIdx,nStrSize,nPatSize,nStrIdx,nPatIdx,nTrimPatSize as numeric
 
     hb_default(@nMin,1)
     hb_default(@nMax,20)
@@ -150,7 +166,7 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
             break
         endif
 
-        nTrimPatSize:=Min(nPatSize,Len(hb_StrReplace(cPattern,{".*"=>""})))
+        nTrimPatSize:=Min(nPatSize,Len(StrTran(cPattern,".*","")))
 
         lMatch:=(;
                     (nPatSize==nStrSize);
@@ -175,124 +191,60 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
             endif
         next nPatIdx
 
-        lMatch:=__IsMatch(cString,cPattern,nStrSize+1,nPatSize+1)
+        lMatch:=.T.
+        lSameSize:=(nPatSize==nStrSize)
+
+        nIdx:=1
+
+        for nStrIdx=1 to nStrSize
+            cCurrentChar:=subStr(cString,nStrIdx,1)
+            lAcceptChar:=if(cLastChar=="",.T.,cCurrentChar==cLastChar)
+            cLastToken:=if(nIdx>1,subStr(cPattern,nIdx-1,1),"")
+            for nPatIdx:=nIdx to nPatSize
+                lSameIndex:=(nPatIdx==nStrIdx)
+                cCurrentToken:=subStr(cPattern,nPatIdx,1)
+                if (!lAcceptChar)
+                    lAcceptChar:=((cCurrentToken$cCurrentChar+".").and.(lSameSize).and.(lSameIndex))
+                endif
+                if (cCurrentToken=="*")
+                    lMatch1:=(;
+                                ((lMatch).or.(lMatch2));
+                                .and.(;
+                                        (((lSameSize).and.(lSameIndex).and.(lAcceptChar))).and.(cCurrentToken$cCurrentChar+"*");
+                                        .or.;
+                                        (((lSameSize).or.(lSameIndex)).and.(lAcceptChar).and.(cCurrentToken$cCurrentChar+"*"));
+                                        .or.;
+                                        ((lAcceptChar).and.(".*"$cPattern).and.(cCurrentToken$cCurrentChar+".*"));
+                                        .or.;
+                                        (cLastToken==".");
+                                );
+                    )
+                else
+                    lMatch2:=(;
+                                ((lMatch).or.(lMatch1));
+                                .and.;
+                                (;
+                                    (((lSameSize).and.(lSameIndex).and.(lAcceptChar)).and.((cCurrentToken$cCurrentChar+".")).or.("*."$cLastToken+cCurrentToken));
+                                    .or.;
+                                    (((lSameSize).or.(lSameIndex)).and.(lAcceptChar).and.(cCurrentToken$cCurrentChar+"."));
+                                    .or.;
+                                    ((lAcceptChar).and.(".*"$cPattern).and.(cCurrentToken$cCurrentChar+"."));
+                                    .or.;
+                                    ("*"$cLastToken+cCurrentToken).or.(cLastToken=="");
+                                );
+                    )
+                endif
+                if ((!lMatch1).and.(!lMatch2))
+                    break
+                else
+                    exit
+                endif
+            next nPatSize
+            cLastChar:=cCurrentChar
+            nIdx++
+            lMatch:=((lMatch1).and.(lMatch2))
+        next nStrIdx
 
     end sequence
 
-    return(lMatch) as logical
-
-/*
-    ref.: https://www.geeksforgeeks.org/implementing-regular-expression-matching/
-
-    #include <iostream>
-    using namespace std;
-
-    bool isMatchRec(string t, string p, int n, int m) {
-
-        // If pattern is empty, then text must also be
-        // empty
-        if (m == 0) {
-            return n == 0;
-        }
-
-        // If text is empty, then pattern can have characters
-        // followed by *s
-        if (n == 0) {
-            return (m >= 2 && p[m - 1] == '*') &&
-                     isMatchRec(t, p, n, m - 2);
-        }
-
-        // If last characters of both string and pattern
-        // match, or pattern has '.'
-        if (t[n - 1] == p[m - 1] || p[m - 1] == '.') {
-            return isMatchRec(t, p, n - 1, m - 1);
-        }
-
-        // Handle '*' in the pattern
-        if (p[m - 1] == '*' && m > 1) {
-
-            // Check if '*' can represent zero occurrences
-            // of the preceding character
-            bool zero = isMatchRec(t, p, n, m - 2);
-
-            // Check if '*' can represent one or more occurrences
-            // of the preceding character
-            bool oneOrMore = (p[m - 2] == t[n - 1] || p[m - 2] == '.') &&
-                                           isMatchRec(t, p, n - 1, m);
-
-            return zero || oneOrMore;
-        }
-
-        // If no match
-        return false;
-    }
-
-    // Wrapper function
-    bool isMatch(string t, string p) {
-        return isMatchRec(t, p, t.size(), p.size());
-    }
-
-    int main() {
-        cout << boolalpha << isMatch("ab", ".*") << endl;                   //true
-        cout << boolalpha << isMatch("ab", "*.") << endl;                   //false
-        cout << boolalpha << isMatch("Aa", "..") << endl;                   //true
-        cout << boolalpha << isMatch("Aa", ".*") << endl;                   //true
-        cout << boolalpha << isMatch("harbour", "h**.ou*") << endl;         //false
-        cout << boolalpha << isMatch("harbour", "h*r.ou*") << endl;         //false
-        cout << boolalpha << isMatch("harbour", "h.r.ou.") << endl;         //true
-        cout << boolalpha << isMatch("aab", "a.*") << endl;                 //true
-        cout << boolalpha << isMatch("aab", "a*.*") << endl;                //true
-        cout << boolalpha << isMatch("aa", "a") << endl;                    //false
-        cout << boolalpha << isMatch("aa", "a.*") << endl;                  //true
-        cout << boolalpha << isMatch("ab", "*") << endl;                    //false
-        cout << boolalpha << isMatch("mississippi", "mis*is*p*.") << endl;  //false
-        cout << boolalpha << isMatch("mississippi", "mis*is*ip.*") << endl; //true
-        cout << boolalpha << isMatch("mississippi", "mississippi") << endl; //true
-        return 0;
-    }
-
-*/
-static function __IsMatch(t as character,p as character,n as numeric, m as numeric)
-
-    local zero as logical:=.F.
-    local oneOrMore as logical:=.F.
-
-    // If pattern is empty, then text must also be
-    // empty
-    if (m == 0)
-        return(n == 0) as logical
-    endif
-
-    // If text is empty, then pattern can have characters
-    // followed by *s
-    if (n == 0)
-        return((m >= 2 .and. subStr(p,m-1,1) == '*') .and.  __IsMatch(t, p, n, m - 2)) as logical
-    endif
-
-    // If last characters of both string and pattern
-    // match, or pattern has '.'
-    if (subStr(t,n-1,1) == subStr(p,m-1,1) .or. subStr(p,m-1,1) == '.')
-        return(__IsMatch(t, p, n - 1, m - 1)) as logical
-    endif
-
-    // Handle '*' in the pattern
-    if (subStr(p,m-1,1) == '*' .and. m > 1)
-
-        // Check if '*' can represent zero occurrences
-        // of the preceding character
-        zero = __IsMatch(t, p, n, m - 2)
-
-        // Check if '*' can represent one or more occurrences
-        // of the preceding character
-        oneOrMore = (subStr(p,m-2,1) == subStr(t,n-1,1) .or. subStr(p,m - 2,1) == '.') .and. __IsMatch(t, p, n - 1, m)
-
-        return(zero .or. oneOrMore) as logical
-
-    endif
-
-    // If no match
-    return(.F.) as logical
-
-static function hb_regexMatch(cString,cPattern)
-   local pRegex as pointer:=hb_regexComp(cPattern)
-   return(!Empty(hb_regex(pRegex,cString,.T./* Case sensitive */))) as logical
+    return(lMatch)

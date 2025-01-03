@@ -38,9 +38,13 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+#include "dna.tech.leetcode.th"
 
-    local aInputs as array:=Array(0)
+namespace dna.tech.leetcode
+
+procedure u_MainRegularExpressionMatching_10_3()
+
+    local aInputs:=Array(0) as array
 
     local cHTML as character
     local cInput as character
@@ -96,22 +100,19 @@ procedure Main()
 
     ? cHTML
 
+    ApMsgInfo(__getOutStd(),ProcName())
+
     return
 
 // Wrapper function
-static function IsMatch(cString as character,cPattern as character,nMin as numeric,nMax as numeric)
-    return(IsMatchRecursive(cString,cPattern,nMin,nMax)) as logical
+static function IsMatch(cString as character,cPattern as character) as logical
+    return(IsMatchDP(cString,cPattern))
 
-static function IsMatchRecursive(cString as character,cPattern as character,nMin as numeric,nMax as numeric)
-
-    local cTmpChar as character
+static function IsMatchDP(cStringtring as character,cPattern as character,nMin as numeric,nMax as numeric)
 
     local lMatch as logical
-
-    local nPatIdx as numeric
     local nStrSize as numeric
     local nPatSize as numeric
-    local nTrimPatSize as numeric
 
     hb_default(@nMin,1)
     hb_default(@nMax,20)
@@ -119,7 +120,7 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
     begin sequence
 
         //1 <= s.length <= 20
-        nStrSize:=Len(cString)
+        nStrSize:=Len(cStringtring)
         lMatch:=((nStrSize>=nMin).and.(nStrSize<=nMax))
         if (!lMatch)
             break
@@ -133,103 +134,75 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
         endif
 
         //s contains only lowercase English letters.
-        lMatch:=hb_RegexMatch(cString,"^[a-z]+$")
+        lMatch:=hb_RegexMatch(cStringtring,"^[a-z]+$")
         if (!lMatch)
             break
         endif
 
         //p contains only lowercase English letters, '.', and '*'.
-        lMatch:=hb_RegexMatch(cPattern,"^[a-z.*]+$")
+        lMatch:=hb_RegexMatch(cStringtring,"^[a-z.*]+$")
         if (!lMatch)
             break
         endif
 
-        //It is guaranteed for each appearance of the character '*', there will be a previous valid character to match.
-        lMatch:=(!("**"$cPattern).and.(!Left(cPattern,1)=="*"))
-        if (!lMatch)
-            break
+        if nPatSize<nStrSize
+            cPattern:=PadR(cPattern,nStrSize)
+            nStrSize:=nStrSize
         endif
 
-        nTrimPatSize:=Min(nPatSize,Len(hb_StrReplace(cPattern,{".*"=>""})))
-
-        lMatch:=(;
-                    (nPatSize==nStrSize);
-                    .or.;
-                    (;
-                        (nTrimPatSize<nStrSize);
-                        .and.;
-                        (!cPattern$cString);
-                    );
-        )
-        if (!lMatch)
-            break
-        endif
-
-        for nPatIdx:=1 to nPatSize
-            cTmpChar:=subStr(cPattern,nPatIdx,1)
-            if (!cTmpChar$".*")
-                lMatch:=(cTmpChar$cString)
-                if (!lMatch)
-                    break
-                endif
-            endif
-        next nPatIdx
-
-        lMatch:=__IsMatch(cString,cPattern,nStrSize+1,nPatSize+1)
+        lMatch:=__IsMatch(cStringtring,cPattern)
 
     end sequence
 
-    return(lMatch) as logical
+    return(lMatch)
 
 /*
-    ref.: https://www.geeksforgeeks.org/implementing-regular-expression-matching/
+    Ref.: https://www.geeksforgeeks.org/implementing-regular-expression-matching/
 
     #include <iostream>
+    #include <vector>
     using namespace std;
 
-    bool isMatchRec(string t, string p, int n, int m) {
-
-        // If pattern is empty, then text must also be
-        // empty
-        if (m == 0) {
-            return n == 0;
-        }
-
-        // If text is empty, then pattern can have characters
-        // followed by *s
-        if (n == 0) {
-            return (m >= 2 && p[m - 1] == '*') &&
-                     isMatchRec(t, p, n, m - 2);
-        }
-
-        // If last characters of both string and pattern
-        // match, or pattern has '.'
-        if (t[n - 1] == p[m - 1] || p[m - 1] == '.') {
-            return isMatchRec(t, p, n - 1, m - 1);
-        }
-
-        // Handle '*' in the pattern
-        if (p[m - 1] == '*' && m > 1) {
-
-            // Check if '*' can represent zero occurrences
-            // of the preceding character
-            bool zero = isMatchRec(t, p, n, m - 2);
-
-            // Check if '*' can represent one or more occurrences
-            // of the preceding character
-            bool oneOrMore = (p[m - 2] == t[n - 1] || p[m - 2] == '.') &&
-                                           isMatchRec(t, p, n - 1, m);
-
-            return zero || oneOrMore;
-        }
-
-        // If no match
-        return false;
-    }
-
-    // Wrapper function
     bool isMatch(string t, string p) {
-        return isMatchRec(t, p, t.size(), p.size());
+        int n = t.size();
+        int m = p.size();
+
+        // DP table where dp[i][j] means whether first i characters in t
+        // match the first j characters in p
+        vector<vector<bool>> dp(n + 1, vector<bool>(m + 1, false));
+
+        // Empty pattern matches empty text
+        dp[0][0] = true;
+
+        // Deals with patterns like a*, a*b*, a*b*c* etc, where '*'
+        // can eliminate preceding character
+        for (int j = 1; j <= m; ++j) {
+            if (p[j - 1] == '*' && j > 1) {
+                dp[0][j] = dp[0][j - 2];
+            }
+        }
+
+        // Fill the table
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 1; j <= m; ++j) {
+
+                // Characters match
+                if (p[j - 1] == '.' || t[i - 1] == p[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                }
+
+                else if (p[j - 1] == '*' && j > 1) {
+
+                    // Two cases:
+                    // 1. '*' represents zero occurrence of the preceding character
+                    // 2. '*' represents one or more occurrence of the preceding character
+                    dp[i][j] = dp[i][j - 2] ||
+                               (dp[i - 1][j] && (p[j - 2] == t[i - 1] || p[j - 2] == '.'));
+                }
+            }
+        }
+
+        return dp[n][m];
     }
 
     int main() {
@@ -252,47 +225,49 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
     }
 
 */
-static function __IsMatch(t as character,p as character,n as numeric, m as numeric)
+static function __IsMatch(t as character,p as character) as logical
 
-    local zero as logical:=.F.
-    local oneOrMore as logical:=.F.
+    local dp as array
 
-    // If pattern is empty, then text must also be
-    // empty
-    if (m == 0)
-        return(n == 0) as logical
-    endif
+    local n:=(len(t)+1) as numeric
+    local m:=(len(p)+1) as numeric
 
-    // If text is empty, then pattern can have characters
-    // followed by *s
-    if (n == 0)
-        return((m >= 2 .and. subStr(p,m-1,1) == '*') .and.  __IsMatch(t, p, n, m - 2)) as logical
-    endif
+    local i,j
 
-    // If last characters of both string and pattern
-    // match, or pattern has '.'
-    if (subStr(t,n-1,1) == subStr(p,m-1,1) .or. subStr(p,m-1,1) == '.')
-        return(__IsMatch(t, p, n - 1, m - 1)) as logical
-    endif
+    // DP table where dp[i][j] means whether first i characters in t
+    // match the first j characters in p
+    dp:=Array(n)
+    aFill(dp,Array(m))
+    aEval(@dp,{|e|aFill(e,.F.)})
 
-    // Handle '*' in the pattern
-    if (subStr(p,m-1,1) == '*' .and. m > 1)
+    // Empty pattern matches empty text
+    dp[0+1][0+1] := .T.
 
-        // Check if '*' can represent zero occurrences
-        // of the preceding character
-        zero = __IsMatch(t, p, n, m - 2)
+    // Deals with patterns like a*, a*b*, a*b*c* etc, where '*'
+    // can eliminate preceding character
+    for j:=1+1 to m
+        if (substr(p,j-1,1)=='*' .and. j > 1+1)
+            dp[0+1][j] := dp[0+1][j-2]
+        endif
+    next j
 
-        // Check if '*' can represent one or more occurrences
-        // of the preceding character
-        oneOrMore = (subStr(p,m-2,1) == subStr(t,n-1,1) .or. subStr(p,m - 2,1) == '.') .and. __IsMatch(t, p, n - 1, m)
+    // Fill the table
+    for i:=1+1 to n
+        for j:=1+1 to m+1
+            // Characters match
+            if (subStr(p,j-1,1) == '.' .or. substr(t,i-1,1) == substr(p,j-1,1))
+                dp[i][j]=dp[i-1][j-1]
+            elseif (subStr(p,j-1,1)=='*'.and.j>1+1)
+                // Two cases:
+                // 1. '*' represents zero occurrence of the preceding character
+                // 2. '*' represents one or more occurrence of the preceding character
+                if (dp[i][j-2])
+                    dp[i][j]:=(subStr(t,j-2,1)==subStr(t,j-1,1)).or.(substr(p,j-2,1)=='.')
+                else
+                    dp[i][j]:=(dp[i-1][j].and.(subStr(p,j-2)==subStr(t,i-1).or.substr(p,j-2,1)=='.'))
+                endif
+            endif
+        next j
+    next i
 
-        return(zero .or. oneOrMore) as logical
-
-    endif
-
-    // If no match
-    return(.F.) as logical
-
-static function hb_regexMatch(cString,cPattern)
-   local pRegex as pointer:=hb_regexComp(cPattern)
-   return(!Empty(hb_regex(pRegex,cString,.T./* Case sensitive */))) as logical
+    return(dp[n][m])
