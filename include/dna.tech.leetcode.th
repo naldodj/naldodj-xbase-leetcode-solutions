@@ -45,6 +45,8 @@
         #include "set.ch"
     #endif
 
-    #define _SET_DECIMALS 3
+    #ifndef _SET_DECIMALS
+        #define _SET_DECIMALS 3
+    #endif
 
 #endif
