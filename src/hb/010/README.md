@@ -34,3 +34,5 @@
     p contains only lowercase English letters, '.', and '*'.
 
     It is guaranteed for each appearance of the character '*', there will be a previous valid character to match.
+---
+![HarbourRegularExpressionMatching](https://github.com/user-attachments/assets/97954d2c-ddc0-41b4-a095-087539a92bb5)
