@@ -34,3 +34,5 @@
     p contains only lowercase English letters, '.', and '*'.
 
     It is guaranteed for each appearance of the character '*', there will be a previous valid character to match.
+---
+![TLPPRegularExpressionMatching](https://github.com/user-attachments/assets/25c8230b-62bd-4770-a26b-d9b2e33dc687)
