@@ -63,7 +63,7 @@ procedure Main()
     aAdd(aInputs,{.T.,"aab","a.*"})
     aAdd(aInputs,{.T.,"aab","a*.*"})
     aAdd(aInputs,{.F.,"aa","a"})
-    aAdd(aInputs,{.T.,"aa","a.*"})
+    aAdd(aInputs,{.T.,"aaa","a.*"})
     aAdd(aInputs,{.F.,"ab","*"})
     aAdd(aInputs,{.F.,"mississippi","mis*is*p*."})
     aAdd(aInputs,{.T.,"mississippi","mis*is*ip.*"})
@@ -175,7 +175,7 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
             endif
         next nPatIdx
 
-        lMatch:=__IsMatch(cString,cPattern,nStrSize,nPatSize)
+        lMatch:=__IsMatch(cString,cPattern,nStrSize+1,nPatSize+1)
 
     end sequence
 
@@ -259,13 +259,13 @@ static function __IsMatch(t as character,p as character,n as numeric, m as numer
 
     // If pattern is empty, then text must also be
     // empty
-    if (m == 0)
-        return(n == 0) as logical
+    if (m == 0+1)
+        return(n == 0+1) as logical
     endif
 
     // If text is empty, then pattern can have characters
     // followed by *s
-    if (n == 0)
+    if (n == 0+1)
         return((m >= 2 .and. subStr(p,m-1,1) == '*') .and.  __IsMatch(t, p, n, m - 2)) as logical
     endif
 

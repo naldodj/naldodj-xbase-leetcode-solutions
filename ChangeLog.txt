@@ -3,6 +3,9 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-01-03 11:14 UTC naldodj (regular.expression.matching: harbour : revision 2)
+  * src/hb/010/regular.expression.matching.10.1.prg
+
 2025-01-03 11:09 UTC naldodj (regular.expression.matching: harbour : revision)
   * src/hb/010/regular.expression.matching.10.1.prg
   * src/hb/010/regular.expression.matching.10.2.prg
