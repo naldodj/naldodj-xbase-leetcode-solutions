@@ -53,8 +53,8 @@ procedure Main()
 
     aAdd(aInputs,{.T.,"ab",".*"})
     aAdd(aInputs,{.F.,"ab","*."})
-    aAdd(aInputs,{.T.,"Aa",".."})
-    aAdd(aInputs,{.T.,"Aa",".*"})
+    aAdd(aInputs,{.F.,"Aa",".."})
+    aAdd(aInputs,{.F.,"Aa",".*"})
     aAdd(aInputs,{.F.,"harbour","h**.ou*"})
     aAdd(aInputs,{.F.,"harbour","h*r.ou*"})
     aAdd(aInputs,{.T.,"harbour","h.r.ou."})
@@ -137,6 +137,11 @@ static function IsMatchDP(cStringtring as character,cPattern as character,nMin a
             break
         endif
 
+        if nPatSize<nStrSize
+            cPattern:=PadR(cPattern,nStrSize)
+            nStrSize:=nStrSize
+        endif
+
         lMatch:=__IsMatch(cStringtring,cPattern)
 
     end sequence
@@ -216,15 +221,15 @@ static function __IsMatch(t as character,p as character)
 
     local dp as array
 
-    local n as numeric:=len(t)
-    local m as numeric:=len(p)
+    local n as numeric:=(len(t)+1)
+    local m as numeric:=(len(p)+1)
 
     local i,j
 
     // DP table where dp[i][j] means whether first i characters in t
     // match the first j characters in p
-    dp:=Array(n+1)
-    aFill(dp,Array(m+1))
+    dp:=Array(n)
+    aFill(dp,Array(m))
     aEval(@dp,{|e|aFill(e,.F.)})
 
     // Empty pattern matches empty text
@@ -232,7 +237,7 @@ static function __IsMatch(t as character,p as character)
 
     // Deals with patterns like a*, a*b*, a*b*c* etc, where '*'
     // can eliminate preceding character
-    for j:=1+1 to m+1
+    for j:=1+1 to m
         if (substr(p,j-1,1)=='*' .and. j > 1+1)
             dp[0+1][j] := dp[0+1][j-2]
         endif
@@ -240,7 +245,7 @@ static function __IsMatch(t as character,p as character)
 
     // Fill the table
     for i:=1+1 to n
-        for j:=1+1 to m
+        for j:=1+1 to m+1
             // Characters match
             if (subStr(p,j-1,1) == '.' .or. substr(t,i-1,1) == substr(p,j-1,1))
                 dp[i][j]=dp[i-1][j-1]
@@ -248,12 +253,16 @@ static function __IsMatch(t as character,p as character)
                 // Two cases:
                 // 1. '*' represents zero occurrence of the preceding character
                 // 2. '*' represents one or more occurrence of the preceding character
-                dp[i][j]:=dp[i][j-2].or.(dp[i-1][j].and.(subStr(p,j-2)==subStr(t,i-1).or.substr(p,j-2,1)=='.'))
+                if (dp[i][j-2])
+                    dp[i][j]:=(subStr(t,j-2,1)==subStr(t,j-1,1)).or.(substr(p,j-2,1)=='.')
+                else
+                    dp[i][j]:=(dp[i-1][j].and.(subStr(p,j-2)==subStr(t,i-1).or.substr(p,j-2,1)=='.'))
+                endif
             endif
         next j
     next i
 
-    return(dp[n+1][m+1]) as logical
+    return(dp[n][m]) as logical
 
 static function hb_regexMatch(cStringtring,cPattern)
    local pRegex as pointer:=hb_regexComp(cPattern)

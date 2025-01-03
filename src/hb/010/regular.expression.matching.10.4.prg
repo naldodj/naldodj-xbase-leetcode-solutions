@@ -53,8 +53,10 @@ procedure Main()
 
     aAdd(aInputs,{.T.,"ab",".*"})
     aAdd(aInputs,{.F.,"ab","*."})
-    aAdd(aInputs,{.T.,"Aa",".."})
-    aAdd(aInputs,{.T.,"Aa",".*"})
+    //s contains only lowercase English letters.
+    aAdd(aInputs,{.F.,"Aa",".."})
+    //s contains only lowercase English letters.
+    aAdd(aInputs,{.F.,"Aa",".*"})
     aAdd(aInputs,{.F.,"harbour","h**.ou*"})
     aAdd(aInputs,{.F.,"harbour","h*r.ou*"})
     aAdd(aInputs,{.T.,"harbour","h.r.ou."})
@@ -116,7 +118,7 @@ static function __IsMatch(cString as character,cPattern as character,nMin as num
     local lMatch as logical,lMatch1 as logical:=.T. ,lMatch2 as logical:=.F.
     local lAcceptChar,lSameSize,lSameIndex as logical
 
-    local nIdx,nStrSize,nPatSize,nStrIdx,nPatIdx as numeric
+    local nIdx,nStrSize,nPatSize,nStrIdx,nPatIdx,nTrimPatSize as numeric
 
     hb_default(@nMin,1)
     hb_default(@nMax,20)
@@ -155,13 +157,13 @@ static function __IsMatch(cString as character,cPattern as character,nMin as num
             break
         endif
 
-        nPatSize:=Min(nPatSize,Len(hb_StrReplace(cPattern,{".*"=>""})))
+        nTrimPatSize:=Min(nPatSize,Len(hb_StrReplace(cPattern,{".*"=>""})))
 
         lMatch:=(;
                     (nPatSize==nStrSize);
                     .or.;
                     (;
-                        (nPatSize<nStrSize);
+                        (nTrimPatSize<nStrSize);
                         .and.;
                         (!cPattern$cString);
                     );
@@ -203,7 +205,7 @@ static function __IsMatch(cString as character,cPattern as character,nMin as num
                                         .or.;
                                         (((lSameSize).or.(lSameIndex)).and.(lAcceptChar).and.(cCurrentToken$cCurrentChar+"*"));
                                         .or.;
-                                        ((lAcceptChar).and.(".*"$cPattern).and.(cCurrentToken$cCurrentChar+"*"));
+                                        ((lAcceptChar).and.(".*"$cPattern).and.(cCurrentToken$cCurrentChar+".*"));
                                         .or.;
                                         (cLastToken==".");
                                 );

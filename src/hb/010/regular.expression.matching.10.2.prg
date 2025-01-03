@@ -53,8 +53,8 @@ procedure Main()
 
     aAdd(aInputs,{.T.,"ab",".*"})
     aAdd(aInputs,{.F.,"ab","*."})
-    aAdd(aInputs,{.T.,"Aa",".."})
-    aAdd(aInputs,{.T.,"Aa",".*"})
+    aAdd(aInputs,{.F.,"Aa",".."})
+    aAdd(aInputs,{.F.,"Aa",".*"})
     aAdd(aInputs,{.F.,"harbour","h**.ou*"})
     aAdd(aInputs,{.F.,"harbour","h*r.ou*"})
     aAdd(aInputs,{.T.,"harbour","h.r.ou."})
@@ -109,6 +109,7 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
     local nPatIdx as numeric
     local nStrSize as numeric
     local nPatSize as numeric
+    local nTrimPatSize as numeric
 
     hb_default(@nMin,1)
     hb_default(@nMax,20)
@@ -147,13 +148,13 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
             break
         endif
 
-        nPatSize:=Min(nPatSize,Len(hb_StrReplace(cPattern,{".*"=>""})))
+        nTrimPatSize:=Min(nPatSize,Len(hb_StrReplace(cPattern,{".*"=>""})))
 
         lMatch:=(;
                     (nPatSize==nStrSize);
                     .or.;
                     (;
-                        (nPatSize<nStrSize);
+                        (nTrimPatSize<nStrSize);
                         .and.;
                         (!cPattern$cString);
                     );
@@ -172,7 +173,7 @@ static function IsMatchRecursive(cString as character,cPattern as character,nMin
             endif
         next nPatIdx
 
-        lMatch:=__IsMatch(cString,cPattern,nStrSize,nPatSize)
+        lMatch:=__IsMatch(cString,cPattern,nStrSize+1,nPatSize+1)
 
     end sequence
 
