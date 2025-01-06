@@ -27,3 +27,4 @@
     2 <= n <= 10^5
     0 <= height[i] <= 10^4
     ---
+![image](https://github.com/user-attachments/assets/860fb50b-ce71-4919-91c5-a38779f854bd)
