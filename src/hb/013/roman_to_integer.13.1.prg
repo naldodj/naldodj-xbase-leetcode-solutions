@@ -1,0 +1,152 @@
+/*
+# [Roman to Integer](https://leetcode.com/problems/roman-to-integer/description/)
+
+    13. Roman to Integer
+
+    Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+
+    Symbol       Value
+    I            1
+    V            5
+    X            10
+    L            50
+    C            100
+    D            500
+    M            1000
+
+    For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
+
+    Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+
+    I can be placed before V (5) and X (10) to make 4 and 9.
+    X can be placed before L (50) and C (100) to make 40 and 90.
+    C can be placed before D (500) and M (1000) to make 400 and 900.
+
+    Given a roman numeral, convert it to an integer.
+
+    Example 1:
+
+    Input: s = "III"
+    Output: 3
+    Explanation: III = 3.
+
+    Example 2:
+
+    Input: s = "LVIII"
+    Output: 58
+    Explanation: L = 50, V= 5, III = 3.
+    Example 3:
+
+    Input: s = "MCMXCIV"
+    Output: 1994
+    Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+
+    Constraints:
+
+    1 <= s.length <= 15
+    s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
+
+    It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+
+    Released to Public Domain.
+    --------------------------------------------------------------------------------------
+
+*/
+procedure Main()
+
+    local aInputs as array
+
+    local cHTML as character
+    local cInput as character
+
+    local lMatched as logical
+
+    local nInput as numeric
+    local nOutPut as numeric
+
+    aInputs:=Array(0)
+
+    aAdd(aInputs,{3,"III"})
+    aAdd(aInputs,{58,"LVIII"})
+    aAdd(aInputs,{1994,"MCMXCIV"})
+    aAdd(aInputs,{3749,"MMMDCCXLIX"})
+    aAdd(aInputs,{1970,"MCMLXX"})
+    aAdd(aInputs,{2010,"MMX"})
+
+    cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
+    cHTML+=    "<thead>"
+    cHTML+=        "<tr style='background-color: #999; color: white; text-align: center;'>"
+    cHTML+=            "<th>Input</th>"
+    cHTML+=            "<th>OutPut</th>"
+    cHTML+=            "<th>Expected</th>"
+    cHTML+=            "<th>Matched</th>"
+    cHTML+=        "</tr>"
+    cHTML+=    "</thead>"
+    cHTML+=    "<tbody>"
+    for nInput:=1 to Len(aInputs)
+        cInput:=aInputs[nInput][2]
+        nOutPut:=RomanToInteger(cInput)
+        lMatched:=(nOutPut==aInputs[nInput][1])
+        cHTML+=        "<tr>"
+        cHTML+=            "<td align='left' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+cInput+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(nOutPut)+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInputs[nInput][1])+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(lMatched)+"</td>"
+        cHTML+=        "</tr>"
+    next nInput
+    cHTML+=    "</tbody>"
+    cHTML+="</table>"
+
+    ? cHTML
+
+    return
+
+static function RomanToInteger(cRoman as character,nSizeMin as numeric,nSizeMax as numeric)
+
+    local i as numeric
+    local nTotal as numeric
+    local nPrevValue as numeric
+    local nCurrentValue as numeric
+
+    // Mapeamento de valores dos números romanos
+    local hRomanValues as hash := {;
+        "I" => 1;
+       ,"V" => 5;
+       ,"X" => 10;
+       ,"L" => 50;
+       ,"C" => 100;
+       ,"D" => 500;
+       ,"M" => 1000;
+    }
+
+    i:=Len(cRoman)
+
+    hb_default(@nSizeMin,1)
+    hb_default(@nSizeMin,15)
+
+    nTotal:=0
+
+    if ((i>1).and.(i<15))
+
+        nPrevValue:=0
+        nCurrentValue:=0
+
+        // Percorrer o número romano do final ao início
+        for i:=i to 1 step -1
+            // Obter o valor do caractere atual
+            nCurrentValue:=hRomanValues[subStr(cRoman,i,1)]
+            if (nCurrentValue<nPrevValue)
+                // Regra de subtração
+                nTotal-=nCurrentValue
+            else
+                // Adicionar valor ao total
+                nTotal+=nCurrentValue
+            endif
+            // Atualizar o valor anterior
+            nPrevValue:=nCurrentValue
+        next i
+
+    endif
+
+    return(nTotal) as numeric
