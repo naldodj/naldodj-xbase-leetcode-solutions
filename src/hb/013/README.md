@@ -47,3 +47,5 @@
     s contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').
 
     It is guaranteed that s is a valid roman numeral in the range [1, 3999].
+---
+![image](https://github.com/user-attachments/assets/ccfe0a12-5df8-49ef-b608-a03b870b05c2)
