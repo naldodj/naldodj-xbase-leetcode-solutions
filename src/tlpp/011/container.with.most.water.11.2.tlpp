@@ -86,12 +86,13 @@ procedure u_MainContainerWithMostWater_11_2()
 
 static function MaxArea(aHeight as array) as numeric
 
+    local nIdx as numeric
     local nLeft as numeric
     local nRight as numeric
     local nMaxArea as numeric
     local nCurrentArea as numeric
 
-    //Ponteiro esquerdo (Harbour usa índice 1-based)
+    //Ponteiro esquerdo (Harbour usa indice 1-based)
     nLeft:=1
 
     //Ponteiro direito
@@ -100,7 +101,7 @@ static function MaxArea(aHeight as array) as numeric
     //Maior volume encontrado
     nMaxArea:=0
 
-    for nLeft:=nLeft to nRight
+    for nIdx:=nLeft to nRight
 
         if (nLeft>=nRight)
             exit
