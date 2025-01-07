@@ -59,6 +59,5 @@
     Constraints:
 
     1 <= num <= 3999
-
-`int_to_roman.12.1.prg` & `int_to_roman.12.2.prg`
-![image](https://github.com/user-attachments/assets/7b3c9bea-020b-42b6-b313-851dac4cf83c)
+---
+![image](https://github.com/user-attachments/assets/053bb749-340e-44bb-ad5d-45ec27d1a715)
