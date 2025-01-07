@@ -3,7 +3,18 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
-2025-01-06 20:29 UTC naldodj (/roman_to_integer: harbour & tlpp)
+2025-01-07 09:56 UTC naldodj (int_to_roman: harbour & tlpp)
+  ;Standardize test code format and style
+    * src/hb/012/int_to_roman.12.1.prg
+    * src/hb/012/int_to_roman.12.2.prg
+    * src/hb/012/int_to_roman.12.3.prg
+    * src/hb/012/int_to_roman.12.4.prg
+    * src/tlpp/012/int_to_roman.12.1.tlpp
+    * src/tlpp/012/int_to_roman.12.2.tlpp
+    * src/tlpp/012/int_to_roman.12.3.tlpp
+    * src/tlpp/012/int_to_roman.12.4.tlpp
+
+2025-01-06 20:29 UTC naldodj (roman_to_integer: harbour & tlpp)
   + src/hb/013/README.md
   + src/tlpp/013/roman_to_integer.13.1.tlpp
   + src/tlpp/013/roman_to_integer.13.2.tlpp

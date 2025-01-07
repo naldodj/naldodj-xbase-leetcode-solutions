@@ -66,45 +66,56 @@
 
 procedure Main()
 
-    local nInput as numeric
+    local aInputs as array
+
+    local cHTML as character
     local cOutPut as character
 
-    nInput:=3749
-    ? "Input: ",nInput,"<br/>"
-    cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"<br/>"
-    nInput:=RomanToDec( cOutPut )
-    ? "Rom2Dec: ",nInput,"<br/>","<br/>"
+    local lMatched as logical
 
-    nInput:=58
-    ? "Input: ",nInput,"<br/>"
-    cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"<br/>"
-    nInput:=RomanToDec( cOutPut )
-    ? "Rom2Dec: ",nInput,"<br/>","<br/>"
+    local nIdx as numeric
+    local nInput as numeric
+    local nRoman2Dec as numeric
 
-    nInput:=1994
-    ? "Input: ",nInput,"<br/>"
-    cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"<br/>"
-    nInput:=RomanToDec( cOutPut )
-    ? "Rom2Dec: ",nInput,"<br/>","<br/>"
+    aInputs:=Array(0)
 
-    nInput:=1970
-    ? "Input: ",nInput,"<br/>"
-    cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"<br/>"
-    nInput:=RomanToDec( cOutPut )
-    ? "Rom2Dec: ",nInput,"<br/>","<br/>"
+    aAdd(aInputs,{"III",3})
+    aAdd(aInputs,{"LVIII",58})
+    aAdd(aInputs,{"MCMXCIV",1994})
+    aAdd(aInputs,{"MMMDCCXLIX",3749})
+    aAdd(aInputs,{"MCMLXX",1970})
+    aAdd(aInputs,{"MMX",2010})
 
-    nInput:=2010
-    ? "Input: ",nInput,"<br/>"
-    cOutPut:=intToRoman(nInput)
-    ? "Output: ",cOutPut,"<br/>"
-    nInput:=RomanToDec( cOutPut )
-    ? "Rom2Dec: ",nInput,"<br/>","<br/>"
+    cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
+    cHTML+=    "<thead>"
+    cHTML+=        "<tr style='background-color: #999; color: white; text-align: center;'>"
+    cHTML+=            "<th>Input</th>"
+    cHTML+=            "<th>OutPut</th>"
+    cHTML+=            "<th>Expected</th>"
+    cHTML+=            "<th>Matched</th>"
+    cHTML+=            "<th>Roman2Dec</th>"
+    cHTML+=        "</tr>"
+    cHTML+=    "</thead>"
+    cHTML+=    "<tbody>"
+    for nIdx:=1 to Len(aInputs)
+        nInput:=aInputs[nIdx][2]
+        cOutPut:=intToRoman(nInput)
+        nRoman2Dec:=RomanToDec(cOutPut)
+        lMatched:=(cOutPut==aInputs[nIdx][1])
+        cHTML+=        "<tr>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(nInput)+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+cOutPut+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+aInputs[nIdx][1]+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(lMatched)+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(nRoman2Dec)+"</td>"
+        cHTML+=        "</tr>"
+    next nIdx
+    cHTML+=    "</tbody>"
+    cHTML+="</table>"
 
-return
+    ? cHTML
+
+    return
 
 static function intToRoman( nNumber as numeric )
 
