@@ -60,6 +60,4 @@
 
     1 <= num <= 3999
 ---
-`int_to_roman.12.1.tlpp` ... `int_to_roman.12.4.tlpp`
-
-![image](https://github.com/user-attachments/assets/32c561ad-ef76-4389-b660-5af50be54c1b)
+![image](https://github.com/user-attachments/assets/0f0a896e-d889-4bd9-b8d5-7873262bd801)
