@@ -23,3 +23,4 @@
 
     strs[i] consists of only lowercase English letters.
 ---
+![image](https://github.com/user-attachments/assets/ce454a4e-221a-42b9-816a-684d6500c341)
