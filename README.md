@@ -1,7 +1,3 @@
-Aqui está o texto revisado e uma versão em inglês:  
-
----
-
 ### naldodj-xbase-leetcode-solutions  
 
 Soluções para problemas do [LeetCode](https://leetcode.com/problemset/) implementadas em (x)Base/TLPP, com foco em algoritmos otimizados e eficiência.  
