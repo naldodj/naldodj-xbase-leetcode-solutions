@@ -66,7 +66,7 @@ procedure Main()
         cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+aInputs[nIdx][1]+"</td>"
         cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(lMatched)+"</td>"
         cHTML+=        "</tr>"
-    next nInput
+    next nIdx
     cHTML+=    "</tbody>"
     cHTML+="</table>"
 

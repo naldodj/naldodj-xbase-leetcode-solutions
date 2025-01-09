@@ -62,7 +62,7 @@ procedure Main()
 
     local lMatched as logical
 
-    local nInput as numeric
+    local nIdx as numeric
     local nOutPut as numeric
 
     aInputs:=Array(0)
@@ -84,17 +84,17 @@ procedure Main()
     cHTML+=        "</tr>"
     cHTML+=    "</thead>"
     cHTML+=    "<tbody>"
-    for nInput:=1 to Len(aInputs)
-        cInput:=aInputs[nInput][2]
+    for nIdx:=1 to Len(aInputs)
+        cInput:=aInputs[nIdx][2]
         nOutPut:=RomanToInteger(cInput)
-        lMatched:=(nOutPut==aInputs[nInput][1])
+        lMatched:=(nOutPut==aInputs[nIdx][1])
         cHTML+=        "<tr>"
         cHTML+=            "<td align='left' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+cInput+"</td>"
         cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(nOutPut)+"</td>"
-        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInputs[nInput][1])+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInputs[nIdx][1])+"</td>"
         cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(lMatched)+"</td>"
         cHTML+=        "</tr>"
-    next nInput
+    next nIdx
     cHTML+=    "</tbody>"
     cHTML+="</table>"
 

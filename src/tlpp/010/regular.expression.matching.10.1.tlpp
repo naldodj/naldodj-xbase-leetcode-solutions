@@ -54,7 +54,7 @@ procedure u_MainRegularExpressionMatching_10_1()
     local lOutPut as logical
     local lMatched as logical
 
-    local nInput as numeric
+    local nIdx as numeric
 
     aAdd(aInputs,{.T.,"ab",".*"})
     aAdd(aInputs,{.F.,"ab","*."})
@@ -85,19 +85,19 @@ procedure u_MainRegularExpressionMatching_10_1()
     cHTML+=        "</tr>"
     cHTML+=    "</thead>"
     cHTML+=    "<tbody>"
-    for nInput:=1 to Len(aInputs)
-        cInput:=aInputs[nInput][2]
-        cPattern:=aInputs[nInput][3]
+    for nIdx:=1 to Len(aInputs)
+        cInput:=aInputs[nIdx][2]
+        cPattern:=aInputs[nIdx][3]
         lOutPut:=IsMatch(cInput,cPattern)
-        lMatched:=(lOutPut==aInputs[nInput][1])
+        lMatched:=(lOutPut==aInputs[nIdx][1])
         cHTML+=        "<tr>"
         cHTML+=            "<td align='left' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+cInput+"</td>"
         cHTML+=            "<td align='left' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+cPattern+"</td>"
         cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(lOutPut)+"</td>"
-        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInputs[nInput][1])+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInputs[nIdx][1])+"</td>"
         cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(lMatched)+"</td>"
         cHTML+=        "</tr>"
-    next nInput
+    next nIdx
     cHTML+=    "</tbody>"
     cHTML+="</table>"
 
