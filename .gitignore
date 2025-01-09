@@ -2,3 +2,4 @@ _commit.txt
 /.vscode
 *.code-workspace
 *.ppo
+/src/tlpp/.vscode

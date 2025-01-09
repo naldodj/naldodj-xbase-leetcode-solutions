@@ -62,7 +62,7 @@ procedure u_MainLongestCommonPrefix_14_1()
     cHTML+=    "</thead>"
     cHTML+=    "<tbody>"
     for nIdx:=1 to Len(aInputs)
-        aInput:=aClone(aInputs[nIdx][2])
+        aInput:=aInputs[nIdx][2]
         cOutPut:=LongestCommonPrefix(aInput)
         lMatched:=(cOutPut==aInputs[nIdx][1])
         cHTML+=        "<tr>"

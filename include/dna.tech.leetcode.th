@@ -20,7 +20,7 @@
     #xtranslate IsNil(<uValue>) => Eval({|uValue|uValue==NIL},<uValue>)
 
     #xtranslate hb_AScan => aScan
-    #xtranslate hb_JSONEncode => FWJSONSerialize
+    #xtranslate hb_JSONEncode(<uValue>) => if(valType(<uValue>)=="A",(__oJSONObject:=JSONObject():New(),__oJSONObject:Set(<uValue>),__cJSON:=__oJSONObject:ToJSON(),freeObj(__oJSONObject),__cJSON),FWJSONSerialize(<uValue>))
 
     #xtranslate hb_NToC(<n>) => LTrim(Str(<n>))
     #xtranslate hb_Default(@<uVar1>,<uVal1>) => <uVar1>:=iif(IsNil(<uVar1>),<uVal1>,<uVar1>)
