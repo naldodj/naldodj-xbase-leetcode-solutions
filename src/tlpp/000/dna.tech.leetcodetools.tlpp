@@ -12,6 +12,8 @@ static function ___tools____OutStd(vList as variadic) as character
 
     local nIdx as numeric
 
+    local jJSON as json
+
     local uValue as variant
 
     begin sequence
@@ -23,12 +25,21 @@ static function ___tools____OutStd(vList as variadic) as character
         for nIdx:=1 to vList:vCount
             uValue:=vList:vArgs[nIdx]
             cValType:=ValType(uValue)
-            if (cValType=="N")
+            if (cValType=="A")
+                jJSON:=JSONObject():New()
+                jJSON:Set(uValue)
+                cOut+=jJSON:ToJSON()
+                freeObj(@jJSON)
+            elseif (cValType=="N")
                 cOut+=hb_NToC(uValue)
-            elseif (cValType$"A,L,J")
+            elseif (cValType=="L")
                 cOut+=FWJSONSerialize(uValue)
-            else
+            elseif (cValType=="J")
+                cOut+=uValue:ToJSON()
+            elseif (cValType!="C")
                 cOut+=cValToChar(uValue)
+            else
+                cOut+=uValue
             endif
         next nIdx
 
