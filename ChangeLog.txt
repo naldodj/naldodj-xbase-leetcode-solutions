@@ -3,6 +3,12 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-01-09 09:46 UTC naldodj (3sum: harbour & tlpp)
+  + src/hb/015/README.md
+  + src/tlpp/015/README.md
+  + src/hb/015/3sum.15.1.prg
+  + src/tlpp/015/3sum.15.1.tlpp
+
 2025-01-08 21:36 UTC naldodj
   ;Standardize test code format and style
     * src/hb/010/regular.expression.matching.10.1.prg
