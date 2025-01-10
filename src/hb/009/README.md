@@ -29,3 +29,4 @@
     Follow up: Could you solve it without converting the integer to a string?
 
 `palindrome_number.9.1.prg` & `palindrome_number.9.2.prg`
+![image](https://github.com/user-attachments/assets/63e89035-0f88-476c-aff7-3764f5401465)
