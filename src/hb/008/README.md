@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/21f09b38-88cd-4929-9845-bb5544a39728)# [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi)
+# [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi)
 
     8. String to Integer (atoi)
 
