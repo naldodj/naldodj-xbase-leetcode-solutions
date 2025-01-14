@@ -26,3 +26,5 @@
     -1000 <= nums[i] <= 1000
     -10^4 <= target <= 10^4
 ---
+![image](https://github.com/user-attachments/assets/53023a87-505d-454c-acd8-714f5fa98717)
+
