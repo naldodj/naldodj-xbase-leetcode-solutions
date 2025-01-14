@@ -3,6 +3,14 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-01-14 18:21 UTC naldodj (letter.combinations.of.a.phone.number: harbour & tlpp)
+  + src/hb/017/letter.combinations.of.a.phone.number.17.1.prg
+  + src/hb/017/README.md
+  + src/tlpp/017/letter.combinations.of.a.phone.number.17.1.tlpp
+  + src/tlpp/017/letter.combinations.of.a.phone.number.17.2.tlpp
+  + src/tlpp/017/README.md
+  + src/hb/017/letter.combinations.of.a.phone.number.17.2.prg
+
 2025-01-14 09:41 UTC naldodj
   ;Standardize test code format and style
     * src/tlpp/016/3sum.closest.16.1.tlpp
