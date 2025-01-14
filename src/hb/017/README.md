@@ -26,3 +26,4 @@
     0 <= digits.length <= 4
     digits[i] is a digit in the range ['2','9'].
 ---
+![image](https://github.com/user-attachments/assets/30d45c95-323d-494e-b08e-264dc130138c)
