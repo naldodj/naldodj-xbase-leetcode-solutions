@@ -3,6 +3,11 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-01-14 09:41 UTC naldodj
+  ;Standardize test code format and style
+    * src/tlpp/016/3sum.closest.16.1.tlpp
+    * src/hb/016/3sum.closest.16.1.prg
+
 2025-01-14 09:13 UTC naldodj
   ! Fix TLPP source
     * src/tlpp/016/3sum.closest.16.1.tlpp

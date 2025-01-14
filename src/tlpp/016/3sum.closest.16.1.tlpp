@@ -99,7 +99,7 @@ procedure u_Main3SumClosest_16_1()
 
 static function ThreeSumClosest(aNums as array,nTarget as numeric) as numeric
 
-    local lClosestSum:=.F. as logical
+    local lClosestSum as logical
 
     local n as numeric
     local nClosestSum as numeric
@@ -109,6 +109,8 @@ static function ThreeSumClosest(aNums as array,nTarget as numeric) as numeric
 
     // Ordenar o array
     aSort(aNums)
+
+    lClosestSum:=.F.
 
     begin sequence
 

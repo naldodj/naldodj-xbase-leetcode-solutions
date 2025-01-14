@@ -95,6 +95,8 @@ procedure Main()
 
 static function ThreeSumClosest(aNums as array,nTarget as numeric)
 
+    local lClosestSum as logical
+
     local n as numeric
     local nClosestSum as numeric
     local i, nLeft, nRight, nCurrentSum as numeric
@@ -103,6 +105,8 @@ static function ThreeSumClosest(aNums as array,nTarget as numeric)
 
     // Ordenar o array
     aSort(aNums)
+
+    lClosestSum:=.F.
 
     begin sequence
 
@@ -118,8 +122,9 @@ static function ThreeSumClosest(aNums as array,nTarget as numeric)
                 nCurrentSum:=(aNums[i]+aNums[nLeft]+aNums[nRight])
 
                 // Atualizar a soma mais próxima
-                if ((nClosestSum==NIL).or.(ABS(nCurrentSum-nTarget)<ABS(nClosestSum-nTarget)))
-                nClosestSum:=nCurrentSum
+                if ((!lClosestSum).or.(ABS(nCurrentSum-nTarget)<ABS(nClosestSum-nTarget)))
+                    lClosestSum:=.T.
+                    nClosestSum:=nCurrentSum
                 endif
 
                 // Ajustar ponteiros
