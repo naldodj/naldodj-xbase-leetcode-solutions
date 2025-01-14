@@ -3,6 +3,10 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-01-14 09:13 UTC naldodj
+  ! Fix TLPP source
+    * src/tlpp/016/3sum.closest.16.1.tlpp
+
 2025-01-13 11:47 UTC naldodj (3sum.closest: harbour & tlpp)
   + src/hb/016/README.md
   + src/tlpp/016/3sum.closest.16.1.tlpp

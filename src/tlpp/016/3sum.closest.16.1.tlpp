@@ -93,9 +93,13 @@ procedure u_Main3SumClosest_16_1()
     // Exibe a tabela HTML no console
     ? cHTML
 
+    ApMsgInfo(__getOutStd(),ProcName())
+
     return
 
 static function ThreeSumClosest(aNums as array,nTarget as numeric) as numeric
+
+    local lClosestSum:=.F. as logical
 
     local n as numeric
     local nClosestSum as numeric
@@ -120,7 +124,8 @@ static function ThreeSumClosest(aNums as array,nTarget as numeric) as numeric
                 nCurrentSum:=(aNums[i]+aNums[nLeft]+aNums[nRight])
 
                 // Atualizar a soma mais proxima
-                if (IsNil(nClosestSum).or.(ABS(nCurrentSum-nTarget)<ABS(nClosestSum-nTarget)))
+                if ((!lClosestSum).or.(ABS(nCurrentSum-nTarget)<ABS(nClosestSum-nTarget)))
+                    lClosestSum:=.T.
                     nClosestSum:=nCurrentSum
                 endif
 
