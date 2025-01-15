@@ -57,6 +57,8 @@ procedure Main()
     aAdd(aInputs,{{},""})
     aAdd(aInputs,{{"a","b","c"},"2"})
     aAdd(aInputs,{{"da","db","dc","ea","eb","ec","fa","fb","fc"},"32"})
+    aAdd(aInputs,{{"tw","tx","ty","tz","uw","ux","uy","uz","vw","vx","vy","vz"},"89"})
+    //aAdd(aInputs,{{"ptw","ptx","pty","ptz","puw","pux","puy","puz","pvw","pvx","pvy","pvz","qtw","qtx","qty","qtz","quw","qux","quy","quz","qvw","qvx","qvy","qvz","rtw","rtx","rty","rtz","ruw","rux","ruy","ruz","rvw","rvx","rvy","rvz","stw","stx","sty","stz","suw","sux","suy","suz","svw","svx","svy","svz"},"789"})
 
     /*
         Construção da tabela HTML que será gerada como saída.
@@ -113,7 +115,9 @@ static function LetterCombinations(cDigits)
         endif
 
         hDigitToLetters:={;
-             "2" => {"a","b","c"};
+             "0" => {""};
+            ,"1" => {""};
+            ,"2" => {"a","b","c"};
             ,"3" => {"d","e","f"};
             ,"4" => {"g","h","i"};
             ,"5" => {"j","k","l"};

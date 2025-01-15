@@ -3,6 +3,12 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-01-15 14:06 UTC naldodj
+  * src/hb/017/letter.combinations.of.a.phone.number.17.1.prg
+  * src/hb/017/letter.combinations.of.a.phone.number.17.2.prg
+  * src/tlpp/017/letter.combinations.of.a.phone.number.17.1.tlpp
+  * src/tlpp/017/letter.combinations.of.a.phone.number.17.2.tlpp
+
 2025-01-14 18:21 UTC naldodj (letter.combinations.of.a.phone.number: harbour & tlpp)
   + src/hb/017/letter.combinations.of.a.phone.number.17.1.prg
   + src/hb/017/README.md
