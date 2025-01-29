@@ -3,6 +3,14 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-01-29 17:46 UTC naldodj (4sum: harbour & tlpp)
+  + src/hb/018/4sum.18.1.prg
+  + src/hb/018/4sum.18.2.prg
+  + src/hb/018/README.md
+  + src/tlpp/018/4sum.18.1.tlpp
+  + src/tlpp/018/4sum.18.2.tlpp
+  + src/tlpp/018/README.md
+
 2025-01-15 14:06 UTC naldodj
   * src/hb/017/letter.combinations.of.a.phone.number.17.1.prg
   * src/hb/017/letter.combinations.of.a.phone.number.17.2.prg
