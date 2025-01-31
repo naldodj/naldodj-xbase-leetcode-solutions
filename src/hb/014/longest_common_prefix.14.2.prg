@@ -47,6 +47,7 @@ procedure Main()
     aAdd(aInputs,{"ti",{"tio","tia","tido","time","tipo"}})
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
+    cHTML+=    "<caption>"+ProcName()+"</caption>"
     cHTML+=    "<thead>"
     cHTML+=        "<tr style='background-color: #999; color: white; text-align: center;'>"
     cHTML+=            "<th>Input</th>"
