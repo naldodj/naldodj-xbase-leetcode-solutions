@@ -3,6 +3,17 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-02-12 13:15 UTC naldodj (remove_nth_node_from_end_of_list: harbour & tlpp)
+  + src/hb/019/remove_nth_node_from_end_of_list.19.1.prg
+  + src/hb/019/remove_nth_node_from_end_of_list.19.2.prg
+  + src/hb/019/remove_nth_node_from_end_of_list.19.3.prg
+  + src/hb/019/remove_nth_node_from_end_of_list.19.4.prg
+  + src/hb/019/README.md
+  + src/tlpp/019/remove_nth_node_from_end_of_list.19.1.tlpp
+  + src/tlpp/019/remove_nth_node_from_end_of_list.19.2.tlpp
+  + src/tlpp/019/remove_nth_node_from_end_of_list.19.3.tlpp
+  + src/tlpp/019/README.md
+
 2025-01-31 17:22 UTC naldodj
   ;Standardize test code format and style
   * src/tlpp/017/letter.combinations.of.a.phone.number.17.2.tlpp
