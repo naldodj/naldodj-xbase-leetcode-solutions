@@ -42,8 +42,9 @@ procedure Main()
     aAdd(aInputs,{{1,2,3,5},{1,2,3,4,5},2}) // Caso 1
     aAdd(aInputs,{{},{1},1}) // Caso 2
     aAdd(aInputs,{{1},{1,2},1}) // Caso 3
-    aAdd(aInputs,{{},{},1}) // Caso 4
-    aAdd(aInputs,{{1,2,3,4,5},{1,2,3,4,5},0}) // Caso 5
+    aAdd(aInputs,{{2},{1,2},2}) // Caso 4
+    aAdd(aInputs,{{},{},1}) // Caso 5
+    aAdd(aInputs,{{1,2,3,4,5},{1,2,3,4,5},0}) // Caso 6
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
     cHTML+="<caption>"+ProcName()+"</caption><toHead><tr style='background-color: #999; color: white; text-align: center;'>"

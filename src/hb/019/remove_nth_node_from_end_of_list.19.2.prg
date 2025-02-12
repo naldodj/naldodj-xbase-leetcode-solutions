@@ -40,8 +40,9 @@ procedure Main()
         {{1,2,3,5},{1,2,3,4,5},2},;// Caso 1
         {{},{1},1},;// Caso 2
         {{1},{1,2},1},;// Caso 3
-        {{},{},1},;// Caso 4 (edge case)
-        {{1,2,3,4,5},{1,2,3,4,5},0};// Caso 5 (edge case)
+        {{2},{1,2},2},;// Caso 4
+        {{},{},1},;// Caso 5 (edge case)
+        {{1,2,3,4,5},{1,2,3,4,5},0};// Caso 6 (edge case)
    }
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
