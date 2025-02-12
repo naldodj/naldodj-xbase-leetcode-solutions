@@ -24,3 +24,4 @@
     1 <= n <= sz
 
 ---
+![image](https://github.com/user-attachments/assets/ad67ab03-8557-4bcd-8118-87ab3d5705c8)
