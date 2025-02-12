@@ -38,6 +38,7 @@ procedure Main()
 
     local oHead as object
 
+    // Casos de teste definidos
     aInputs:=Array(0)
     aAdd(aInputs,{{1,2,3,5},{1,2,3,4,5},2}) // Caso 1
     aAdd(aInputs,{{},{1},1}) // Caso 2
@@ -48,13 +49,14 @@ procedure Main()
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
     cHTML+="<caption>"+ProcName()+"</caption><toHead><tr style='background-color: #999; color: white; text-align: center;'>"
-    cHTML+="<th>Input</th><th>Output</th><th>Expected</th><th>Matched</th></tr></toHead><tbody>"
+    cHTML+="<th>Input</th><th>Nth Node</th><th>Output</th><th>Expected</th><th>Matched</th></tr></toHead><tbody>"
 
+    // Itera sobre os casos de teste
     for each aInput in aInputs
-        oHead:=arrayToList(aInput[2])
-        nTarget:=aInput[3]
-        aResult:=listToArray(removeNthFromEnd(oHead,nTarget))
-        cHTML+=generateHTMLRow(aInput[2],aResult,aInput[1])
+        oHead:=arrayToList(aInput[2])// Entrada atual
+        nTarget:=aInput[3] // Valor de n
+        aResult:=listToArray(removeNthFromEnd(oHead,nTarget)) // Resultado da função removeNthFromEnd
+        cHTML+=generateHTMLRow(aInput[2],nTarget,aResult,aInput[1]) // Gera uma linha na tabela HTML
     next each
 
     cHTML+="</tbody></table>"
@@ -150,7 +152,7 @@ static function listToArray(oHead as object)
 
     return(aResult) as array
 
-static function generateHTMLRow(aInput as array,aOutput as array,aExpected as array)
+static function generateHTMLRow(aInput as array,nNthNode as numeric,aOutput as array,aExpected as array)
 
     local cRow as character
     local cBgColor as character
@@ -162,6 +164,7 @@ static function generateHTMLRow(aInput as array,aOutput as array,aExpected as ar
 
     cRow:="<tr>"
     cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aInput)+"</td>"
+    cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(nNthNode)+"</td>"
     cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aOutput)+"</td>"
     cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aExpected)+"</td>"
     cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(lMatched)+"</td>"

@@ -12,7 +12,11 @@
     #define __DNA_TECH_LEETCOD_TH__
 
     #xcommand ?  [ <vList,...> ] => (if(type("__cOut")=="U",__cOut:="",nil),[ __cOut+=dna.tech.leetcode.Tools():OutStd( <vList> ) ] )
+
+    #xcommand ?? <__cOut> => dna.tech.leetcode.Tools():htmlFileShow(<__cOut>,ProcName(),nil,"http://127.0.0.1")
+
     #xtranslate __getOutStd() => (if(type("__cOut")=="C",__cOut,""))
+    #xtranslate __clsOutStd() => (if(type("__cOut")=="C",__cOut:="",""))
 
     #xtranslate "<br/><br/>" => "<br/>","<br/>"
     #xtranslate "<br/>" => chr(13)+chr(10)

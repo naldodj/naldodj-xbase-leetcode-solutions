@@ -1,9 +1,11 @@
+#include "parmtype.ch"
 #include "dna.tech.leetcode.th"
 
 namespace dna.tech.leetcode
 
 class tools
     static method OutStd(vList as variadic) as character
+    static method htmlFileShow(cHTML,cTitle,cHTMLTempFile,cBaseURL) as logical
 end class
 
 static function ___tools____OutStd(vList as variadic) as character
@@ -46,3 +48,172 @@ static function ___tools____OutStd(vList as variadic) as character
     end sequence
 
     return(cOut)
+
+static method htmlFileShow(cHTML,cTitle,cHTMLTempFile,cBaseURL) class tools
+
+    local aButtons as array
+
+    local cFile as character
+
+    local jButtons as json
+
+    local lAbrir as logical
+    local lShowHtml:=.T. as logical
+    local lRedefineBottom:=.T. as logical
+
+    local nTop as numeric
+    local nLeft as numeric
+    local nBottom as numeric
+    local nRight as numeric
+
+    local oDlg as object
+    local oGrp as object
+
+    local oTWebEngine as object
+    local oTWebChannel as object
+
+    local oFWDefSize as object
+
+    paramtype 1 var cHTML as character optional default ""
+    paramtype 2 var cTitle as character optional default ""
+    paramtype 3 var cHTMLTempFile as character optional default ""
+    paramtype 4 var cBaseURL as character optional default ""
+
+    begin sequence
+
+        lShowHtml:=(!empty(cBaseURL))
+        if (!lShowHtml)
+            break
+        endif
+
+        jButtons:=JSONObject():New()
+
+        aButtons:=array(0)
+        aAdd(aButtons,{"&Sair",{||oDlg:End()},OemToAnsi("Sair"),OemtoAnsi("Sair")})
+        aAdd(aButtons,{"&Print",{||oTWebEngine:Print()},OemToAnsi("Print"),OemtoAnsi("Print")})
+        aAdd(aButtons,{"Print PD&F",{||oTWebEngine:PrintPDF()},OemToAnsi("Print PDF"),OemtoAnsi("Print PDF")})
+
+        cFile:=cHTMLTempFile
+        cFile:=strTran(cFile,"file:///","")
+        cFile:=strTran(cFile,"/","\")
+        lAbrir:=file(cFile)
+
+        if (lAbrir)
+            aAdd(aButtons,{"&Abrir",{||ShellExecute("open",cHTMLTempFile,"","",SW_SHOWMAXIMIZED)},OemToAnsi("Abir"),OemtoAnsi("Abir")})
+        endif
+
+        oFWDefSize:=FWDefSize():New(.F.,.F.)
+
+        if (oFWDefSize:aWindSize[1]==0)
+            oFWDefSize:aWindSize[1]:=20
+        endif
+        if (oFWDefSize:aWindSize[3]==0)
+            oFWDefSize:aWindSize[3]:=716
+        endif
+        if (oFWDefSize:aWindSize[4]==0)
+            oFWDefSize:aWindSize[4]:=1346
+        endif
+
+        if (oFWDefSize:aWorkArea[2]==0)
+            oFWDefSize:aWorkArea[2]:=30
+        endif
+
+        if (oFWDefSize:aWorkArea[3]==0)
+            oFWDefSize:aWorkArea[3]:=674.5
+        endif
+
+        if (oFWDefSize:aWorkArea[4]==0)
+            oFWDefSize:aWorkArea[4]:=348
+        endif
+
+        oFWDefSize:lLateral:=.F.
+        oFWDefSize:AddObject("TWebEngine",100,95,.T.,.T.)
+        oFWDefSize:AddObject("ButtonActions",100,05,.F.,.F.)
+
+        oFWDefSize:Process()
+
+        nLeft:=oFWDefSize:aWindSize[2]
+        nBottom:=oFWDefSize:aWindSize[3]
+        nRight:=oFWDefSize:aWindSize[4]
+
+        nTop:=oFWDefSize:aWindSize[1]
+        nLeft:=oFWDefSize:aWindSize[2]
+        nBottom:=oFWDefSize:aWindSize[3]
+        nRight:=oFWDefSize:aWindSize[4]
+
+        if (lRedefineBottom)
+            nBottom-=50
+        endif
+
+        DEFINE MSDIALOG oDlg TITLE cTitle FROM nTop,nLeft TO nBottom,nRight OF GetWndDefault() STATUS PIXEL
+
+            nTop:=oFWDefSize:GetDimension("TWebEngine","LININI")
+            nLeft:=oFWDefSize:GetDimension("TWebEngine","COLINI")
+            nBottom:=oFWDefSize:GetDimension("TWebEngine","LINEND")
+            nRight:=oFWDefSize:GetDimension("TWebEngine","COLEND")
+
+            nTop-=5
+            nBottom+=1
+            nRight-=5
+
+            if (lRedefineBottom)
+                nBottom-=25
+            endif
+
+            oTWebChannel:=TWebChannel():New()
+            oTWebChannel:Connect()
+
+            oTWebEngine:=TWebEngine():New(oDlg,nTop,nLeft,nRight,nBottom,/*cURL*/,oTWebChannel:nPort)
+            oTWebEngine:Align:=CONTROL_ALIGN_ALLCLIENT
+
+            nTop:=oFWDefSize:GetDimension("ButtonActions","LININI")
+            nBottom:=oFWDefSize:GetDimension("ButtonActions","LINEND")
+
+            if (lRedefineBottom)
+                nTop-=25
+                nBottom-=25
+            endif
+
+            nTop-=3
+            nRight+=3
+
+            @ nTop,03 GROUP oGrp TO nBottom+2,nRight PROMPT "" OF oDlg COLOR 0,16777215 PIXEL
+
+            nTop+=1
+            nRight+=5
+
+            //Botoes (da direita pra a esquerda)
+            @ nTop,(nRight)-((50*1)+06) BUTTON jButtons["1"] PROMPT aButtons[1][1] SIZE 50,08 OF oGrp ACTION Eval(aButtons[1][2]) PIXEL
+            @ nTop,(nRight)-((50*2)+09) BUTTON jButtons["2"] PROMPT aButtons[2][1] SIZE 50,08 OF oGrp ACTION Eval(aButtons[2][2]) PIXEL
+            @ nTop,(nRight)-((50*3)+12) BUTTON jButtons["3"] PROMPT aButtons[3][1] SIZE 50,08 OF oGrp ACTION Eval(aButtons[3][2]) PIXEL
+            if (lAbrir)
+                @ nTop,(nRight)-((50*4)+15) BUTTON jButtons["4"] PROMPT aButtons[4][1] SIZE 50,08 OF oGrp ACTION Eval(aButtons[4][2]) PIXEL
+            endif
+
+            oDlg:lEscClose:=.F.
+
+            FWMsgRun(nil,{||oTWebEngine:SetHtml(cHtml,cBaseURL)/*,oTWebEngine:Navigate()*/},"Aguarde...","Carregando Arquivo")
+
+            oDlg:lCentered:=(!lRedefineBottom)
+
+        ACTIVATE MSDIALOG oDlg
+
+        if (valtype(oTWebChannel)=="O")
+            oTWebChannel:Disconnect()
+        endif
+
+    end sequence
+
+    FWFreeArray(@aButtons)
+
+    FreeObj(oGrp)
+    FreeObj(oDlg)
+    FreeObj(jButtons)
+    FreeObj(oFWDefSize)
+
+    FreeObj(oTWebEngine)
+    FreeObj(oTWebChannel)
+
+    DelClassIntF()
+
+    return(lShowHtml)

@@ -16,7 +16,6 @@
     Output: [1]
 
     Constraints:
-
     The number of nodes in the list is sz.
     1 <= sz <= 30
     0 <= Node.val <= 100
@@ -24,7 +23,6 @@
 
     Released to Public Domain.
     --------------------------------------------------------------------------------------
-
 */
 procedure Main()
 
@@ -39,9 +37,8 @@ procedure Main()
     local nIdx as numeric
     local nTarget as numeric
 
-    aInputs:=Array(0)
-
     // Casos de teste definidos
+    aInputs:=Array(0)
     aAdd(aInputs,{{1,2,3,5},{1,2,3,4,5},2})// Caso 1
     aAdd(aInputs,{{},{1},1})// Caso 2
     aAdd(aInputs,{{1},{1,2},1})// Caso 3
@@ -54,6 +51,7 @@ procedure Main()
     cHTML+=    "<thead>"
     cHTML+=        "<tr style='background-color: #999; color: white; text-align: center;'>"
     cHTML+=            "<th>Input</th>"
+    cHTML+=            "<th>Nth Node</th>"
     cHTML+=            "<th>OutPut</th>"
     cHTML+=            "<th>Expected</th>"
     cHTML+=            "<th>Matched</th>"
@@ -70,6 +68,7 @@ procedure Main()
         // Gera uma linha na tabela HTML
         cHTML+=        "<tr>"
         cHTML+=            "<td align='left' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInput)+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(nTarget)+"</td>"
         cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aOutPut)+"</td>"
         cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInputs[nIdx][1])+"</td>"
         cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(lMatched)+"</td>"

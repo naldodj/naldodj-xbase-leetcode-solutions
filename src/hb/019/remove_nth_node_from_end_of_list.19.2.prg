@@ -27,11 +27,13 @@
 
 procedure Main()
 
-    local aInputs as array
     local aInput as array
+    local aInputs as array
     local aOutPut as array
+
     local cHTML as character
     local lMatched as logical
+
     local nIdx as numeric
     local nTarget as numeric
 
@@ -46,16 +48,17 @@ procedure Main()
    }
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
-    cHTML += "<caption>" + ProcName() + "</caption>"
-    cHTML += "<thead>"
-    cHTML += "<tr style='background-color: #999; color: white; text-align: center;'>"
-    cHTML += "<th>Input</th>"
-    cHTML += "<th>OutPut</th>"
-    cHTML += "<th>Expected</th>"
-    cHTML += "<th>Matched</th>"
-    cHTML += "</tr>"
-    cHTML += "</thead>"
-    cHTML += "<tbody>"
+    cHTML+=    "<caption>"+ProcName()+"</caption>"
+    cHTML+=    "<thead>"
+    cHTML+=        "<tr style='background-color: #999; color: white; text-align: center;'>"
+    cHTML+=            "<th>Input</th>"
+    cHTML+=            "<th>Nth Node</th>"
+    cHTML+=            "<th>OutPut</th>"
+    cHTML+=            "<th>Expected</th>"
+    cHTML+=            "<th>Matched</th>"
+    cHTML+=        "</tr>"
+    cHTML+=    "</thead>"
+    cHTML+=    "<tbody>"
 
     // Itera sobre os casos de teste
     for nIdx:=1 to Len(aInputs)
@@ -64,12 +67,13 @@ procedure Main()
         aOutPut:=removeNthFromEnd(aInput,nTarget) // Resultado da função removeNthFromEnd
         lMatched:=(hb_JSONEncode(aOutPut) == hb_JSONEncode(aInputs[nIdx][1])) // Verifica correspondência com o esperado
         // Gera uma linha na tabela HTML
-        cHTML += "<tr>"
-        cHTML += "<td align='left' style='background-color:" + if(lMatched,"#22560D","#E4080A") + ";'>" + hb_JSONEncode(aInput) + "</td>"
-        cHTML += "<td align='center' style='background-color:" + if(lMatched,"#22560D","#E4080A") + ";'>" + hb_JSONEncode(aOutPut) + "</td>"
-        cHTML += "<td align='center' style='background-color:" + if(lMatched,"#22560D","#E4080A") + ";'>" + hb_JSONEncode(aInputs[nIdx][1]) + "</td>"
-        cHTML += "<td align='center' style='background-color:" + if(lMatched,"#22560D","#E4080A") + ";'>" + hb_JSONEncode(lMatched) + "</td>"
-        cHTML += "</tr>"
+        cHTML+=        "<tr>"
+        cHTML+=            "<td align='left' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInput)+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(nTarget)+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aOutPut)+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInputs[nIdx][1])+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(lMatched)+"</td>"
+        cHTML+=        "</tr>"
     next nIdx
 
     cHTML += "</tbody>"

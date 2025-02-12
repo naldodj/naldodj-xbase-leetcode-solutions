@@ -31,8 +31,8 @@ namespace dna.tech.leetcode
 
 procedure u_MainRemoveNthNodeFromEndOfList_19_3()
 
-    local aInputs as array
     local aInput as array
+    local aInputs as array
     local aOutPut as array
 
     local cHTML as character
@@ -43,6 +43,7 @@ procedure u_MainRemoveNthNodeFromEndOfList_19_3()
     local nTarget as numeric
 
     // Casos de teste definidos
+    aInputs:=Array(0)
     aAdd(aInputs,{{1,2,3,5},{1,2,3,4,5},2})// Caso 1
     aAdd(aInputs,{{},{1},1})// Caso 2
     aAdd(aInputs,{{1},{1,2},1})// Caso 3
@@ -51,16 +52,17 @@ procedure u_MainRemoveNthNodeFromEndOfList_19_3()
     aAdd(aInputs,{{1,2,3,4,5},{1,2,3,4,5},0})// Caso 6 (edge case)
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
-    cHTML += "<caption>" + ProcName() + "</caption>"
-    cHTML += "<thead>"
-    cHTML += "<tr style='background-color: #999; color: white; text-align: center;'>"
-    cHTML += "<th>Input</th>"
-    cHTML += "<th>OutPut</th>"
-    cHTML += "<th>Expected</th>"
-    cHTML += "<th>Matched</th>"
-    cHTML += "</tr>"
-    cHTML += "</thead>"
-    cHTML += "<tbody>"
+    cHTML+=    "<caption>"+ProcName()+"</caption>"
+    cHTML+=    "<thead>"
+    cHTML+=        "<tr style='background-color: #999; color: white; text-align: center;'>"
+    cHTML+=            "<th>Input</th>"
+    cHTML+=            "<th>Nth Node</th>"
+    cHTML+=            "<th>OutPut</th>"
+    cHTML+=            "<th>Expected</th>"
+    cHTML+=            "<th>Matched</th>"
+    cHTML+=        "</tr>"
+    cHTML+=    "</thead>"
+    cHTML+=    "<tbody>"
 
     // Itera sobre os casos de teste
     for nIdx:=1 to Len(aInputs)
@@ -69,23 +71,23 @@ procedure u_MainRemoveNthNodeFromEndOfList_19_3()
         aOutPut:=removeNthFromEnd(aInput,nTarget) // Resultado da funcao removeNthFromEnd
         lMatched:=(hb_JSONEncode(aOutPut) == hb_JSONEncode(aInputs[nIdx][1])) // Verifica correspondencia com o esperado
         // Gera uma linha na tabela HTML
-        cHTML += "<tr>"
-        cHTML += "<td align='left' style='background-color:" + if(lMatched,"#22560D","#E4080A") + ";'>" + hb_JSONEncode(aInput) + "</td>"
-        cHTML += "<td align='center' style='background-color:" + if(lMatched,"#22560D","#E4080A") + ";'>" + hb_JSONEncode(aOutPut) + "</td>"
-        cHTML += "<td align='center' style='background-color:" + if(lMatched,"#22560D","#E4080A") + ";'>" + hb_JSONEncode(aInputs[nIdx][1]) + "</td>"
-        cHTML += "<td align='center' style='background-color:" + if(lMatched,"#22560D","#E4080A") + ";'>" + hb_JSONEncode(lMatched) + "</td>"
-        cHTML += "</tr>"
+        cHTML+=        "<tr>"
+        cHTML+=            "<td align='left' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInput)+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(nTarget)+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aOutPut)+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(aInputs[nIdx][1])+"</td>"
+        cHTML+=            "<td align='center' style='background-color:"+if(lMatched,"#22560D","#E4080A")+";'>"+hb_JSONEncode(lMatched)+"</td>"
+        cHTML+=        "</tr>"
     next nIdx
 
-    cHTML += "</tbody>"
-    cHTML += "</table>"
+    cHTML+=    "</tbody>"
+    cHTML+="</table>"
 
     // Exibe a tabela HTML no console
-    ? cHTML
-
-    ApMsgInfo(__getOutStd(),ProcName())
+    ?? cHTML
 
     return
+
 static function removeNthFromEnd(aNums as array,nTarget as numeric) as array
 
     local aResult as array
