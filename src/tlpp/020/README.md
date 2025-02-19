@@ -32,6 +32,7 @@
 
     1 <= s.length <= 104
     s consists of parentheses only '()[]{}'.
-
+---
+![image](https://github.com/user-attachments/assets/bc8dc7f3-685a-4fea-8821-091fb17fc7bf)
 ---
 ![image](https://github.com/user-attachments/assets/8fa91975-6f5f-4d71-affd-d796680c30a7)
