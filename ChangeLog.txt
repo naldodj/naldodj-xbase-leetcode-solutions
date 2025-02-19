@@ -3,6 +3,12 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-02-19 18:30 UTC naldodj (valid_parentheses: tlpp)
+  + src/tlpp/020/README.md
+  + src/tlpp/020/valid_parentheses.20.1.tlpp
+  + src/tlpp/020/valid_parentheses.20.2.tlpp
+  + src/tlpp/020/valid_parentheses.20.3.tlpp
+
 2025-02-19 18:08 UTC naldodj (valid_parentheses: harbour)
   * New test cases
     * src/hb/020/valid_parentheses.20.1.prg
