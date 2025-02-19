@@ -1,4 +1,7 @@
 ### naldodj-xbase-leetcode-solutions  
+---
+![image](https://github.com/user-attachments/assets/0001871c-f1e4-4a6e-b54c-f7f6e279cd53)
+---
 
 Soluções para problemas do [LeetCode](https://leetcode.com/problemset/) implementadas em (x)Base/TLPP, com foco em algoritmos otimizados e eficiência.  
 
