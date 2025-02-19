@@ -34,3 +34,4 @@
     s consists of parentheses only '()[]{}'.
 
 ---
+![image](https://github.com/user-attachments/assets/69c241d9-ad80-45ee-8e3f-0d4fd1d28cbc)
