@@ -53,6 +53,8 @@ procedure Main()
     aAdd(aInputs,{.T.,"([])"})// Caso 4
     aAdd(aInputs,{.T.,"{[()]}"})// Caso 5
     aAdd(aInputs,{.F.,"{[()}]"})// Caso 6
+    aAdd(aInputs,{.T.,"{{{{[[(({[()]}))]]}}}}"})// Caso 7
+    aAdd(aInputs,{.F.,"{{{{[[(({[()]}))]}]}}}"})// Caso 8
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
     cHTML+=    "<caption>"+ProcName()+"</caption>"
