@@ -3,6 +3,9 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-02-20 21:32 UTC naldodj (chinese_multiplication: harbour)
+  + src/hb/_00/gifts/001-chinese_multiplication/README.md
+
 2025-02-20 21:30 UTC naldodj (chinese_multiplication: harbour)
   + src/hb/_00/gifts/001-chinese_multiplication/chinese_multiplication.1.prg
   + src/hb/_00/gifts/001-chinese_multiplication/chinese_multiplication.2.prg
