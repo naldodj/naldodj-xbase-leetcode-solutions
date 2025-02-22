@@ -3,6 +3,10 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-02-22 08:33 UTC naldodj (russian_multiplication: harbour)
+  * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.1.prg
+  * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.2.prg
+
 2025-02-21 21:34 UTC naldodj (russian_multiplication: harbour)
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.1.prg
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.2.prg

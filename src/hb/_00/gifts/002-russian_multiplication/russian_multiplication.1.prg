@@ -192,7 +192,7 @@ static function BigAdd(cNum1,cNum2)
 
     local nCarry as numeric
     local nMaxLen,i as numeric
-    local n1,n2,nSum as numeric
+    local n1,n2,nSum,nLen1,nLen2 as numeric
 
     cRes:=""
     nCarry:=0
@@ -209,13 +209,15 @@ static function BigAdd(cNum1,cNum2)
     endif
 
     // Ajusta comprimento
-    if (Len(cNum1)>Len(cNum2))
+    nLen1:=Len(cNum1)
+    nLen2:=Len(cNum2)
+    if (nLen1>nLen2)
         cNum2:=(Replicate("0",Len(cNum1)-Len(cNum2))+cNum2)
-    elseif (Len(cNum2)>Len(cNum1))
+    elseif (nLen2>nLen1)
         cNum1:=(Replicate("0",Len(cNum2)-Len(cNum1))+cNum1)
     endif
 
-    nMaxLen:=Len(cNum1)
+    nMaxLen:=Max(nLen1,nLen2)
 
     // Soma de trás pra frente
     for i:=nMaxLen to 1 step -1
