@@ -22,16 +22,16 @@
     340 x 125
     170 x 250
      85 x 500
-                +500
+               +500
      42 x 1000
      21 x 2000
-                +2000
+               +2000
      10 x 4000
       5 x 8000
-                +8000
+               +8000
       2 x 16000
       1 x 32000
-                +32000
+               +32000
      result:   42500
 
     Released to Public Domain.
@@ -144,7 +144,7 @@ static function RussianMultiplication(cN1,cN2,lTrace)
             cResultado:=BigAdd(cResultado,cTmpN2)
             // Exibe passo a passo
             if (lTrace)
-                ? cTab,"+" +cTmpN2,"<br/>"
+                ? cTab,"+"+cTmpN2,"<br/>"
             endif
             cTmpN1:=BigSubOne(cTmpN1) // Subtrai 1
         endif
@@ -288,6 +288,7 @@ static function BigSubOne(cNum as character)
 static function BigHalve(cNum as character)
 
     local cRes as character
+    local cTmp as character
 
     local i,nVal,nDiv as numeric
     local nCarry as numeric
@@ -309,7 +310,8 @@ static function BigHalve(cNum as character)
         cRes+=LTrim(Str(nDiv,1))
     next i
 
-    cRes:=iif(Empty(BigTrimLeftZeros(cRes)),"0",BigTrimLeftZeros(cRes))
+    cTmp:=BigTrimLeftZeros(cRes)
+    cRes:=iif(Empty(cTmp),"0",cTmp)
 
     return(cRes)
 
