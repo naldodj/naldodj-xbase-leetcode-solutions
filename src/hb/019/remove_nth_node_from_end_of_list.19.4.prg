@@ -53,7 +53,7 @@ procedure Main()
 
     // Itera sobre os casos de teste
     for each aInput in aInputs
-        oHead:=arrayToList(aInput[2])// Entrada atual
+        oHead:=ArrayToList(aInput[2])// Entrada atual
         nTarget:=aInput[3] // Valor de n
         aResult:=ListToArray(removeNthFromEnd(oHead,nTarget)) // Resultado da função removeNthFromEnd
         cHTML+=GenerateHTMLRow(aInput[2],nTarget,aResult,aInput[1]) // Gera uma linha na tabela HTML
@@ -122,7 +122,7 @@ static function removeNthFromEnd(oHead as object,nTarget as numeric)
 
     return(oDummy:next) as object
 
-static function arrayToList(aNums as array)
+static function ArrayToList(aNums as array)
 
     local i as numeric
 
