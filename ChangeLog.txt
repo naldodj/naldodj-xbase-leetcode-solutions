@@ -3,6 +3,12 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-03-25 10:21 UTC naldodj (merge_two_sorted_lists: harbour)
+  + src/hb/021/merge_two_sorted_lists.21.1.prg
+  + src/hb/021/merge_two_sorted_lists.21.2.prg
+  + src/hb/021/README.md
+  * src/hb/019/remove_nth_node_from_end_of_list.19.4.prg
+
 2025-02-22 08:33 UTC naldodj (russian_multiplication: harbour)
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.1.prg
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.2.prg

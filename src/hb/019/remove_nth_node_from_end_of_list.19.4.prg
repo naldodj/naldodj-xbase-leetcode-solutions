@@ -19,7 +19,7 @@
 
     The number of nodes in the list is sz.
     1 <= sz <= 30
-    0 <= Node.val <= 100
+    0 <= Node.value <= 100
     1 <= n <= sz
 
     Released to Public Domain.
@@ -55,8 +55,8 @@ procedure Main()
     for each aInput in aInputs
         oHead:=arrayToList(aInput[2])// Entrada atual
         nTarget:=aInput[3] // Valor de n
-        aResult:=listToArray(removeNthFromEnd(oHead,nTarget)) // Resultado da função removeNthFromEnd
-        cHTML+=generateHTMLRow(aInput[2],nTarget,aResult,aInput[1]) // Gera uma linha na tabela HTML
+        aResult:=ListToArray(removeNthFromEnd(oHead,nTarget)) // Resultado da função removeNthFromEnd
+        cHTML+=GenerateHTMLRow(aInput[2],nTarget,aResult,aInput[1]) // Gera uma linha na tabela HTML
     next each
 
     cHTML+="</tbody></table>"
@@ -73,8 +73,8 @@ function TListNode()
 
       s_oTListNodeClass:=HBClass():New("TLISTNODE")
 
-      s_oTListNodeClass:AddData("Val")
-      s_oTListNodeClass:AddData("Next",10)
+      s_oTListNodeClass:AddData("value")
+      s_oTListNodeClass:AddData("next",10)
 
       s_oTListNodeClass:AddMethod("New",@TListNodeNew())
 
@@ -82,15 +82,15 @@ function TListNode()
 
    endif
 
-   return(s_oTListNodeClass:Instance())
+   return(s_oTListNodeClass:Instance()) as object
 
-static function TListNodeNew(Val,Next)
+static function TListNodeNew(value,next)
     self:=QSelf()
-    self:Val:=Val
-    self:Next:=Next
-return(self)
+    self:value:=value
+    self:next:=next
+    return(self) as object
 
-static function removeNthFromEnd(oHead,nTarget)
+static function removeNthFromEnd(oHead as object,nTarget as numeric)
 
     local i as numeric
 
@@ -105,22 +105,22 @@ static function removeNthFromEnd(oHead,nTarget)
     // Avança oFirst n+1 posições à frente
     for i:=1 to nTarget+1
         if (oFirst!=NIL)
-            oFirst:=oFirst:Next
+            oFirst:=oFirst:next
         endif
     next i
 
     // Move oFirst até o final,mantendo oSecond n posições atrás
     while (oFirst!=NIL)
-        oFirst:=oFirst:Next
-        oSecond:=oSecond:Next
+        oFirst:=oFirst:next
+        oSecond:=oSecond:next
     end while
 
     // Remove o nth nó
-    if (oSecond:Next!=NIL)
-        oSecond:Next:=oSecond:Next:Next
+    if (oSecond:next!=NIL)
+        oSecond:next:=oSecond:next:next
     endif
 
-    return(oDummy:Next) as object
+    return(oDummy:next) as object
 
 static function arrayToList(aNums as array)
 
@@ -133,26 +133,26 @@ static function arrayToList(aNums as array)
     oCurrent:=oDummy
 
     for i:=1 to Len(aNums)
-        oCurrent:Next:=TListNode():New(aNums[i],NIL)
+        oCurrent:next:=TListNode():New(aNums[i],NIL)
         oCurrent:=oCurrent:Next
     next i
 
     return(oDummy:Next) as object
 
-static function listToArray(oHead as object)
+static function ListToArray(oHead as object)
 
     local aResult as array
 
     aResult:=Array(0)
 
     while (oHead!=NIL)
-        aAdd(aResult,oHead:Val)
+        aAdd(aResult,oHead:value)
         oHead:=oHead:Next
     end while
 
     return(aResult) as array
 
-static function generateHTMLRow(aInput as array,nNthNode as numeric,aOutput as array,aExpected as array)
+static function GenerateHTMLRow(aInput as array,nNthNode as numeric,aOutput as array,aExpected as array)
 
     local cRow as character
     local cBgColor as character
