@@ -27,3 +27,5 @@
     Both list1 and list2 are sorted in non-decreasing order.
 
 ---
+![image](https://github.com/user-attachments/assets/351a8c28-ca55-4eac-8cc5-0bc77d5fb075)
+
