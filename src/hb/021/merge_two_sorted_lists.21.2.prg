@@ -32,7 +32,7 @@ procedure Main()
 
     local aInput as array
     local aInputs as array
-    local aResult as array:=Array(0)
+    local aResult as array
 
     local cHTML as character
 
@@ -49,11 +49,10 @@ procedure Main()
 
     // Itera sobre os casos de teste
     for each aInput in aInputs
-        aEval(aInput[2],{|e|aAdd(aResult,e)})
+        aResult:=aClone(aInput[2])
         aEval(aInput[3],{|e|aAdd(aResult,e)})
         aResult:=aSort(aResult,nil,nil,{|x,y|x<y}) // Resultado da função aSort
         cHTML+=GenerateHTMLRow(aInput[2],aInput[3],aResult,aInput[1]) // Gera uma linha na tabela HTML
-        aSize(aResult,0)
     next each
 
     cHTML+="</tbody></table>"
