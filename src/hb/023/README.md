@@ -35,3 +35,4 @@
     The sum of lists[i].length will not exceed 10^4.
 
 ---
+![image](https://github.com/user-attachments/assets/ad9deecc-4a5c-4fac-a860-6ef7952f5806)
