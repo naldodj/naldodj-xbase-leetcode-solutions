@@ -99,11 +99,25 @@ return(self) as object
 static function MergeKLists(aLists as array)
 
     local aList as array
-    local aResult as array:=Array(0)
+    local aResult as array
 
-    for each aList in aLists
-        aResult:=ListToArray(MergeSortedLists(CreateLinkedList(aResult),CreateLinkedList(aList)))
-    next each //aList
+    begin sequence
+
+        if (empty(aLists))
+            aResult:=Array(0)
+            break
+        endif
+
+        for each aList in aLists
+            if (aList:__enumIndex()==1)
+                // Inicializa a lista mesclada com a primeira lista
+                aResult:=aLists[1]
+            else
+                aResult:=ListToArray(MergeSortedLists(CreateLinkedList(aResult),CreateLinkedList(aList)))
+            endif
+        next each //aList
+
+    end sequence
 
     return(aResult) as array
 
