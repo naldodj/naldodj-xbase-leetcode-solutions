@@ -1,34 +1,46 @@
 /*
-    21. Merge Two Sorted Lists
+    23. Merge k Sorted Lists
 
-    You are given the heads of two sorted linked lists list1 and list2.
+    You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
 
-    Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
-
-    Return the head of the merged linked list.
+    Merge all the linked-lists into one sorted linked-list and return it.
 
     Example 1:
-    Input: list1 = [1,2,4], list2 = [1,3,4]
-    Output: [1,1,2,3,4,4]
+    Input: lists = [[1,4,5],[1,3,4],[2,6]]
+    Output: [1,1,2,3,4,4,5,6]
+    Explanation: The linked-lists are:
+    [
+      1->4->5,
+      1->3->4,
+      2->6
+    ]
+    merging them into one sorted list:
+    1->1->2->3->4->4->5->6
 
     Example 2:
-    Input: list1 = [], list2 = []
+    Input: lists = []
     Output: []
 
     Example 3:
-    Input: list1 = [], list2 = [0]
-    Output: [0]
+    Input: lists = [[]]
+    Output: []
 
     Constraints:
-
-    The number of nodes in both lists is in the range [0, 50].
-    -100 <= Node.val <= 100
-    Both list1 and list2 are sorted in non-decreasing order.
+    k == lists.length
+    0 <= k <= 10^4
+    0 <= lists[i].length <= 500
+    -10^4 <= lists[i][j] <= 10^4
+    lists[i] is sorted in ascending order.
+    The sum of lists[i].length will not exceed 104.
 
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
 procedure Main()
+    Merge_K_Sorted_Lists()
+return
+
+static procedure Merge_K_Sorted_Lists()
 
     local aInput as array
     local aInputs as array
@@ -36,26 +48,21 @@ procedure Main()
 
     local cHTML as character
 
-    local oList1 as object
-    local oList2 as object
-
     // Casos de teste definidos
     aInputs:=Array(0)
-    aAdd(aInputs,{{1,1,2,3,4,4},{1,2,4},{1,3,4}}) // Caso 1
-    aAdd(aInputs,{{},{},{}}) // Caso 2
-    aAdd(aInputs,{{0},{},{0}}) // Caso 3
-    aAdd(aInputs,{{1,1,2,2,3,3,4,4},{1,2,3,4},{1,2,3,4}}) // Caso 4
+    aAdd(aInputs,{{1,1,2,3,4,4,5,6},{{1,4,5},{1,3,4},{2,6}}}) // Caso 1
+    aAdd(aInputs,{{},{}}) // Caso 2
+    aAdd(aInputs,{{},{{}}}) // Caso 3
+    aAdd(aInputs,{{0,1,2,3,4,5,6,7,8,9},{{2,4,6,8},{0},{1,3,5,7,9}}}) // Caso 4
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
     cHTML+="<caption>"+ProcName()+"</caption><toHead><tr style='background-color: #999; color: white; text-align: center;'>"
-    cHTML+="<th>Input1</th><th>Input2</th><th>Merged List</th><th>Expected</th><th>Matched</th></tr></toHead><tbody>"
+    cHTML+="<th>Input</th><th>Merged List</th><th>Expected</th><th>Matched</th></tr></toHead><tbody>"
 
     // Itera sobre os casos de teste
     for each aInput in aInputs
-        oList1:=CreateLinkedList(aInput[2])// Entrada atual Lista 1
-        oList2:=CreateLinkedList(aInput[3])// Entrada atual Lista 2
-        aResult:=ListToArray(MergeSortedLists(oList1,oList2)) // Resultado da função MergeSortedLists
-        cHTML+=GenerateHTMLRow(aInput[2],aInput[3],aResult,aInput[1]) // Gera uma linha na tabela HTML
+        aResult:=MergeKLists(aInput[2]) // Resultado da função MergeKLists
+        cHTML+=GenerateHTMLRow(aInput[2],aResult,aInput[1]) // Gera uma linha na tabela HTML
     next each
 
     cHTML+="</tbody></table>"
@@ -88,6 +95,17 @@ static function TListNodeNew(value,next)
     self:value:=value
     self:next:=next
 return(self) as object
+
+static function MergeKLists(aLists as array)
+
+    local aList as array
+    local aResult as array:=Array(0)
+
+    for each aList in aLists
+        aResult:=ListToArray(MergeSortedLists(CreateLinkedList(aResult),CreateLinkedList(aList)))
+    next each //aList
+
+    return(aResult) as array
 
 static function MergeSortedLists(oList1 as object,oList2 as object)
 
@@ -150,7 +168,7 @@ static function ListToArray(oHead as object)
 
     return(aResult) as array
 
-static function GenerateHTMLRow(aInput1 as array,aInput2 as array,aOutput as array,aExpected as array)
+static function GenerateHTMLRow(aInput as array,aOutput as array,aExpected as array)
 
     local cRow as character
     local cBgColor as character
@@ -161,8 +179,7 @@ static function GenerateHTMLRow(aInput1 as array,aInput2 as array,aOutput as arr
     cBgColor:=if(lMatched,"#22560D","#E4080A")
 
     cRow:="<tr>"
-    cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aInput1)+"</td>"
-    cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aInput2)+"</td>"
+    cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aInput)+"</td>"
     cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aOutput)+"</td>"
     cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aExpected)+"</td>"
     cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(lMatched)+"</td>"
