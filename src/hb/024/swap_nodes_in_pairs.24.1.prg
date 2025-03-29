@@ -1,38 +1,38 @@
 /*
-    21. Merge Two Sorted Lists
 
-    You are given the heads of two sorted linked lists list1 and list2.
+    24. Swap Nodes in Pairs
 
-    Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
-
-    Return the head of the merged linked list.
+    Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
 
     Example 1:
-    Input: list1 = [1,2,4], list2 = [1,3,4]
-    Output: [1,1,2,3,4,4]
+    Input: head =[1,2,3,4]
+    Output: [2,1,4,3]
 
     Example 2:
-    Input: list1 = [], list2 = []
+    Input: head =[]
     Output: []
 
     Example 3:
-    Input: list1 = [], list2 = [0]
-    Output: [0]
+    Input: head =[1]
+    Output: [1]
+
+    Example 4:
+    Input: head =[1,2,3]
+    Output: [2,1,3]
 
     Constraints:
 
-    The number of nodes in both lists is in the range [0, 50].
-    -100 <= Node.val <= 100
-    Both list1 and list2 are sorted in non-decreasing order.
+    The number of nodes in the list is in the range [0, 100].
+    0<=Node.val<=100
 
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
 procedure Main()
-    Merge_Two_Sorted_Lists()
-    return
+    Swap_Nodes_In_Pairs()
+return
 
-procedure Merge_Two_Sorted_Lists()
+static procedure Swap_Nodes_In_Pairs()
 
     local aInput as array
     local aInputs as array
@@ -40,26 +40,23 @@ procedure Merge_Two_Sorted_Lists()
 
     local cHTML as character
 
-    local oList1 as object
-    local oList2 as object
-
     // Casos de teste definidos
     aInputs:=Array(0)
-    aAdd(aInputs,{{1,1,2,3,4,4},{1,2,4},{1,3,4}}) // Caso 1
-    aAdd(aInputs,{{},{},{}}) // Caso 2
-    aAdd(aInputs,{{0},{},{0}}) // Caso 3
-    aAdd(aInputs,{{1,1,2,2,3,3,4,4},{1,2,3,4},{1,2,3,4}}) // Caso 4
+    aAdd(aInputs,{{2,1,4,3},{1,2,3,4}}) // Caso 1
+    aAdd(aInputs,{{},{}}) // Caso 2
+    aAdd(aInputs,{{1},{1}}) // Caso 3
+    aAdd(aInputs,{{2,1,3},{1,2,3}}) // Caso 4
+    aAdd(aInputs,{{1,0,3,2,5,4,7,6,9,8},{0,1,2,3,4,5,6,7,8,9}}) // Caso 5
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
     cHTML+="<caption>"+ProcName()+"</caption><toHead><tr style='background-color: #999; color: white; text-align: center;'>"
-    cHTML+="<th>Input1</th><th>Input2</th><th>Merged List</th><th>Expected</th><th>Matched</th></tr></toHead><tbody>"
+    cHTML+="<th>Input</th><th>Swaped Nodes</th><th>Expected</th><th>Matched</th></tr></toHead><tbody>"
 
     // Itera sobre os casos de teste
     for each aInput in aInputs
-        oList1:=CreateLinkedList(aInput[2])// Entrada atual Lista 1
-        oList2:=CreateLinkedList(aInput[3])// Entrada atual Lista 2
-        aResult:=ListToArray(MergeSortedLists(oList1,oList2)) // Resultado da função MergeSortedLists
-        cHTML+=GenerateHTMLRow(aInput[2],aInput[3],aResult,aInput[1]) // Gera uma linha na tabela HTML
+        // Cria a lista encadeada a partir do array de entrada, efetua a troca de pares e converte o resultado de volta para array
+        aResult:=ListToArray(SwapPairs(CreateLinkedList(aInput[2]))) // Resultado da função SwapPairs
+        cHTML+=GenerateHTMLRow(aInput[2],aResult,aInput[1]) // Gera uma linha na tabela HTML
     next each
 
     cHTML+="</tbody></table>"
@@ -88,33 +85,33 @@ static function TListNodeNew(value,next)
     self:next:=next
 return(self) as object
 
-static function MergeSortedLists(oList1 as object,oList2 as object)
+static function SwapPairs(oHead as object)
 
-    local oTail as object
     local oDummy as object
+    local oFirst as object
+    local oSecond as object
+    local oCurrent as object
 
-    oDummy:=TListNode():New(0,NIL) // Nó fictício para facilitar a junção
-    oTail:=oDummy
+    // Cria um nó fictício que aponta para a cabeça da lista
+    oDummy:=TListNode():New(0, NIL)
+    oDummy:next:=oHead
+    oCurrent:=oDummy
 
-    while ((oList1!=NIL).and.(oList2!=NIL))
-        if ((oList1:value)<=(oList2:value))
-            oTail:next:=oList1
-            oList1:=oList1:next
-        else
-            oTail:next:=oList2
-            oList2:=oList2:next
-        endif
-        oTail:=oTail:next
+    // Enquanto existirem pelo menos dois nós à frente
+    while ((oCurrent:next!=NIL).and.(oCurrent:next:next!=NIL) )
+        // Define os dois nós a serem trocados
+        oFirst:=oCurrent:next
+        oSecond:=oCurrent:next:next
+        // Realiza a troca dos nós
+        oFirst:next:=oSecond:next
+        oSecond:next:=oFirst
+        oCurrent:next:=oSecond
+        // Avança o ponteiro para o próximo par
+        oCurrent:=oFirst
     end while
 
-    // Se ainda houver elementos em uma das listas
-    if (oList1!=NIL)
-        oTail:next:=oList1
-    else
-        oTail:next:=oList2
-    endif
-
-    return(oDummy:next) as object // Retorna a lista mesclada, ignorando o nó fictício
+    // Retorna a nova cabeça da lista (ignora o nó fictício)
+    return(oDummy:next) as object
 
 static function CreateLinkedList(aList as array)
     return(ArrayToList(aList)) as object
@@ -149,7 +146,7 @@ static function ListToArray(oHead as object)
 
     return(aResult) as array
 
-static function GenerateHTMLRow(aInput1 as array,aInput2 as array,aOutput as array,aExpected as array)
+static function GenerateHTMLRow(aInput as array,aOutput as array,aExpected as array)
 
     local cRow as character
     local cBgColor as character
@@ -160,8 +157,7 @@ static function GenerateHTMLRow(aInput1 as array,aInput2 as array,aOutput as arr
     cBgColor:=if(lMatched,"#22560D","#E4080A")
 
     cRow:="<tr>"
-    cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aInput1)+"</td>"
-    cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aInput2)+"</td>"
+    cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aInput)+"</td>"
     cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aOutput)+"</td>"
     cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(aExpected)+"</td>"
     cRow+="<td style='background-color:"+cBgColor+";'>"+hb_JSONEncode(lMatched)+"</td>"

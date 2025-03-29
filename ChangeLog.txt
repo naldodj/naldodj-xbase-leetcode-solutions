@@ -3,6 +3,13 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-03-29 12:11 UTC naldodj (Swap nodes in pairs)
+  + src/hb/024/README.md
+  + src/hb/024/swap_nodes_in_pairs.24.1.prg
+  * src/hb/021/merge_two_sorted_lists.21.1.prg
+  * src/hb/023/merge_k_sorted_lists.23.1.prg
+  * src/hb/019/remove_nth_node_from_end_of_list.19.4.prg
+
 2025-03-28 12:41 UTC naldodj (Merge k Sorted Lists)
   % src/hb/023/merge_k_sorted_lists.23.1.prg
 

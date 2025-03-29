@@ -27,6 +27,10 @@
 
 */
 procedure Main()
+    Remove_Nth_Node_From_End_of_List()
+    return
+
+procedure Remove_Nth_Node_From_End_of_List()
 
     local aInput as array
     local aInputs as array
@@ -67,25 +71,20 @@ procedure Main()
 
 function TListNode()
 
-   static s_oTListNodeClass
+   static s_oTListNodeClass as object
 
    if (s_oTListNodeClass==NIL)
-
       s_oTListNodeClass:=HBClass():New("TLISTNODE")
-
       s_oTListNodeClass:AddData("value")
       s_oTListNodeClass:AddData("next",10)
-
       s_oTListNodeClass:AddMethod("New",@TListNodeNew())
-
       s_oTListNodeClass:Create()
-
    endif
 
    return(s_oTListNodeClass:Instance()) as object
 
 static function TListNodeNew(value,next)
-    self:=QSelf()
+    local self as object:=QSelf()
     self:value:=value
     self:next:=next
     return(self) as object
