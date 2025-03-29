@@ -44,8 +44,8 @@ procedure Main()
     aAdd(aInputs,{{1,1,2,2,3,3,4,4},{1,2,3,4},{1,2,3,4}}) // Caso 4
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
-    cHTML+="<caption>"+ProcName()+"</caption><toHead><tr style='background-color: #999; color: white; text-align: center;'>"
-    cHTML+="<th>Input1</th><th>Input2</th><th>Merged List</th><th>Expected</th><th>Matched</th></tr></toHead><tbody>"
+    cHTML+="<caption>"+ProcName()+"</caption><thead><tr style='background-color: #999; color: white; text-align: center;'>"
+    cHTML+="<th>Input1</th><th>Input2</th><th>Merged List</th><th>Expected</th><th>Matched</th></tr></thead><tbody>"
 
     // Itera sobre os casos de teste
     for each aInput in aInputs

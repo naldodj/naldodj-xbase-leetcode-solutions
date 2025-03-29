@@ -56,8 +56,8 @@ static procedure Merge_K_Sorted_Lists()
     aAdd(aInputs,{{0,1,2,3,4,5,6,7,8,9},{{2,4,6,8},{0},{1,3,5,7,9}}}) // Caso 4
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
-    cHTML+="<caption>"+ProcName()+"</caption><toHead><tr style='background-color: #999; color: white; text-align: center;'>"
-    cHTML+="<th>Input</th><th>Merged List</th><th>Expected</th><th>Matched</th></tr></toHead><tbody>"
+    cHTML+="<caption>"+ProcName()+"</caption><thead><tr style='background-color: #999; color: white; text-align: center;'>"
+    cHTML+="<th>Input</th><th>Merged List</th><th>Expected</th><th>Matched</th></tr></thead><tbody>"
 
     // Itera sobre os casos de teste
     for each aInput in aInputs

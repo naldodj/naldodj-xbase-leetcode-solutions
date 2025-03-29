@@ -52,8 +52,8 @@ procedure Remove_Nth_Node_From_End_of_List()
     aAdd(aInputs,{{1,2,3,4,5},{1,2,3,4,5},0}) // Caso 6
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
-    cHTML+="<caption>"+ProcName()+"</caption><toHead><tr style='background-color: #999; color: white; text-align: center;'>"
-    cHTML+="<th>Input</th><th>Nth Node</th><th>Output</th><th>Expected</th><th>Matched</th></tr></toHead><tbody>"
+    cHTML+="<caption>"+ProcName()+"</caption><thead><tr style='background-color: #999; color: white; text-align: center;'>"
+    cHTML+="<th>Input</th><th>Nth Node</th><th>Output</th><th>Expected</th><th>Matched</th></tr></thead><tbody>"
 
     // Itera sobre os casos de teste
     for each aInput in aInputs

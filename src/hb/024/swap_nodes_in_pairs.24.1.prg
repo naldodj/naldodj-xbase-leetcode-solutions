@@ -49,8 +49,8 @@ static procedure Swap_Nodes_In_Pairs()
     aAdd(aInputs,{{1,0,3,2,5,4,7,6,9,8},{0,1,2,3,4,5,6,7,8,9}}) // Caso 5
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
-    cHTML+="<caption>"+ProcName()+"</caption><toHead><tr style='background-color: #999; color: white; text-align: center;'>"
-    cHTML+="<th>Input</th><th>Swaped Nodes</th><th>Expected</th><th>Matched</th></tr></toHead><tbody>"
+    cHTML+="<caption>"+ProcName()+"</caption><thead><tr style='background-color: #999; color: white; text-align: center;'>"
+    cHTML+="<th>Input</th><th>Swaped Nodes</th><th>Expected</th><th>Matched</th></tr></thead><tbody>"
 
     // Itera sobre os casos de teste
     for each aInput in aInputs
