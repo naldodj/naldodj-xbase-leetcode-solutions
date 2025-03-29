@@ -23,4 +23,4 @@
 
     Each element in nums appears exactly three times except for one element which appears once.
 ---
-![image](https://github.com/user-attachments/assets/350d7520-d605-4560-90e6-8128d473fafd)
+![image](https://github.com/user-attachments/assets/9f37c736-a74b-4ae7-8526-09c75bf0c865)
