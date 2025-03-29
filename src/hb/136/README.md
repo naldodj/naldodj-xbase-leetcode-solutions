@@ -26,5 +26,4 @@
 
     Each element in the array appears twice except for one element which appears only once.
 ---
-![image](https://github.com/user-attachments/assets/65b629f8-b349-4db6-8517-2423f6c728f4)
-
+![image](https://github.com/user-attachments/assets/c1290179-f6d2-4816-b1e9-a019b386b3ac)
