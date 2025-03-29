@@ -38,7 +38,10 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+function Main()
+    return(Regular_Expression_Matching())
+
+static function Regular_Expression_Matching()
 
     local aInputs as array:=Array(0)
 
@@ -99,7 +102,7 @@ procedure Main()
 
     ? cHTML
 
-    return
+    return(nil)
 
 // Wrapper function
 static function IsMatch(cString as character,cPattern as character,nMin as numeric,nMax as numeric)

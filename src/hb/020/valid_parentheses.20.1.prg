@@ -33,7 +33,10 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-procedure Main()
+function Main()
+    return(Valid_Parentheses())
+
+static function Valid_Parentheses()
 
     local aInputs as array
 
@@ -88,7 +91,7 @@ procedure Main()
     // Exibe a tabela HTML no console
     ? cHTML
 
-    return
+    return(nil)
 
 static function IsValid(cInput as character)
 

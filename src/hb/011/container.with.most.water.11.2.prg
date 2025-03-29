@@ -30,7 +30,10 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+function Main()
+return(Container_With_Most_Water())
+
+function Container_With_Most_Water()
 
     local aInput as array
     local aInputs as array
@@ -76,7 +79,7 @@ procedure Main()
 
     ? cHTML
 
-    return
+    return(nil)
 
 static function MaxArea(aHeight as array)
 

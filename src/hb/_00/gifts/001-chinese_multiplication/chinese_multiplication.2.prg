@@ -4,7 +4,10 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-procedure Main()
+function Main()
+    return(Chinese_Multiplication())
+
+static function Chinese_Multiplication()
 
     local aInputs as array
 
@@ -66,7 +69,7 @@ procedure Main()
     // Exibe a tabela HTML no console
     ? cHTML
 
-    return
+    return(nil)
 
 static function ChineseMultiplication(cN1 as string,cN2 as string)
 

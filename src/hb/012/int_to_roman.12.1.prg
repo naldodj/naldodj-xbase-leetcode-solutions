@@ -63,7 +63,10 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+function Main()
+return(Integer_to_Roman())
+
+static function Integer_to_Roman()
 
     local aInputs as array
 
@@ -115,7 +118,7 @@ procedure Main()
 
     ? cHTML
 
-    return
+    return(nil)
 
 static function intToRoman( nNumber as numeric )
 

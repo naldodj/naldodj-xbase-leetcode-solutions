@@ -33,7 +33,7 @@
 */
 
 function Main()
-return(Single_Number())
+    return(Single_Number())
 
 static function Single_Number()
 

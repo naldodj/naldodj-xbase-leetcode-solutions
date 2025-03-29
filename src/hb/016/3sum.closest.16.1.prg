@@ -29,7 +29,10 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+function Main()
+    return(Three_Sum_Closest())
+
+static function Three_Sum_Closest()
 
     /*
         aInputs contém conjuntos de casos de teste. Cada entrada é uma matriz de dois elementos:
@@ -92,7 +95,7 @@ procedure Main()
     // Exibe a tabela HTML no console
     ? cHTML
 
-    return
+    return(nil)
 
 static function ThreeSumClosest(aNums as array,nTarget as numeric)
 

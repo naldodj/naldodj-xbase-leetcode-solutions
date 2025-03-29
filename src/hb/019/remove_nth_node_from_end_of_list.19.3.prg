@@ -24,7 +24,10 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-procedure Main()
+function Main()
+    return(Remove_Nth_Node_From_End_of_List())
+
+static function Remove_Nth_Node_From_End_of_List()
 
     local aInput as array
     local aInputs as array
@@ -81,7 +84,7 @@ procedure Main()
     // Exibe a tabela HTML no console
     ? cHTML
 
-    return
+    return(nil)
 
 static function removeNthFromEnd(aNums as array, nTarget as numeric)
 

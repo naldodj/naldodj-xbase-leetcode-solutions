@@ -27,7 +27,10 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+function Main()
+    return(Four_Sum())
+
+static function Four_Sum()
 
     local aInput as array
     local aInputs as array
@@ -79,7 +82,7 @@ procedure Main()
     // Exibe a tabela HTML no console
     ? cHTML
 
-    return
+    return(nil)
 
 static function FourSum(aNums as array,nTarget as numeric)
 

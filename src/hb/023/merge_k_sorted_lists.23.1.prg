@@ -36,11 +36,10 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-procedure Main()
-    Merge_K_Sorted_Lists()
-return
+function Main()
+    return(Merge_K_Sorted_Lists())
 
-static procedure Merge_K_Sorted_Lists()
+static function Merge_K_Sorted_Lists()
 
     local aInput as array
     local aInputs as array
@@ -69,7 +68,7 @@ static procedure Merge_K_Sorted_Lists()
 
     ? cHTML
 
-    return
+    return(nil)
 
 function TListNode()
 

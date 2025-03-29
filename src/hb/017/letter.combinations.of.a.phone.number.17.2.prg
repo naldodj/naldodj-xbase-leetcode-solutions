@@ -29,7 +29,10 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+function Main()
+    return(Letter_Combinations_of_a_Phone_Number())
+
+static function Letter_Combinations_of_a_Phone_Number()
 
     /*
         aInputs contém conjuntos de casos de teste. Cada entrada é uma matriz de dois elementos:
@@ -96,7 +99,7 @@ procedure Main()
     // Exibe a tabela HTML no console
     ? cHTML
 
-    return
+    return(nil)
 
 static function LetterCombinations(cDigits as character)
 

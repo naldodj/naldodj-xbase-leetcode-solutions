@@ -37,7 +37,10 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-procedure Main()
+function Main()
+    return(Russian_Multiplication())
+
+static function Russian_Multiplication()
 
     local aInputs as array
 
@@ -112,7 +115,7 @@ procedure Main()
     // Exibe a tabela HTML no console
     ? cHTML
 
-    return
+    return(nil)
 
 /* -------------------------------------------------------------
    RussianMultiplication(cN1,cN2,lTrace)

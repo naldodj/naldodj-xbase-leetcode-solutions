@@ -36,7 +36,10 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+function Main()
+    return(Three_Sum())
+
+static function Three_Sum()
 
     /*
         aInputs contém conjuntos de casos de teste. Cada entrada é uma matriz de dois elementos:
@@ -100,7 +103,7 @@ procedure Main()
     // Exibe a tabela HTML no console
     ? cHTML
 
-    return
+    return(nil)
 
 /*
     Função ThreeSum:

@@ -28,11 +28,10 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-procedure Main()
-    Swap_Nodes_In_Pairs()
-return
+function Main()
+    return(Swap_Nodes_In_Pairs())
 
-static procedure Swap_Nodes_In_Pairs()
+static function Swap_Nodes_In_Pairs()
 
     local aInput as array
     local aInputs as array
@@ -63,7 +62,7 @@ static procedure Swap_Nodes_In_Pairs()
 
     ? cHTML
 
-    return
+    return(nil)
 
 function TListNode()
 

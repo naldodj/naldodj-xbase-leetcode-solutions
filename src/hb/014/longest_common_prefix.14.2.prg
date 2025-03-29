@@ -26,7 +26,10 @@
     --------------------------------------------------------------------------------------
 
 */
-procedure Main()
+function Main()
+    return(Longest_Common_Prefix())
+
+static function Longest_Common_Prefix()
 
     local aInput as array
     local aInputs as array
@@ -73,7 +76,7 @@ procedure Main()
 
     ? cHTML
 
-    return
+    return(nil)
 
 static function LongestCommonPrefix(aStrings as array)
 

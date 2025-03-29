@@ -28,11 +28,10 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-procedure Main()
-    Merge_Two_Sorted_Lists()
-    return
+function Main()
+    return(Merge_Two_Sorted_Lists())
 
-procedure Merge_Two_Sorted_Lists()
+static function Merge_Two_Sorted_Lists()
 
     local aInput as array
     local aInputs as array
@@ -66,7 +65,7 @@ procedure Merge_Two_Sorted_Lists()
 
     ? cHTML
 
-    return
+    return(nil)
 
 function TListNode()
 

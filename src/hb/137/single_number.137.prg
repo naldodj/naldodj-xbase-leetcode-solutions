@@ -27,7 +27,7 @@
 */
 
 function Main()
-return(Single_Number_II())
+    return(Single_Number_II())
 
 static function Single_Number_II()
 

@@ -28,7 +28,10 @@
     Released to Public Domain.
     --------------------------------------------------------------------------------------
 */
-procedure Main()
+function Main()
+    return(Merge_Two_Sorted_Lists())
+
+static function Merge_Two_Sorted_Lists()
 
     local aInput as array
     local aInputs as array
@@ -59,7 +62,7 @@ procedure Main()
 
     ? cHTML
 
-    return
+    return(nil)
 
 static function GenerateHTMLRow(aInput1 as array,aInput2 as array,aOutput as array,aExpected as array)
 
