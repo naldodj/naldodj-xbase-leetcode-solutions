@@ -3,6 +3,10 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-04-15 22:51 UTC naldodj (reverse_nodes_in_k-group)
+  + src/hb/025/README.md
+  + src/hb/025/reverse_nodes_in_k-group.25.1.prg
+
 2025-03-29 17:09 UTC naldodj
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.1.prg
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.2.prg
