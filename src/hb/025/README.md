@@ -25,3 +25,4 @@
     Follow-up: Can you solve the problem in O(1) extra memory space?
 
 ---
+![image](https://github.com/user-attachments/assets/932b30c4-9f15-4883-9a7b-50d52b11aee2)
