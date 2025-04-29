@@ -41,3 +41,5 @@
     nums is sorted in non-decreasing order.
 
 ---
+![image](https://github.com/user-attachments/assets/3a13a5ec-1fd7-4d05-b7d7-46f70efe8a14)
+
