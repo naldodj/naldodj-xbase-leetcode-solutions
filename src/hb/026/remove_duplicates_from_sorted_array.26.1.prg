@@ -70,7 +70,7 @@ static function Remove_Duplicates_from_Sorted_Array()
     // Itera sobre os casos de teste
     for each aInput in aInputs
         // Cria a lista encadeada a partir do array de entrada, efetua a reversão e converte o resultado de volta para array
-        aResult:=RemoveDuplicates(aInput[2],aInput[3],aInput[4],aInput[5]) // Resultado da função RemoveDuplicates
+        aResult:=RemoveDuplicates(aClone(aInput[2]),aInput[3],aInput[4],aInput[5]) // Resultado da função RemoveDuplicates
         cHTML+=GenerateHTMLRow(aInput[2],aResult,aInput[1],aInput[3],aInput[4]) // Gera uma linha na tabela HTML
     next each
 
