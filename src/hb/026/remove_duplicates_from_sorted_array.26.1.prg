@@ -62,6 +62,11 @@ static function Remove_Duplicates_from_Sorted_Array()
     aAdd(aInputs,{{0,1,2,3,4,"_","_","_","_","_"},{0,0,1,1,1,2,2,3,3,4},.T.,.F.,.T.})
     aAdd(aInputs,{{3,1,4,2,0,"_","_","_","_","_"},{3,1,4,2,1,3,0,4,0,2},.F.,.F.,.F.})
     aAdd(aInputs,{{0,1,2,3,4,"_","_","_","_","_"},{3,1,4,2,1,3,0,4,0,2},.F.,.T.,.T.})
+/*
+    aAdd(aInputs,{{0,1,2,3,4,"_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"},{0,0,0,0,0,0,0,0,1,1,1,1,1,1,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,4,4,4,4,4,4},.T.,.F.,.F.})
+    aAdd(aInputs,{{0,1,2,3,4,"_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"},{0,2,1,4,3,2,1,0,1,4,3,2,0,1,3,4,2,0,1,4,3,2,0,1,4,3,2,0,1,0,4,2,1,0,2,4},.F.,.T.,.F.})
+    aAdd(aInputs,{{0,2,1,4,3,"_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_","_"},{0,2,1,4,3,2,1,0,1,4,3,2,0,1,3,4,2,0,1,4,3,2,0,1,4,3,2,0,1,0,4,2,1,0,2,4},.F.,.F.,.F.})
+*/
 
     cHTML:="<table border='1' cellpadding='5' cellspacing='0' style='width:100%; height:auto;'>"
     cHTML+="<caption>"+ProcName()+"</caption><thead><tr style='background-color: #999; color: white; text-align: center;'>"
@@ -99,7 +104,7 @@ static function GenerateHTMLRow(aInput as array,aOutput as array,aExpected as ar
     cRow+="<td>"+hb_JSONEncode(aInput)+"</td>"
     cRow+="<td>"+hb_JSONEncode(aOutput)+"</td>"
     cRow+="<td>"+hb_JSONEncode(aExpected)+"</td>"
-    cRow+="<td>"+cIMGOrdered+"</td>"
+    cRow+="<td >"+cIMGOrdered+"</td>"
     cRow+="<td>"+cIMGForceNonDecreasingOrder+"</td>"
     cRow+="<td>"+cIMGMatch+"</td>"
     cRow+="</tr>"
@@ -137,8 +142,7 @@ static function RemoveDuplicates(aArray as array,lIsOrdered as logical,lForceThe
                 endif
                 j++
             end while
-            i++
-            if (valtype(aArray[i])!="N")
+            if ((++i>nALen).or.valtype(aArray[i])!="N")
                 exit
             endif
         end while

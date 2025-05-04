@@ -3,6 +3,10 @@
    Entries may not always be in chronological/commit order.
    See license at the end of file. */
 
+2025-05-04 14:52 UTC naldodj (!Fix : remove_duplicates_from_sorted_array)
+  * src/hb/026/remove_duplicates_from_sorted_array.26.1.prg
+  * src/hb/026/remove_duplicates_from_sorted_array.26.2.prg
+
 2025-05-02 08:38 UTC naldodj (!Fix : remove_duplicates_from_sorted_array)
   * src/hb/026/remove_duplicates_from_sorted_array.26.1.prg
   * src/hb/026/remove_duplicates_from_sorted_array.26.2.prg
