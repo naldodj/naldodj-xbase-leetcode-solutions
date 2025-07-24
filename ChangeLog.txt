@@ -1,26 +1,34 @@
 /* Encoding: UTF-8 (No BOM)  Notation (in 5th column):
      * Change  ! Fix  % Optimize  + Add  - Remove  ; Comment
    Entries may not always be in chronological/commit order.
-   See license at the end of file. */
+   See license at the end of file.
+   (Get-Date).ToUniversalTime().ToString("yyyy-MM-dd HH:mm")
+*/
 
-2025-05-04 14:52 UTC naldodj (!Fix : remove_duplicates_from_sorted_array)
+2025-07-24 21:41 UTC naldodj (makepatch)
+  + bin/patches/ext.txt
+  + bin/patches/makepatch.bat
+  + bin/patches/makepatch.lst
+  + bin/patches/makepatch.ps1
+
+2025-05-04 14:52 BRT naldodj (!Fix : remove_duplicates_from_sorted_array)
   * src/hb/026/remove_duplicates_from_sorted_array.26.1.prg
   * src/hb/026/remove_duplicates_from_sorted_array.26.2.prg
 
-2025-05-02 08:38 UTC naldodj (!Fix : remove_duplicates_from_sorted_array)
+2025-05-02 08:38 BRT naldodj (!Fix : remove_duplicates_from_sorted_array)
   * src/hb/026/remove_duplicates_from_sorted_array.26.1.prg
   * src/hb/026/remove_duplicates_from_sorted_array.26.2.prg
 
-2025-04-29 15:25 UTC naldodj (remove_duplicates_from_sorted_array)
+2025-04-29 15:25 BRT naldodj (remove_duplicates_from_sorted_array)
   + src/hb/026/remove_duplicates_from_sorted_array.26.2.prg
   + src/hb/026/remove_duplicates_from_sorted_array.26.1.prg
   + src/hb/026/README.md
 
-2025-04-15 22:51 UTC naldodj (reverse_nodes_in_k-group)
+2025-04-15 22:51 BRT naldodj (reverse_nodes_in_k-group)
   + src/hb/025/README.md
   + src/hb/025/reverse_nodes_in_k-group.25.1.prg
 
-2025-03-29 17:09 UTC naldodj
+2025-03-29 17:09 BRT naldodj
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.1.prg
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.2.prg
   * src/hb/010/regular.expression.matching.10.1.prg
@@ -58,7 +66,7 @@
   * src/hb/020/valid_parentheses.20.2.prg
   * src/hb/020/valid_parentheses.20.3.prg
 
-2025-03-29 16:29 UTC naldodj (Fix)
+2025-03-29 16:29 BRT naldodj (Fix)
   !* src/hb/019/remove_nth_node_from_end_of_list.19.4.prg
   !* src/hb/021/merge_two_sorted_lists.21.1.prg
   !* src/hb/021/merge_two_sorted_lists.21.2.prg
@@ -67,74 +75,74 @@
   !* src/hb/136/single_number.136.prg
   !* src/hb/137/single_number.137.prg
 
-2025-03-29 12:11 UTC naldodj (Swap nodes in pairs)
+2025-03-29 12:11 BRT naldodj (Swap nodes in pairs)
   + src/hb/024/README.md
   + src/hb/024/swap_nodes_in_pairs.24.1.prg
   * src/hb/021/merge_two_sorted_lists.21.1.prg
   * src/hb/023/merge_k_sorted_lists.23.1.prg
   * src/hb/019/remove_nth_node_from_end_of_list.19.4.prg
 
-2025-03-28 12:41 UTC naldodj (Merge k Sorted Lists)
+2025-03-28 12:41 BRT naldodj (Merge k Sorted Lists)
   % src/hb/023/merge_k_sorted_lists.23.1.prg
 
-2025-03-28 10:50 UTC naldodj (Merge k Sorted Lists)
+2025-03-28 10:50 BRT naldodj (Merge k Sorted Lists)
   ! src/hb/023/merge_k_sorted_lists.23.1.prg
 
-2025-03-28 10:47 UTC naldodj (Merge k Sorted Lists)
+2025-03-28 10:47 BRT naldodj (Merge k Sorted Lists)
   + src/hb/023/merge_k_sorted_lists.23.1.prg
   + src/hb/023/README.md
 
-2025-03-26 20:28 UTC naldodj
+2025-03-26 20:28 BRT naldodj
   * src/hb/021/merge_two_sorted_lists.21.2.prg
 
-2025-03-25 11:22 UTC naldodj
+2025-03-25 11:22 BRT naldodj
   * src/hb/019/remove_nth_node_from_end_of_list.19.4.prg
 
-2025-03-25 10:21 UTC naldodj (merge_two_sorted_lists: harbour)
+2025-03-25 10:21 BRT naldodj (merge_two_sorted_lists: harbour)
   + src/hb/021/merge_two_sorted_lists.21.1.prg
   + src/hb/021/merge_two_sorted_lists.21.2.prg
   + src/hb/021/README.md
   * src/hb/019/remove_nth_node_from_end_of_list.19.4.prg
 
-2025-02-22 08:33 UTC naldodj (russian_multiplication: harbour)
+2025-02-22 08:33 BRT naldodj (russian_multiplication: harbour)
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.1.prg
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.2.prg
 
-2025-02-21 21:34 UTC naldodj (russian_multiplication: harbour)
+2025-02-21 21:34 BRT naldodj (russian_multiplication: harbour)
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.1.prg
   * src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.2.prg
 
-2025-02-21 11:11 UTC naldodj (russian_multiplication: harbour)
+2025-02-21 11:11 BRT naldodj (russian_multiplication: harbour)
   + src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.1.prg
   + src/hb/_00/gifts/002-russian_multiplication/russian_multiplication.2.prg
   + src/hb/_00/gifts/002-russian_multiplication/README.md
 
-2025-02-20 21:32 UTC naldodj (chinese_multiplication: harbour)
+2025-02-20 21:32 BRT naldodj (chinese_multiplication: harbour)
   + src/hb/_00/gifts/001-chinese_multiplication/README.md
 
-2025-02-20 21:30 UTC naldodj (chinese_multiplication: harbour)
+2025-02-20 21:30 BRT naldodj (chinese_multiplication: harbour)
   + src/hb/_00/gifts/001-chinese_multiplication/chinese_multiplication.1.prg
   + src/hb/_00/gifts/001-chinese_multiplication/chinese_multiplication.2.prg
 
-2025-02-19 18:30 UTC naldodj (valid_parentheses: tlpp)
+2025-02-19 18:30 BRT naldodj (valid_parentheses: tlpp)
   + src/tlpp/020/README.md
   + src/tlpp/020/valid_parentheses.20.1.tlpp
   + src/tlpp/020/valid_parentheses.20.2.tlpp
   + src/tlpp/020/valid_parentheses.20.3.tlpp
 
-2025-02-19 18:08 UTC naldodj (valid_parentheses: harbour)
+2025-02-19 18:08 BRT naldodj (valid_parentheses: harbour)
   * New test cases
     * src/hb/020/valid_parentheses.20.1.prg
     * src/hb/020/valid_parentheses.20.2.prg
     * src/hb/020/valid_parentheses.20.3.prg
 
-2025-02-19 11:45 UTC naldodj (valid_parentheses: harbour)
+2025-02-19 11:45 BRT naldodj (valid_parentheses: harbour)
   + src/hb/020/README.md
   + src/hb/020/valid_parentheses.20.1.prg
   + src/hb/020/valid_parentheses.20.2.prg
   + src/hb/020/valid_parentheses.20.3.prg
 
-2025-02-12 19:43 UTC naldodj (remove_nth_node_from_end_of_list: harbour & tlpp)
+2025-02-12 19:43 BRT naldodj (remove_nth_node_from_end_of_list: harbour & tlpp)
   * include/dna.tech.leetcode.th
   * src/hb/019/remove_nth_node_from_end_of_list.19.1.prg
   * src/hb/019/remove_nth_node_from_end_of_list.19.2.prg
@@ -145,7 +153,7 @@
   * src/tlpp/019/remove_nth_node_from_end_of_list.19.2.tlpp
   * src/tlpp/019/remove_nth_node_from_end_of_list.19.3.tlpp
 
-2025-02-12 13:53 UTC naldodj (remove_nth_node_from_end_of_list: harbour & tlpp)
+2025-02-12 13:53 BRT naldodj (remove_nth_node_from_end_of_list: harbour & tlpp)
   * src/hb/019/remove_nth_node_from_end_of_list.19.1.prg
   * src/hb/019/remove_nth_node_from_end_of_list.19.2.prg
   * src/hb/019/remove_nth_node_from_end_of_list.19.3.prg
@@ -154,7 +162,7 @@
   * src/tlpp/019/remove_nth_node_from_end_of_list.19.2.tlpp
   * src/tlpp/019/remove_nth_node_from_end_of_list.19.3.tlpp
 
-2025-02-12 13:15 UTC naldodj (remove_nth_node_from_end_of_list: harbour & tlpp)
+2025-02-12 13:15 BRT naldodj (remove_nth_node_from_end_of_list: harbour & tlpp)
   + src/hb/019/remove_nth_node_from_end_of_list.19.1.prg
   + src/hb/019/remove_nth_node_from_end_of_list.19.2.prg
   + src/hb/019/remove_nth_node_from_end_of_list.19.3.prg
@@ -165,11 +173,11 @@
   + src/tlpp/019/remove_nth_node_from_end_of_list.19.3.tlpp
   + src/tlpp/019/README.md
 
-2025-01-31 17:22 UTC naldodj
+2025-01-31 17:22 BRT naldodj
   ;Standardize test code format and style
   * src/tlpp/017/letter.combinations.of.a.phone.number.17.2.tlpp
 
-2025-01-31 17:18 UTC naldodj
+2025-01-31 17:18 BRT naldodj
   ;Standardize test code format and style
     * src/hb/010/regular.expression.matching.10.1.prg
     * src/hb/010/regular.expression.matching.10.2.prg
@@ -213,7 +221,7 @@
     * src/tlpp/018/4sum.18.1.tlpp
     * src/tlpp/018/4sum.18.2.tlpp
 
-2025-01-29 17:46 UTC naldodj (4sum: harbour & tlpp)
+2025-01-29 17:46 BRT naldodj (4sum: harbour & tlpp)
   + src/hb/018/4sum.18.1.prg
   + src/hb/018/4sum.18.2.prg
   + src/hb/018/README.md
@@ -221,13 +229,13 @@
   + src/tlpp/018/4sum.18.2.tlpp
   + src/tlpp/018/README.md
 
-2025-01-15 14:06 UTC naldodj
+2025-01-15 14:06 BRT naldodj
   * src/hb/017/letter.combinations.of.a.phone.number.17.1.prg
   * src/hb/017/letter.combinations.of.a.phone.number.17.2.prg
   * src/tlpp/017/letter.combinations.of.a.phone.number.17.1.tlpp
   * src/tlpp/017/letter.combinations.of.a.phone.number.17.2.tlpp
 
-2025-01-14 18:21 UTC naldodj (letter.combinations.of.a.phone.number: harbour & tlpp)
+2025-01-14 18:21 BRT naldodj (letter.combinations.of.a.phone.number: harbour & tlpp)
   + src/hb/017/letter.combinations.of.a.phone.number.17.1.prg
   + src/hb/017/README.md
   + src/tlpp/017/letter.combinations.of.a.phone.number.17.1.tlpp
@@ -235,36 +243,36 @@
   + src/tlpp/017/README.md
   + src/hb/017/letter.combinations.of.a.phone.number.17.2.prg
 
-2025-01-14 09:41 UTC naldodj
+2025-01-14 09:41 BRT naldodj
   ;Standardize test code format and style
     * src/tlpp/016/3sum.closest.16.1.tlpp
     * src/hb/016/3sum.closest.16.1.prg
 
-2025-01-14 09:13 UTC naldodj
+2025-01-14 09:13 BRT naldodj
   ! Fix TLPP source
     * src/tlpp/016/3sum.closest.16.1.tlpp
 
-2025-01-13 11:47 UTC naldodj (3sum.closest: harbour & tlpp)
+2025-01-13 11:47 BRT naldodj (3sum.closest: harbour & tlpp)
   + src/hb/016/README.md
   + src/tlpp/016/3sum.closest.16.1.tlpp
   + src/tlpp/016/README.md
   + src/hb/016/3sum.closest.16.1.prg
 
-2025-01-09 18:38 UTC naldodj
+2025-01-09 18:38 BRT naldodj
   * src/tlpp/000/dna.tech.leetcodetools.tlpp
 
-2025-01-09 15:08 UTC naldodj
+2025-01-09 15:08 BRT naldodj
   ! Fix FWJSONSerialize error
     * include/dna.tech.leetcode.th
   * src/tlpp/014/longest_common_prefix.14.1.tlpp
 
-2025-01-09 09:46 UTC naldodj (3sum: harbour & tlpp)
+2025-01-09 09:46 BRT naldodj (3sum: harbour & tlpp)
   + src/hb/015/README.md
   + src/tlpp/015/README.md
   + src/hb/015/3sum.15.1.prg
   + src/tlpp/015/3sum.15.1.tlpp
 
-2025-01-08 21:36 UTC naldodj
+2025-01-08 21:36 BRT naldodj
   ;Standardize test code format and style
     * src/hb/010/regular.expression.matching.10.1.prg
     * src/hb/010/regular.expression.matching.10.2.prg
@@ -287,7 +295,7 @@
     * src/tlpp/013/roman_to_integer.13.1.tlpp
     * src/tlpp/013/roman_to_integer.13.2.tlpp
 
-2025-01-08 10:45 UTC naldodj (longest_common_prefix: harbour & tlpp)
+2025-01-08 10:45 BRT naldodj (longest_common_prefix: harbour & tlpp)
   + src/hb/014/README.md
   + src/tlpp/014/README.md
   + src/hb/014/longest_common_prefix.14.1.prg
@@ -295,7 +303,7 @@
   + src/tlpp/014/longest_common_prefix.14.1.tlpp
   + src/tlpp/014/longest_common_prefix.14.2.tlpp
 
-2025-01-07 09:56 UTC naldodj (int_to_roman: harbour & tlpp)
+2025-01-07 09:56 BRT naldodj (int_to_roman: harbour & tlpp)
   ;Standardize test code format and style
     * src/hb/012/int_to_roman.12.1.prg
     * src/hb/012/int_to_roman.12.2.prg
@@ -306,7 +314,7 @@
     * src/tlpp/012/int_to_roman.12.3.tlpp
     * src/tlpp/012/int_to_roman.12.4.tlpp
 
-2025-01-06 20:29 UTC naldodj (roman_to_integer: harbour & tlpp)
+2025-01-06 20:29 BRT naldodj (roman_to_integer: harbour & tlpp)
   + src/hb/013/README.md
   + src/tlpp/013/roman_to_integer.13.1.tlpp
   + src/tlpp/013/roman_to_integer.13.2.tlpp
@@ -314,11 +322,11 @@
   + src/hb/013/roman_to_integer.13.1.prg
   + src/hb/013/roman_to_integer.13.2.prg
 
-2025-01-06 11:53 UTC naldodj (container.with.most.water: tlpp)
+2025-01-06 11:53 BRT naldodj (container.with.most.water: tlpp)
   ! src/tlpp/011/container.with.most.water.11.2.tlpp
   * src/tlpp/011/container.with.most.water.11.3.tlpp
 
-2025-01-06 11:44 UTC naldodj (container.with.most.water: harbour & tlpp)
+2025-01-06 11:44 BRT naldodj (container.with.most.water: harbour & tlpp)
   + src/hb/011/container.with.most.water.11.3.prg
   + src/hb/011/README.md
   + src/tlpp/011/container.with.most.water.11.2.tlpp
@@ -328,10 +336,10 @@
   + src/hb/011/container.with.most.water.11.2.prg
   + src/tlpp/011/container.with.most.water.11.1.tlpp
 
-2025-01-03 17:30 UTC naldodj
+2025-01-03 17:30 BRT naldodj
     * include/dna.tech.leetcode.th
 
-2025-01-03 12:40 UTC naldodj (regular.expression.matching: tlpp)
+2025-01-03 12:40 BRT naldodj (regular.expression.matching: tlpp)
   ;regular.expression.matching: tlpp
     + src/tlpp/010/regular.expression.matching.10.1.tlpp
     + src/tlpp/010/regular.expression.matching.10.2.tlpp
@@ -372,23 +380,23 @@
     * src/hb/010/regular.expression.matching.10.4.prg
     * src/hb/010/README.md
 
-2025-01-03 11:14 UTC naldodj (regular.expression.matching: harbour : revision 2)
+2025-01-03 11:14 BRT naldodj (regular.expression.matching: harbour : revision 2)
   * src/hb/010/regular.expression.matching.10.1.prg
 
-2025-01-03 11:09 UTC naldodj (regular.expression.matching: harbour : revision)
+2025-01-03 11:09 BRT naldodj (regular.expression.matching: harbour : revision)
   * src/hb/010/regular.expression.matching.10.1.prg
   * src/hb/010/regular.expression.matching.10.2.prg
   * src/hb/010/regular.expression.matching.10.3.prg
   * src/hb/010/regular.expression.matching.10.4.prg
 
-2025-01-01 12:50 UTC naldodj (regular.expression.matching: harbour)
+2025-01-01 12:50 BRT naldodj (regular.expression.matching: harbour)
   ; fix file names
     * src/hb/010/regular.expression.matching10.1.prg -> src/hb/010/regular.expression.matching.10.1.prg
     * src/hb/010/regular.expression.matching10.2.prg -> src/hb/010/regular.expression.matching.10.2.prg
     * src/hb/010/regular.expression.matching10.3.prg -> src/hb/010/regular.expression.matching.10.3.prg
     * src/hb/010/regular.expression.matching10.4.prg -> src/hb/010/regular.expression.matching.10.4.prg
 
-2025-01-01 12:47 UTC naldodj (regular.expression.matching: harbour)
+2025-01-01 12:47 BRT naldodj (regular.expression.matching: harbour)
   ;Initial implementation. Requires revisions and improvements.
     + src/hb/010/README.md
     + src/hb/010/regular.expression.matching10.1.prg
@@ -396,7 +404,7 @@
     + src/hb/010/regular.expression.matching10.3.prg
     + src/hb/010/regular.expression.matching10.4.prg
 
-2025-01-01 10:30 UTC naldodj (</br> => <br/>)
+2025-01-01 10:30 BRT naldodj (</br> => <br/>)
   * .gitignore
   * include/dna.tech.leetcode.th
   * src/hb/001/two_sum.1.2.prg
@@ -451,7 +459,7 @@
   * src/tlpp/136/single_number.136.tlpp
   * src/tlpp/137/single_number.137.tlpp
 
-2024-12-30 12:51 UTC naldodj
+2024-12-30 12:51 BRT naldodj
   * src/hb/136/single_number.136.prg
   * src/hb/137/single_number.137.prg
   * src/tlpp/001/two_sum.1.1.tlpp
@@ -459,7 +467,7 @@
   * src/tlpp/136/single_number.136.tlpp
   * src/tlpp/137/single_number.137.tlpp
 
-2024-12-30 12:11 UTC naldodj (palindrome_number)
+2024-12-30 12:11 BRT naldodj (palindrome_number)
   + src/hb/001/two_sum.1.2.prg
   + src/hb/009/palindrome_number.9.1.prg
   + src/hb/009/palindrome_number.9.2.prg
@@ -506,7 +514,7 @@
   * src/hb/001/two_sum.1.prg -> src/hb/001/two_sum.1.1prg
   * src/tlpp/001/two_sum.1.tlpp -> src/tlpp/001/two_sum.1.1.tlpp
 
-2024-12-30 03:54 UTC naldodj
+2024-12-30 03:54 BRT naldodj
   * src/tlpp/007/reverse_integer.7.1.tlpp
   * src/tlpp/007/reverse_integer.7.2.tlpp
   * src/tlpp/007/reverse_integer.7.3.tlpp
@@ -517,10 +525,10 @@
   * src/tlpp/012/int_to_roman.12.3.tlpp
   * src/tlpp/012/int_to_roman.12.4.tlpp
 
-2024-12-29 19:41 UTC naldodj (string_to_integer_atoi)
+2024-12-29 19:41 BRT naldodj (string_to_integer_atoi)
   * src/tlpp/008/string_to_integer_atoi.8.1.tlpp
 
-2024-12-29 18:41 UTC naldodj (string_to_integer_atoi)
+2024-12-29 18:41 BRT naldodj (string_to_integer_atoi)
   + src/hb/008/README.md
   + src/hb/008/string_to_integer_atoi.8.1.prg
   + src/hb/008/string_to_integer_atoi.8.2.prg
@@ -528,7 +536,7 @@
   + src/tlpp/008/string_to_integer_atoi.8.1.tlpp
   + src/tlpp/008/string_to_integer_atoi.8.2.tlpp
 
-2024-12-29 11:00 UTC naldodj
+2024-12-29 11:00 BRT naldodj
   * src/tlpp/007/reverse_integer.7.1.tlpp
   * src/tlpp/007/reverse_integer.7.2.tlpp
   * src/tlpp/007/reverse_integer.7.3.tlpp
@@ -537,12 +545,12 @@
   * src/tlpp/012/int_to_roman.12.3.tlpp
   * src/tlpp/012/int_to_roman.12.4.tlpp
 
-2024-12-29 10:51 UTC naldodj
+2024-12-29 10:51 BRT naldodj
   * src/tlpp/007/reverse_integer.7.1.tlpp
   * src/tlpp/007/reverse_integer.7.2.tlpp
   * src/tlpp/007/reverse_integer.7.3.tlpp
 
-2024-12-29 10:47 UTC naldodj
+2024-12-29 10:47 BRT naldodj
   * src/hb/012/int_to_roman.12.1.prg
   * src/hb/012/int_to_roman.12.2.prg
   * src/hb/012/int_to_roman.12.3.prg
@@ -550,7 +558,7 @@
   * src/tlpp/012/int_to_roman.12.3.tlpp
   * src/tlpp/012/int_to_roman.12.4.tlpp
 
-2024-12-29 10:15 UTC naldodj
+2024-12-29 10:15 BRT naldodj
   * src/hb/012/int_to_roman.12.1.prg
   * src/hb/012/int_to_roman.12.2.prg
   * src/hb/012/int_to_roman.12.3.prg
@@ -558,7 +566,7 @@
   * src/tlpp/012/int_to_roman.12.3.tlpp
   * src/tlpp/012/int_to_roman.12.4.tlpp
 
-2024-12-29 09:24 UTC naldodj
+2024-12-29 09:24 BRT naldodj
   + src/tlpp/012/int_to_roman.12.3.tlpp
   + src/tlpp/012/int_to_roman.12.4.tlpp
   + src/hb/012/int_to_roman.12.3.prg
@@ -566,7 +574,7 @@
   * src/tlpp/012/int_to_roman.12.1.tlpp
   * src/tlpp/012/int_to_roman.12.2.tlpp
 
-2024-12-29 08:27 UTC naldodj
+2024-12-29 08:27 BRT naldodj
   * src/hb/012/int_to_roman.12.1.prg
   * src/hb/012/int_to_roman.12.2.prg
   * src/hb/012/README.md
@@ -576,33 +584,33 @@
   * src/tlpp/136/README.md
   * src/tlpp/137/README.md
 
-2024-12-29 08:15 UTC naldodj (RomanToDec)
+2024-12-29 08:15 BRT naldodj (RomanToDec)
   * src/hb/012/int_to_roman.12.2.prg
   * src/tlpp/012/int_to_roman.12.1.tlpp
   * src/tlpp/012/int_to_roman.12.2.tlpp
   * src/hb/012/int_to_roman.12.1.prg
     ;Add function RomanToDec
 
-2024-12-29 07:37 UTC naldodj (int_to_roman harbour & tlpp: 12.2)
+2024-12-29 07:37 BRT naldodj (int_to_roman harbour & tlpp: 12.2)
   + src/hb/012/int_to_roman.12.2.prg
   + src/tlpp/012/int_to_roman.12.2.tlpp
 
-2024-12-29 00:05 UTC naldodj (Out of range 1 <= n <= 3999
+2024-12-29 00:05 BRT naldodj (Out of range 1 <= n <= 3999
   * src/hb/012/int_to_roman.12.1.prg
   * src/tlpp/012/int_to_roman.12.1.tlpp
 
-2024-12-29 00:05 UTC naldodj (int_to_roman harbour & tlpp)
+2024-12-29 00:05 BRT naldodj (int_to_roman harbour & tlpp)
   + src/hb/012/int_to_roman.12.1.prg
   + src/hb/012/README.md
   + src/tlpp/012/int_to_roman.12.1.tlpp
   + src/tlpp/012/README.md
 
-2024-12-28 23:18 UTC naldodj (reverse_integer tlpp)
+2024-12-28 23:18 BRT naldodj (reverse_integer tlpp)
   * src/tlpp/007/reverse_integer.7.1.tlpp
   * src/tlpp/007/reverse_integer.7.2.tlpp
   * src/tlpp/007/reverse_integer.7.3.tlpp
 
-2024-12-28 22:44 UTC naldodj (reverse_integer tlpp)
+2024-12-28 22:44 BRT naldodj (reverse_integer tlpp)
   + src/tlpp/007/reverse_integer.7.1.tlpp
   + src/tlpp/007/reverse_integer.7.3.tlpp
   + src/tlpp/007/README.md
@@ -624,17 +632,17 @@
   * src/tlpp/136/single_number.136.tlpp
   * src/tlpp/137/single_number.137.tlpp
 
-2024-12-26 07:40 UTC naldodj (reverse_integer harbour)
+2024-12-26 07:40 BRT naldodj (reverse_integer harbour)
   + src/hb/007/reverse_integer.7.1.prg
   + src/hb/007/reverse_integer.7.2.prg
   + src/hb/007/reverse_integer.7.3.prg
   + src/hb/007/README.md
 
-2024-12-26 07:40 UTC naldodj (zigzag_conversion)
+2024-12-26 07:40 BRT naldodj (zigzag_conversion)
   * src/hb/006/zigzag_conversion.6.1.prg
   * src/hb/006/zigzag_conversion.6.2.prg
 
-2024-12-25 13:33 UTC naldodj (zigzag_conversion)
+2024-12-25 13:33 BRT naldodj (zigzag_conversion)
   + src/hb/006/README.md
   + src/tlpp/006/README.md
   + src/tlpp/006/zigzag_conversion.6.1.tlpp
@@ -642,10 +650,10 @@
   + src/hb/006/zigzag_conversion.6.1.prg
   + src/hb/006/zigzag_conversion.6.2.prg
 
-2024-12-17 10:09 UTC naldodj (longest_palindromic_substring :: tlpp)
+2024-12-17 10:09 BRT naldodj (longest_palindromic_substring :: tlpp)
   ! src/tlpp/005/longest_palindromic_substring.5.1.tlpp
 
-2024-12-18 09:00 UTC naldodj (longest_palindromic_substring :: tlpp)
+2024-12-18 09:00 BRT naldodj (longest_palindromic_substring :: tlpp)
   + src/tlpp/005/README.md
   + src/tlpp/005/longest_palindromic_substring.5.1.tlpp
   + src/tlpp/005/longest_palindromic_substring.5.2.tlpp
@@ -653,65 +661,65 @@
   * src/hb/005/README.md
   * src/hb/005/longest_palindromic_substring.5.1.prg
 
-2024-12-17 21:51 UTC naldodj (longest_palindromic_substring :: harbour)
+2024-12-17 21:51 BRT naldodj (longest_palindromic_substring :: harbour)
   + src/hb/005/README.md
   + src/hb/005/longest_palindromic_substring.5.1.prg
   + src/hb/005/longest_palindromic_substring.5.2.prg
 
-2024-12-16 16:34 UTC naldodj
+2024-12-16 16:34 BRT naldodj
   * src/tlpp/004/median_of_two_sorted_arrays.4.1.tlpp
   * src/hb/004/median_of_two_sorted_arrays.4.1.prg
 
-2024-12-16 10:08 UTC naldodj (median_of_two_sorted_arrays tlpp)
+2024-12-16 10:08 BRT naldodj (median_of_two_sorted_arrays tlpp)
   + src/tlpp/004/median_of_two_sorted_arrays.4.1.tlpp
   + src/tlpp/004/median_of_two_sorted_arrays.4.2.tlpp
   + src/tlpp/004/median_of_two_sorted_arrays.4.3.tlpp
   + src/tlpp/004/README.md
   * src/hb/004/median_of_two_sorted_arrays.4.1.prg
 
-2024-12-16 09:41 UTC naldodj (median_of_two_sorted_arrays Harbour add README.md)
+2024-12-16 09:41 BRT naldodj (median_of_two_sorted_arrays Harbour add README.md)
   + src/hb/004/README.md
 
-2024-12-16 09:36 UTC naldodj (median_of_two_sorted_arrays Harbour)
+2024-12-16 09:36 BRT naldodj (median_of_two_sorted_arrays Harbour)
   + src/hb/004/median_of_two_sorted_arrays.4.1.prg
   + src/hb/004/median_of_two_sorted_arrays.4.3.prg
   + src/hb/004/median_of_two_sorted_arrays.4.2.prg
 
-2024-12-14 06:40 UTC naldodj
+2024-12-14 06:40 BRT naldodj
   * src/tlpp/002/add_two_numbers.2.2.tlpp
   * src/tlpp/136/single_number.136.tlpp
   * src/tlpp/137/single_number.137.tlpp
 
-2024-12-13 19:47 UTC naldodj
+2024-12-13 19:47 BRT naldodj
   * src/tlpp/002/add_two_numbers.2.2.tlpp
   * src/tlpp/136/single_number.136.tlpp
   * src/tlpp/137/single_number.137.tlpp
 
-2024-12-13 19:12 UTC naldodj (longest_substring_without_repeating_characters harbour)
+2024-12-13 19:12 BRT naldodj (longest_substring_without_repeating_characters harbour)
   - src/hb/003/longest_substring_without_repeating_characters.prg
   * src/hb/003/longest_substring_without_repeating_characters.3.prg
 
-2024-12-13 18:58 UTC naldodj (longest_substring_without_repeating_characters tlpp)
+2024-12-13 18:58 BRT naldodj (longest_substring_without_repeating_characters tlpp)
   + src/hb/003/longest_substring_without_repeating_characters.3.prg
   + src/tlpp/003/longest_substring_without_repeating_characters.3.tlpp
   + src/tlpp/003/README.md
   * src/hb/003/longest_substring_without_repeating_characters.prg
 
-2024-12-13 18:40 UTC naldodj (longest_substring_without_repeating_characters)
+2024-12-13 18:40 BRT naldodj (longest_substring_without_repeating_characters)
   + src/hb/003/longest_substring_without_repeating_characters.prg
   + src/hb/003/README.md
 
-2024-12-13 15:47 UTC naldodj (add_two_numbers tlpp)
+2024-12-13 15:47 BRT naldodj (add_two_numbers tlpp)
   + src/tlpp/002/add_two_numbers.2.0.tlpp
   + src/tlpp/002/add_two_numbers.2.2.tlpp
   + src/tlpp/002/add_two_numbers.2.1.tlpp
   * src/hb/002/add_two_numbers.2.1.prg
   * src/hb/002/add_two_numbers.2.2.prg
 
-2024-12-13 11:41 UTC naldodj (add_two_numbers)
+2024-12-13 11:41 BRT naldodj (add_two_numbers)
   + src/hb/002/add_two_numbers.2.2.prg
 
-2024-12-13 08:20 UTC naldodj (add_two_numbers)
+2024-12-13 08:20 BRT naldodj (add_two_numbers)
   + src/hb/002/add_two_numbers.2.0.prg
   + src/hb/002/add_two_numbers.2.1.prg
   + src/hb/002/README.md
@@ -723,36 +731,36 @@
   * src/tlpp/136/single_number136.tlpp -> src/tlpp/136/single_number.136.tlpp
   * src/tlpp/137/single_number137.tlpp -> src/tlpp/137/single_number.137.tlpp
 
-2024-12-13 07:43 UTC naldodj
+2024-12-13 07:43 BRT naldodj
   * src/hb/001/two_sum1.md -> src/hb/001/README.md
   * src/tlpp/001/two_sum1.md -> src/tlpp/001/README.md
 
-2024-12-13 07:41 UTC naldodj
+2024-12-13 07:41 BRT naldodj
   * src/hb/1/two_sum1.prg -> src/hb/001/two_sum1.prg
   * src/hb/1/two_sum1.md -> src/hb/001/two_sum1.md
 
-2024-12-13 07:39 UTC naldodj
+2024-12-13 07:39 BRT naldodj
   * src/tlpp/1/two_sum1.tlpp -> src/tlpp/001/two_sum1.tlpp
   * src/tlpp/1/two_sum1.md -> src/tlpp/001/two_sum1.md
 
-2024-12-12 16:41 UTC naldodj (two_sum)
+2024-12-12 16:41 BRT naldodj (two_sum)
   + src/tlpp/1/two_sum1.tlpp
   + src/hb/1/two_sum1.md
   + src/hb/1/two_sum1.prg
   + src/tlpp/1/two_sum1.md
 
-2024-12-12 13:19 UTC naldodj
+2024-12-12 13:19 BRT naldodj
   * src/hb/136/single_number136.prg
   * src/hb/137/single_number137.prg
   * src/tlpp/136/single_number136.tlpp
   * src/tlpp/137/single_number137.tlpp
     ; Refactored iteration to simplify using aEval for clarity.
 
-2024-12-12 11:22 UTC naldodj (Add README file)
+2024-12-12 11:22 BRT naldodj (Add README file)
   + src/tlpp/136/README.md
   + src/tlpp/137/README.md
 
-2024-12-12 11:15 UTC naldodj (Initial Commit)
+2024-12-12 11:15 BRT naldodj (Initial Commit)
   + bin/3rdpatch.hb
   + bin/check.hb
   + bin/commit.hb
